@@ -87,7 +87,18 @@ jobs:
           rm -rf "$EXTRACT_DIR"
           mkdir -p "$EXTRACT_DIR"
           
-          if ! tar -xzf "$DOWNLOADED_FILE" -C "$EXTRACT_DIR" --warning=none; then
+          # Ekstraksi. Tambahkan pengecekan apakah file yang diunduh adalah file tar.gz
+          if [[ "$URL" == *.tar.gz ]]; then
+             TAR_OPTS="xzf"
+          elif [[ "$URL" == *.tgz ]]; then
+             TAR_OPTS="xzf"
+          else
+             echo "Peringatan: URL $URL bukan file .tar.gz atau .tgz yang didukung. Melewati."
+             rm -f "$DOWNLOADED_FILE"
+             continue
+          fi
+          
+          if ! tar -"$TAR_OPTS" "$DOWNLOADED_FILE" -C "$EXTRACT_DIR" --warning=none; then
             echo "Peringatan: Gagal mengekstrak $DOWNLOADED_FILE. Melewati."
             rm -f "$DOWNLOADED_FILE"
             continue
@@ -103,12 +114,13 @@ jobs:
           fi
 
           # Hitung hash SHA256 dan siapkan input untuk jq
+          # Menggunakan sed untuk membersihkan karakter yang tidak diinginkan dan memastikan pemformatan JSON yang ketat.
           HASH_DATA=$(
             cd "$ROOT_DIR"
-            # Temukan semua file biasa, kecualikan file template, hitung sha256sum
+            # 1. Temukan semua file biasa, kecualikan file template, hitung sha256sum
             find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
-            # Format output: [path, hash] untuk setiap baris
-            awk '{sub(/^\.\//, "", $2); printf "[ \"%s\", \"%s\" ]\n", $2, $1}'
+            # 2. Awk memformat output sebagai JSON Key-Value Pair. Gunakan $1 dan $2 dari output sha256sum.
+            awk '{sub(/^\.\//, "", $2); printf "[\"%s\",\"%s\"]\n", $2, $1}'
           )
 
           # 5. Buat JSON hanya jika ada data hash yang ditemukan
@@ -116,8 +128,17 @@ jobs:
             echo "Peringatan: Tidak ada file hash yang ditemukan dalam paket yang diekstrak. Membuat objek JSON kosong."
             echo "{}" > "ojs-plugin-hashes/$JSON_FILENAME"
           else
+            # DEBUG: Cetak 5 baris pertama dari HASH_DATA sebelum diproses oleh jq
+            echo "DEBUG: 5 baris pertama HASH_DATA:"
+            echo "$HASH_DATA" | head -n 5
+            
             # Gunakan HASH_DATA sebagai input ke jq dan simpan sebagai JSON
-            echo "$HASH_DATA" | jq -s 'from_entries' > "ojs-plugin-hashes/$JSON_FILENAME"
+            if ! echo "$HASH_DATA" | jq -s 'from_entries' > "ojs-plugin-hashes/$JSON_FILENAME"; then
+               echo "ERROR: Gagal memproses jq untuk $PRODUCT v$VERSION."
+               echo "Data mentah yang menyebabkan kegagalan jq disimpan ke /tmp/jq_fail_raw.txt"
+               echo "$HASH_DATA" > "/tmp/jq_fail_raw.txt"
+               # Tidak exit dengan error agar workflow dapat mencoba yang lain, tetapi mencetak peringatan.
+            fi
           fi
 
           # Bersihkan
