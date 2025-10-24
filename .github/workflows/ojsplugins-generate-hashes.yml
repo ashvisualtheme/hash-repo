@@ -15,6 +15,10 @@ jobs:
     steps:
     - name: 🛒 Setup Tools & Create Artifact Directory
       run: |
+        # Nonaktifkan man-db trigger untuk mempercepat instalasi paket
+        echo 'DPkg::Post-Invoke {"if [ -d /usr/share/man ]; then /usr/bin/mandb --quiet; fi";};' | sudo tee /etc/apt/apt.conf.d/99man-db
+        echo 'APT::AutoRemove::Suggests "false";' | sudo tee -a /etc/apt/apt.conf.d/99man-db
+        
         # Instal xmlstarlet (untuk parsing XML) dan jq (untuk memformat JSON)
         sudo apt-get update
         sudo apt-get install -y xmlstarlet jq wget curl
@@ -98,19 +102,23 @@ jobs:
              ROOT_DIR="$EXTRACT_DIR"
           fi
 
-          # Navigasi ke direktori akar untuk menghitung hash
-          # Gunakan ROOT_DIR sebagai direktori kerja untuk find, bukan cd
-          
-          # Hitung hash SHA256 dan buat JSON
-          (
+          # Hitung hash SHA256 dan siapkan input untuk jq
+          HASH_DATA=$(
             cd "$ROOT_DIR"
             # Temukan semua file biasa, kecualikan file template, hitung sha256sum
             find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
             # Format output: [path, hash] untuk setiap baris
-            awk '{sub(/^\.\//, "", $2); printf "[ \"%s\", \"%s\" ]\n", $2, $1}' | \
-            # Gabungkan larik [path, hash] menjadi satu objek {path: hash}
-            jq -s 'from_entries'
-          ) > "ojs-plugin-hashes/$JSON_FILENAME"
+            awk '{sub(/^\.\//, "", $2); printf "[ \"%s\", \"%s\" ]\n", $2, $1}'
+          )
+
+          # 5. Buat JSON hanya jika ada data hash yang ditemukan
+          if [ -z "$HASH_DATA" ]; then
+            echo "Peringatan: Tidak ada file hash yang ditemukan dalam paket yang diekstrak. Membuat objek JSON kosong."
+            echo "{}" > "ojs-plugin-hashes/$JSON_FILENAME"
+          else
+            # Gunakan HASH_DATA sebagai input ke jq dan simpan sebagai JSON
+            echo "$HASH_DATA" | jq -s 'from_entries' > "ojs-plugin-hashes/$JSON_FILENAME"
+          fi
 
           # Bersihkan
           rm -rf "$EXTRACT_DIR" "$DOWNLOADED_FILE"
