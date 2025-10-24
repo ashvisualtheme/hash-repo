@@ -1,0 +1,18 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/de_DE/locale.po": "0b45f97ee25ed36ea429302ff8a37f81a0a335c1f215b20b539ecf21786c492e",
+  "locale/ar_IQ/locale.po": "38802261e16186765dee6e8d40851d7c12a72bc55c04c70b5b598da4754438ad",
+  "locale/en_US/locale.po": "6280a3af8492fa6e0c3a657da64cdb54eb9c536d3569442d65840404b2a6449d",
+  ".github/ISSUE_TEMPLATE/feature_request.md": "f9790119d7ec1a29cab749677108ef14e8f5c759535ba9db037ddf70b466fb52",
+  ".github/ISSUE_TEMPLATE/help-request.md": "196c459637e8c123a1a4ce79de0e6b4cb12a98831fbf3189e1bc5b6c967a162c",
+  ".github/ISSUE_TEMPLATE/bug_report.md": "a0009383e674e4ae6df3ac2ec1d3d72b65dff86eb1be66097708235dd3bd3fe7",
+  "version.xml": "f5c6b60e0d4ca59a5915ed7b66ba870c72a5e9ac4cdfbb9565b0cf5492d3d0fc",
+  "README.md": "3f94a4b8bb1fe8986a96723308cb76c002905620a61abe865909fa9e44fedf10",
+  ".travis.yml": "4f352fe15dd59d7bb28a8ee693e796285e8490684dd770c0989c0ba8a1d711a5",
+  "AnnouncementsBlockPluginSettingsForm.inc.php": "7861158ddd5b4b1d0f47fb20c371cedb9431ce66514fad82d5cdfe83612f2842",
+  "cypress/tests/functional/Announcementsblock.spec.js": "8e17ad4907e86cd38b6959fe39c093a72c2371b50272beac8e2b3b5707e3dab2",
+  "index.php": "224f946ec5fc53f2df39d14514a12dfb22a5f808fd38a17f2a2fbd292d613aac",
+  "templates/settings.tpl": "263eb9da315252814b55eefc7eca20106f039026f715eac6d162f09736cd28ce",
+  "templates/block.tpl": "31099a9acc41954aa133e11df3bef68f1318c691ddf7a595006d4d1fa40eea60",
+  "AnnouncementsBlockPlugin.inc.php": "4ac72e9a2b2f6939e960ee72d3068687624723f3d6c8ab392f525c17fd60cf3b"
+}

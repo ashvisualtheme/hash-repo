@@ -1,0 +1,11 @@
+{
+  "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+  "locale/en_US/locale.xml": "fe3da6d5b840dbb5f341c0519333299dda6363b2a4f74de0fa9183acc9addcd5",
+  "locale/en_US/locale.po": "1f8c0f14c3127a0c4c24aa99dcbb745070715e0736a32efad506691dfc6016f0",
+  "locale/es_ES/locale.xml": "1e33d08ac8f687778559ba7ea36371c0f71d552add4ec21ce099d899e5db85a3",
+  "locale/es_ES/locale.po": "b6aaef01b41be2a145a9b01a754852cb80b04801bafa579a99387cea696e7d6c",
+  "version.xml": "3b6dfa34bef168df37b04967a82a96db08ca90c6e4d45017b0a3e12b1a80b093",
+  "index.php": "97d5da407df044e78c91939a10d5b2c684de8ba5722975d75e6bc4c68b5750ed",
+  "PubIdResolver.inc.php": "6b8390bd1ed8ca26aedc9900fa3bcf5fa24db7093ec9b31b68024c0fd986ffad",
+  "README": "fa72c6f8efdf64bdcb0ab8889a926a25d26d03662b65885c0857e6da64e07728"
+}
