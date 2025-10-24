@@ -1,0 +1,74 @@
+name: Filter Plugin & Theme OJS (3.3+) dan Generate Artefak
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_ojs_version:
+        description: 'Versi OJS Target (e.g., 3.4.0-5)'
+        required: true
+        default: '3.4.0-5'
+
+jobs:
+  filter_plugins:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    - name: Set Target OJS Version (Optional for this script)
+      run: echo "OJS_VERSION=${{ github.event.inputs.target_ojs_version }}" >> $GITHUB_ENV
+
+    - name: Instal xmlstarlet dan jq
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y xmlstarlet jq
+
+    - name: Unduh File XML Plugin Gallery
+      run: |
+        curl -L -o plugins.xml https://raw.githubusercontent.com/pkp/plugin-gallery/refs/heads/main/plugins.xml
+
+    - name: ⚙️ Filter, Ekstrak, dan Buat Artefak per Plugin/Theme (OJS 3.3+)
+      run: |
+        # Buat direktori untuk menyimpan artefak
+        mkdir -p ojs-3.3-compatible-artifacts
+        
+        # XPath untuk memilih semua node plugin atau theme yang memiliki kompatibilitas 3.3 atau 3.4
+        XPATH_QUERY="//plugins/*[self::plugin or self::theme][compatibility[starts-with(text(), '3.3') or starts-with(text(), '3.4')]]"
+        
+        # Ekstrak data yang diperlukan (nama, versi, URL unduhan)
+        # Kami menggunakan format output yang dipisahkan oleh karakter kustom (|) untuk mempermudah parsing shell.
+        xmlstarlet sel -t -m "${XPATH_QUERY}" \
+          -v name -o '|' -v release/version -o '|' -v release/download -n \
+          plugins.xml | while IFS="|" read -r NAME VERSION URL; do
+            
+            # Sanitasi nama untuk nama file yang valid (ganti spasi atau karakter khusus dengan dash)
+            SAFE_NAME=$(echo "$NAME" | tr ' ' '-' | tr -cd '[:alnum:]-')
+            
+            # Format nama file sesuai permintaan: namaPlugin-v.1.0.0-0.json
+            FILENAME="${SAFE_NAME}-v.${VERSION}.json"
+            
+            # Buat konten JSON untuk file
+            # Gunakan printf untuk menghindari masalah quotes dan shell expansion
+            JSON_CONTENT=$(jq -n \
+              --arg name "$NAME" \
+              --arg version "$VERSION" \
+              --arg url "$URL" \
+              '{plugin_name: $name, version: $version, download_url: $url}')
+            
+            # Simpan JSON ke file artefak
+            echo "$JSON_CONTENT" > "ojs-3.3-compatible-artifacts/$FILENAME"
+            
+            echo "Dibuat: $FILENAME"
+            
+        done
+
+    - name: Tampilkan isi direktori artefak (Debugging)
+      run: ls -l ojs-3.3-compatible-artifacts/
+
+    - name: 📦 Unggah Semua Artefak Plugin/Theme
+      uses: actions/upload-artifact@v4
+      with:
+        name: ojs-3.3-compatible-plugins-individual
+        # Unggah seluruh direktori, yang berisi semua file JSON
+        path: ojs-3.3-compatible-artifacts/
