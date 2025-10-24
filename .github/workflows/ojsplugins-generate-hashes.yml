@@ -47,12 +47,13 @@ jobs:
             ]
         ]"
         
-        # 1. Ekstrak data: product, version, dan package URL
+        # 1. Ekstrak data: product, version, package URL, dan CATEGORY BARU.
         #    Outputnya adalah baris yang dipisahkan pipa (|)
         echo "Memproses rilis dengan filter kompatibilitas: OJS 3.3+ ..."
         
         xmlstarlet sel -t -m "${XPATH_QUERY}" \
           -v 'ancestor::*[local-name()="plugin"]/@product' -o '|' \
+          -v 'ancestor::*[local-name()="plugin"]/@category' -o '|' \
           -v '@version' -o '|' \
           -v '*[local-name()="package"]' -n \
           plugins.xml > releases.txt
@@ -60,8 +61,8 @@ jobs:
         echo "Ditemukan $(wc -l < releases.txt) rilis yang kompatibel."
 
         # 2. Iterasi melalui setiap rilis untuk mengunduh, menghitung hash, dan membuat JSON
-        while IFS="|" read -r PRODUCT VERSION URL; do
-          if [ -z "$PRODUCT" ] || [ -z "$VERSION" ] || [ -z "$URL" ]; then
+        while IFS="|" read -r PRODUCT CATEGORY VERSION URL; do
+          if [ -z "$PRODUCT" ] || [ -z "$CATEGORY" ] || [ -z "$VERSION" ] || [ -z "$URL" ]; then
             echo "Melewati baris data tidak lengkap."
             continue
           fi
@@ -69,18 +70,21 @@ jobs:
           # Bersihkan nama file dari karakter yang tidak aman (PRODUCT)
           SAFE_PRODUCT=$(echo "$PRODUCT" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
           
+          # Bersihkan kategori
+          SAFE_CATEGORY=$(echo "$CATEGORY" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
+          
           # 1. Standardisasi format versi: Ganti titik terakhir dengan tanda hubung jika diikuti angka (misal: 1.0.4.0 -> 1.0.4-0)
           STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
           # 2. Bersihkan versi yang sudah distandardisasi
           CLEAN_VERSION=$(echo "$STANDARDIZED_VERSION" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
           
-          # 3. Konstruksi nama file dengan struktur folder yang diminta (plugins/generic/namaPlugin-vVERSION.json)
-          JSON_FILENAME="plugins/generic/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
+          # 3. Konstruksi nama file dengan struktur folder yang diminta (plugins/[category]/namaPlugin-vVERSION.json)
+          JSON_FILENAME="plugins/${SAFE_CATEGORY}/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
           
           DOWNLOADED_FILE="${TEMP_DIR}/package.tar.gz"
           EXTRACT_DIR="${TEMP_DIR}/extracted_content"
 
-          echo "--- Memproses: $PRODUCT v$VERSION ($JSON_FILENAME) ---"
+          echo "--- Memproses: $PRODUCT (Kategori: $CATEGORY) v$VERSION ($JSON_FILENAME) ---"
           
           # 3. Download package ke direktori sementara
           if ! wget -q "$URL" -O "$DOWNLOADED_FILE"; then
@@ -128,8 +132,8 @@ jobs:
             awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}'
           )
 
-          # Pastikan direktori tujuan ada (ojs-plugin-hashes/plugins/generic/)
-          mkdir -p "ojs-plugin-hashes/plugins/generic/"
+          # Pastikan direktori tujuan ada (ojs-plugin-hashes/plugins/[category]/)
+          mkdir -p "ojs-plugin-hashes/plugins/${SAFE_CATEGORY}/"
 
           # 5. Buat JSON hanya jika ada data hash yang ditemukan
           if [ -z "$HASH_DATA" ]; then
