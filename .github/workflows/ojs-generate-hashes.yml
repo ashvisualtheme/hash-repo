@@ -32,7 +32,7 @@ jobs:
         cd "ojs-${{ env.VERSION }}"
         find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
         awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}' | \
-        jq -s 'add' > "..ojs/core/ojs-${{ env.VERSION }}.json"
+        jq -s 'add' > "..ojs-${{ env.VERSION }}.json"
         cd ..
 
     - name: Upload hashes as artifact
