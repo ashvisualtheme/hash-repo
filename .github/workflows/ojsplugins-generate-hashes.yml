@@ -114,13 +114,12 @@ jobs:
           fi
 
           # Hitung hash SHA256 dan siapkan input untuk jq
-          # Menggunakan sed untuk membersihkan karakter yang tidak diinginkan dan memastikan pemformatan JSON yang ketat.
           HASH_DATA=$(
             cd "$ROOT_DIR"
-            # 1. Temukan semua file biasa, kecualikan file template, hitung sha256sum
-            find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
-            # 2. Awk memformat output sebagai JSON Key-Value Pair. Gunakan $1 dan $2 dari output sha256sum.
-            awk '{sub(/^\.\//, "", $2); printf "[\"%s\",\"%s\"]\n", $2, $1}'
+            # 1. Temukan semua file biasa, kecualikan file di dalam direktori .git/, dan kecualikan file template. Hitung sha256sum
+            find . -type f -not -path './.git/*' ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
+            # 2. Awk memformat output sebagai objek JSON tunggal {path: hash} per baris.
+            awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}'
           )
 
           # 5. Buat JSON hanya jika ada data hash yang ditemukan
@@ -132,8 +131,8 @@ jobs:
             echo "DEBUG: 5 baris pertama HASH_DATA:"
             echo "$HASH_DATA" | head -n 5
             
-            # Gunakan HASH_DATA sebagai input ke jq dan simpan sebagai JSON
-            if ! echo "$HASH_DATA" | jq -s 'from_entries' > "ojs-plugin-hashes/$JSON_FILENAME"; then
+            # Gunakan HASH_DATA sebagai input ke jq dan gabungkan objek menjadi satu ({path: hash, ...})
+            if ! echo "$HASH_DATA" | jq -s 'add' > "ojs-plugin-hashes/$JSON_FILENAME"; then
                echo "ERROR: Gagal memproses jq untuk $PRODUCT v$VERSION."
                echo "Data mentah yang menyebabkan kegagalan jq disimpan ke /tmp/jq_fail_raw.txt"
                echo "$HASH_DATA" > "/tmp/jq_fail_raw.txt"
