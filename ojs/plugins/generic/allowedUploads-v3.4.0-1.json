@@ -1,0 +1,15 @@
+{
+  "AllowedUploadsPlugin.inc.php": "47211f157dce69d39406f40ea2b9016e569ddcd7c6943581b1e5dec5a013ea6d",
+  "LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+  "locale/en/locale.po": "744f25570237ebe13e38de46bc1131bacfa53d799e429965e9cb43b07c38519f",
+  "locale/ar/locale.po": "0bdd837e9b9df70390343963678cff0aafc62f9c54d23e230610fca63d87d914",
+  "locale/es/locale.po": "307e908f9d94f7fbf13cb4c22f6a1d04925d3ad360b0fd1b9d9024f9087409af",
+  "locale/fi/locale.po": "341976f49580bcd165311fabe2307c083c14b8d0462e30b89dfc31bcca623572",
+  "locale/de/locale.po": "e58555143cec41b5c54d8c1431b3a6ad3f78fc7358307644d9e02ecebac8e886",
+  "version.xml": "9351137afc548eb2c71dfa62079e21ac63ba5c85e26163c80c8e1626e6d1793f",
+  ".gitignore": "74d2bf311acca95fa8cf2f076121c10a7aee68af86d0b23cfe1aa49770a17a0a",
+  "README.md": "75abd68293bdd4f3737e8112558b9a0e182ade57f5981ad95af725becb1e7410",
+  "AllowedUploadsSettingsForm.inc.php": "7f84bf04f2547de29489b438c50005ab02e9eac040fb8a9451eea23622d4818e",
+  "index.php": "6d1ece303132a2e886a73981faa4c068423a641b02f2c6ae37c492271fbd401d",
+  "templates/settingsForm.tpl": "908830f250756e90ce0ef8c0bebf8bdff86540a1b1356273d7f873d19f6672e7"
+}

@@ -1,0 +1,17 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/NotificationTranslator.inc.php": "b8563cfeba75188e30f67a97af61b5eab9bde439f902d5182a92da9496d3c99c",
+  "classes/NotificationTranslatorTests.inc.php": "6aac1aaa7cd3d7e717f6071d7966778b7d44a027ec4b8a7fba1e7b6dd756cdc4",
+  "classes/NotificationTranslatorPKP.inc.php": "64bf44dd8c8c74d71ed6ece4b3ec8edd4f953d2a11cbbeafc6c2aff7ff715e9f",
+  "classes/PluginUpdateNotification.inc.php": "ea8e033a417ba93d133e46915410f5c0a96ef1f1daf1ef710db69e475c09a294",
+  "classes/autoload.inc.php": "2424e3fa587d612b4ced21f51abc153cfee02cd82ac9d4a03b06fc9dd234fb5e",
+  "locale/en_US/locale.po": "3e9b7be15568f474b81d104102aa768f534f1f40b6d643fdcd230760120efe74",
+  "locale/es_ES/locale.po": "3eb5ed14140a70aac65e0f856914b306cb7cab0a0d0ae8e4828cf3dd07096831",
+  "locale/pt_BR/locale.po": "0238f807e3331a2763c818755aad3da80b56f0de25f5ec2f78834ea6f343ac87",
+  "locale/fr_CA/locale.po": "efc4fa3232a9140dded1e4b083420fc85ec0649769f4a74e833e0ab9887648ba",
+  "PluginUpdateNotificationPlugin.inc.php": "1990d7cb09a723500efd1360398bcd7f8b3f10e9c9556883f1b2fa1f9e9ff1a4",
+  "version.xml": "607552ad4c08561174ce6b93cd527ee0a784ffbea580983a4d1d7e0e66219ca0",
+  "README.md": "b90475b04361a6001683d2cf312882725116de0492585fc548fc7d97c128137c",
+  "index.php": "6dddbe09ed62ecadf940c487201e49470438611641e31ecd6c595d78ec025614",
+  "templates/updateNotificationPlugins.tpl": "e1b0e10586529c50ed613298db2fd4c578ed123e54ef69166e7e2da71fe35595"
+}

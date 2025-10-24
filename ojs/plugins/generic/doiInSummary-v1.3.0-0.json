@@ -1,0 +1,11 @@
+{
+  "LICENSE": "9b4613ef79e0497b2641841123e2a54edd2382c16eb0f3519723620ea0f2d4d4",
+  "DoiInSummaryPlugin.inc.php": "379150a50145fbe5c1d18483cea8cbb51607f4c8a7a6d2d3b814e841a27ede51",
+  "locale/en_US/locale.po": "5db61656314091195ca8b07818fb3fe4130a55cc4418b044e92419e30c104058",
+  "locale/pt_BR/locale.po": "be7ea5778337f1361f683d92ad829e1b0314bd688fe95cb95961d35485d30810",
+  "version.xml": "0585a84e0ff736e057142207212fcbaf7b02a27935f4027d53870a8c6fbbd445",
+  "README.md": "1342d433d51f0cb89e55150e30aefc11ae7ead061890bed6665eac1e86a554cd",
+  "index.php": "922786201bee57c29bffc2ac5d3577f9fc088feaa0aa70b5ffeb688c42e49ff9",
+  "templates/doi_summary.tpl": "a87b5d366f4c0a11b6ad4009e937707725a91d449cec83f85dba0f7f9a1e5ee4",
+  "styles/doi.css": "e85e40bf06e9880d3d8749e6f0d675508cf1f62da5fa57db00dc74e63a017e55"
+}

@@ -1,0 +1,14 @@
+{
+  "DeleteIncompleteSubmissionsPlugin.inc.php": "007e70ad77c10fa7f3c4cd31ff2c9518a01519ad394e6b23c514c139d13fe676",
+  "LICENSE": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+  "screenshots/plugin-options.png": "0dc3e2a3a50e23185c0e577552d3a9b96a821844e33b05772f7d21bc0380b55a",
+  "screenshots/delete-submissions-modal.png": "2c48202637d756a31655ee155d61332b6ec7e4b03f2176df1e43f91e2008af71",
+  "locale/en_US/locale.po": "8006ddd116e5c90ef6a9535c437191cede2e72b6a0886117e21fc0de8bec8124",
+  "locale/es_ES/locale.po": "0d09c7e8bd84a763e4e98df5d910419cff1e97f785e1914bed469f1df96e426d",
+  "locale/pt_BR/locale.po": "42a3835f8e7d0741d4434c802edd6218dd581b93b1296e40e4a9d0f7a1323b8f",
+  "version.xml": "cc15080cc2e4780716b8e9bb2366a3512f07afaf838b44fcea29b18b1bd6dd14",
+  "README.md": "89f638a8bc3cd4abb89a6b52b31b3475eae050fb9a9150631f78c398fdc57811",
+  "form/DeleteIncompleteSubmissionsSettingsForm.inc.php": "2b621755fc2127324bb6d42900c4f52dae944300a183af9dad93f70753c1eb83",
+  "index.php": "de1b0a1d164a079aeecff0eb235853e85e6f9e3f3df0a2b0ca058e7b3769e445",
+  "templates/settingsForm.tpl": "e117b4b8d01ef330edd869e2f9473ef6554c48e4d62067465f867f7767f83d89"
+}

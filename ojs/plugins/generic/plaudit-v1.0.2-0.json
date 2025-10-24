@@ -1,0 +1,13 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "PlauditPlugin.inc.php": "a908bd6a2d9b659835a27c1094a18f5f827e7419153db43d217a61a9d96c4375",
+  "locale/en_US/locale.po": "bb943d26b2857a30ef5b276a6d271951fca57b5a41e38ec8b37614090b200c6c",
+  "locale/es_ES/locale.po": "ec2f9c26d288766f99a04e66a704f6be7478531941e9428fbff0f7a440b18e27",
+  "locale/pt_BR/locale.po": "efbfc8c6e756eeab6f9d5e660e2fd0dbb1d53f3927e42baf8d37e86bd0a4d306",
+  "version.xml": "dece78bd8245d3d7a0aaa9f421af5f898a0f64e88f66d26bb91c3c3bf450601d",
+  "README.md": "13731e0e70014f302c045e7056f168cd0d83f8f7bd25ce3991fcded2c2336d5f",
+  "form/PlauditSettingsForm.inc.php": "0d76eddb676e0da9625d90c8dd2691d986555aeadc8d523d3ebf9bb7d7194c55",
+  "index.php": "4bf125db9228ffab70d35e2dae438a0f6724c7a04240ab6514cca009d6d8a527",
+  "templates/settings.tpl": "bf774cdc0dd15bbab468ff27f6685f75f6cd67011571b1a279c28584477c9941",
+  "templates/plauditWidget.tpl": "d951b708bbf4450217a4f48c8d0e2b10fbb32b2fdab766c782b0e7d104c6cc83"
+}
