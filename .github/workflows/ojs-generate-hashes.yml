@@ -1,71 +1,42 @@
 name: Generate OJS Hashes
 
-# Pemicu workflow
 on:
-  # Memungkinkan workflow dijalankan secara manual dari tab "Actions"
   workflow_dispatch:
     inputs:
       ojs_version:
         description: 'OJS Version (e.g., 3.4.0-5)'
         required: true
-        
-  # Bisa juga dipicu saat membuat release baru
-  # release:
-  #   types: [created]
 
 jobs:
   build:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Checkout kode repositori Anda (jika diperlukan)
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    # 2. Ambil versi OJS dari input manual atau dari nama tag rilis
     - name: Set OJS Version
       id: get_version
-      run: |
-        if [ "${{ github.event_name }}" == "workflow_dispatch" ]; then
-          echo "VERSION=${{ github.event.inputs.ojs_version }}" >> $GITHUB_ENV
-        # else
-        #   # Mengambil versi dari nama tag rilis (contoh: v3.4.0-5 -> 3.4.0-5)
-        #   echo "VERSION=${{ github.ref_name }}" | sed 's/^v//' >> $GITHUB_ENV
-        fi
+      run: echo "VERSION=${{ github.event.inputs.ojs_version }}" >> $GITHUB_ENV
 
-    # 3. Instalasi jq, dependency yang dibutuhkan skrip Anda
     - name: Install jq
       run: sudo apt-get update && sudo apt-get install -y jq
 
-    # 4. Unduh dan Ekstrak OJS
     - name: Download and Extract OJS
       run: |
         wget "https://pkp.sfu.ca/ojs/download/ojs-${{ env.VERSION }}.tar.gz"
         tar -xzf "ojs-${{ env.VERSION }}.tar.gz"
 
-    # 5. Buat file JSON hash
     - name: Generate Hashes JSON
       run: |
         cd "ojs-${{ env.VERSION }}"
         find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
-        awk '{print "\"" $2 "\": \"" $1 "\""}' | sed 's|^\."/||' | \
-        jq -s '.' > "../hashes-${{ env.VERSION }}.json" # Sedikit modifikasi pada jq untuk penyederhanaan
+        awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}' | \
+        jq -s 'add' > "..ojs/core/ojs-${{ env.VERSION }}.json"
         cd ..
 
-    # 6. Unggah file JSON sebagai artifact
-    # Artifact adalah file yang disimpan dari hasil workflow, bisa diunduh nanti
     - name: Upload hashes as artifact
       uses: actions/upload-artifact@v4
       with:
         name: ojs-hashes
         path: hashes-${{ env.VERSION }}.json
-
-    # 7. (Opsional) Commit file JSON ke Repositori
-    # Hapus komentar di bawah jika Anda ingin file JSON langsung di-commit
-    # - name: Commit hashes file
-    #   run: |
-    #     git config --global user.name 'github-actions[bot]'
-    #     git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-    #     git add hashes-${{ env.VERSION }}.json
-    #     git commit -m "feat: Add OJS ${{ env.VERSION }} hashes"
-    #     git push
