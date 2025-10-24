@@ -1,74 +1,130 @@
-name: Filter Plugin & Theme OJS (3.3+) dan Generate Artefak
+name: Generate OJS Plugin Hashes (3.3+)
 
 on:
   workflow_dispatch:
     inputs:
-      target_ojs_version:
-        description: 'Versi OJS Target (e.g., 3.4.0-5)'
-        required: true
-        default: '3.4.0-5'
+      target_compat_filter:
+        description: 'Filter kompatibilitas (misalnya: 3.3 atau ~3.4). Default: 3.3 ke atas'
+        required: false
+        default: '3.3'
 
 jobs:
-  filter_plugins:
+  filter_and_process_plugins:
     runs-on: ubuntu-latest
-
+    
     steps:
-    - name: Checkout repository
-      uses: actions/checkout@v4
-
-    - name: Set Target OJS Version (Optional for this script)
-      run: echo "OJS_VERSION=${{ github.event.inputs.target_ojs_version }}" >> $GITHUB_ENV
-
-    - name: Instal xmlstarlet dan jq
+    - name: 🛒 Setup Tools & Create Artifact Directory
       run: |
+        # Instal xmlstarlet (untuk parsing XML) dan jq (untuk memformat JSON)
         sudo apt-get update
-        sudo apt-get install -y xmlstarlet jq
-
-    - name: Unduh File XML Plugin Gallery
-      run: |
-        curl -L -o plugins.xml https://raw.githubusercontent.com/pkp/plugin-gallery/refs/heads/main/plugins.xml
-
-    - name: ⚙️ Filter, Ekstrak, dan Buat Artefak per Plugin/Theme (OJS 3.3+)
-      run: |
-        # Buat direktori untuk menyimpan artefak
-        mkdir -p ojs-3.3-compatible-artifacts
+        sudo apt-get install -y xmlstarlet jq wget curl
         
-        # XPath untuk memilih semua node plugin atau theme yang memiliki kompatibilitas 3.3 atau 3.4
-        XPATH_QUERY="//plugins/*[self::plugin or self::theme][compatibility[starts-with(text(), '3.3') or starts-with(text(), '3.4')]]"
+        # Buat direktori untuk menampung hasil artefak JSON
+        mkdir -p ojs-plugin-hashes
+
+    - name: ⬇️ Download Plugin Gallery XML
+      run: |
+        curl -L -o plugins.xml https://raw.githubusercontent.com/pkp/plugin-gallery/main/plugins.xml
+
+    - name: 🔍 Filter, Download, Extract, and Hash Packages
+      id: process_releases
+      run: |
+        # Direktori kerja sementara untuk mengunduh dan mengekstrak
+        TEMP_DIR="temp_download_area"
+        mkdir -p "$TEMP_DIR"
+
+        # Tentukan filter XPath untuk rilis yang kompatibel dengan OJS 3.3.x, ~3.4.x, atau ~3.5.x
+        # Kami menggunakan local-name() untuk mengabaikan namespace PKP yang rumit.
+        XPATH_QUERY="//*[local-name()='plugin']/*[local-name()='release'][
+            *[local-name()='compatibility'][@application='ojs2'][
+                *[local-name()='version'][
+                    starts-with(text(), '3.3') or starts-with(text(), '3.4') or starts-with(text(), '~3.3') or starts-with(text(), '~3.4') or starts-with(text(), '~3.5')
+                ]
+            ]
+        ]"
         
-        # Ekstrak data yang diperlukan (nama, versi, URL unduhan)
-        # Kami menggunakan format output yang dipisahkan oleh karakter kustom (|) untuk mempermudah parsing shell.
+        # 1. Ekstrak data: product, version, dan package URL
+        #    Outputnya adalah baris yang dipisahkan pipa (|)
+        echo "Memproses rilis dengan filter kompatibilitas: OJS 3.3+ ..."
+        
         xmlstarlet sel -t -m "${XPATH_QUERY}" \
-          -v name -o '|' -v release/version -o '|' -v release/download -n \
-          plugins.xml | while IFS="|" read -r NAME VERSION URL; do
-            
-            # Sanitasi nama untuk nama file yang valid (ganti spasi atau karakter khusus dengan dash)
-            SAFE_NAME=$(echo "$NAME" | tr ' ' '-' | tr -cd '[:alnum:]-')
-            
-            # Format nama file sesuai permintaan: namaPlugin-v.1.0.0-0.json
-            FILENAME="${SAFE_NAME}-v.${VERSION}.json"
-            
-            # Buat konten JSON untuk file
-            # Gunakan printf untuk menghindari masalah quotes dan shell expansion
-            JSON_CONTENT=$(jq -n \
-              --arg name "$NAME" \
-              --arg version "$VERSION" \
-              --arg url "$URL" \
-              '{plugin_name: $name, version: $version, download_url: $url}')
-            
-            # Simpan JSON ke file artefak
-            echo "$JSON_CONTENT" > "ojs-3.3-compatible-artifacts/$FILENAME"
-            
-            echo "Dibuat: $FILENAME"
-            
-        done
+          -v 'ancestor::*[local-name()="plugin"]/@product' -o '|' \
+          -v '@version' -o '|' \
+          -v '*[local-name()="package"]' -n \
+          plugins.xml > releases.txt
 
-    - name: Tampilkan isi direktori artefak (Debugging)
-      run: ls -l ojs-3.3-compatible-artifacts/
+        echo "Ditemukan $(wc -l < releases.txt) rilis yang kompatibel."
 
-    - name: 📦 Unggah Semua Artefak Plugin/Theme
+        # 2. Iterasi melalui setiap rilis untuk mengunduh, menghitung hash, dan membuat JSON
+        while IFS="|" read -r PRODUCT VERSION URL; do
+          if [ -z "$PRODUCT" ] || [ -z "$VERSION" ] || [ -z "$URL" ]; then
+            echo "Melewati baris data tidak lengkap."
+            continue
+          fi
+          
+          # Bersihkan nama file dari karakter yang tidak aman
+          SAFE_PRODUCT=$(echo "$PRODUCT" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
+          SAFE_VERSION=$(echo "$VERSION" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
+          
+          JSON_FILENAME="${SAFE_PRODUCT}-v${SAFE_VERSION}.json"
+          DOWNLOADED_FILE="${TEMP_DIR}/package.tar.gz"
+          EXTRACT_DIR="${TEMP_DIR}/extracted_content"
+
+          echo "--- Memproses: $PRODUCT v$VERSION ($JSON_FILENAME) ---"
+          
+          # 3. Download package ke direktori sementara
+          if ! wget -q "$URL" -O "$DOWNLOADED_FILE"; then
+            echo "Peringatan: Gagal mengunduh $URL. Melewati."
+            continue
+          fi
+          
+          # 4. Ekstrak file dan tentukan nama direktori akar (root) setelah ekstraksi
+          # Bersihkan direktori ekstrak sebelumnya
+          rm -rf "$EXTRACT_DIR"
+          mkdir -p "$EXTRACT_DIR"
+          
+          if ! tar -xzf "$DOWNLOADED_FILE" -C "$EXTRACT_DIR" --warning=none; then
+            echo "Peringatan: Gagal mengekstrak $DOWNLOADED_FILE. Melewati."
+            rm -f "$DOWNLOADED_FILE"
+            continue
+          fi
+          
+          # Cari direktori akar (biasanya satu-satunya sub-direktori setelah ekstraksi)
+          # Ini mungkin adalah direktori yang bernama 'plugin-name-version'
+          ROOT_DIR=$(find "$EXTRACT_DIR" -maxdepth 1 -mindepth 1 -type d | head -n 1)
+          
+          if [ -z "$ROOT_DIR" ]; then
+             # Jika file diekstrak langsung ke EXTRACT_DIR (tidak ada sub-dir), gunakan EXTRACT_DIR sebagai root
+             ROOT_DIR="$EXTRACT_DIR"
+          fi
+
+          # Navigasi ke direktori akar untuk menghitung hash
+          # Gunakan ROOT_DIR sebagai direktori kerja untuk find, bukan cd
+          
+          # Hitung hash SHA256 dan buat JSON
+          (
+            cd "$ROOT_DIR"
+            # Temukan semua file biasa, kecualikan file template, hitung sha256sum
+            find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
+            # Format output: [path, hash] untuk setiap baris
+            awk '{sub(/^\.\//, "", $2); printf "[ \"%s\", \"%s\" ]\n", $2, $1}' | \
+            # Gabungkan larik [path, hash] menjadi satu objek {path: hash}
+            jq -s 'from_entries'
+          ) > "ojs-plugin-hashes/$JSON_FILENAME"
+
+          # Bersihkan
+          rm -rf "$EXTRACT_DIR" "$DOWNLOADED_FILE"
+          
+          echo "Berhasil memproses hash untuk $PRODUCT v$VERSION."
+          
+        done < releases.txt
+
+    - name: 📄 List generated files
+      run: ls -lhR ojs-plugin-hashes/
+
+    - name: 📦 Upload Hashes as Artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ojs-3.3-compatible-plugins-individual
-        # Unggah seluruh direktori, yang berisi semua file JSON
-        path: ojs-3.3-compatible-artifacts/
+        name: ojs-3.3-plus-plugin-hashes
+        path: ojs-plugin-hashes/
+        if-no-files-found: warn
