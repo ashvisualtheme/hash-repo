@@ -32,8 +32,12 @@ jobs:
         cd "ojs-${{ env.VERSION }}"
         find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
         awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}' | \
-        jq -s 'add' > "..ojs-${{ env.VERSION }}.json"
+        jq -s 'add' > "../ojs-${{ env.VERSION }}.json"  # <-- PERBAIKAN DI SINI
         cd ..
+
+    # Langkah debugging ini akan menunjukkan nama file yang sebenarnya dibuat
+    - name: List files in workspace
+      run: ls -R
 
     - name: Upload hashes as artifact
       uses: actions/upload-artifact@v4
