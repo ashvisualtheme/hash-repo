@@ -66,11 +66,17 @@ jobs:
             continue
           fi
           
-          # Bersihkan nama file dari karakter yang tidak aman
+          # Bersihkan nama file dari karakter yang tidak aman (PRODUCT)
           SAFE_PRODUCT=$(echo "$PRODUCT" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
-          SAFE_VERSION=$(echo "$VERSION" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
           
-          JSON_FILENAME="${SAFE_PRODUCT}-v${SAFE_VERSION}.json"
+          # 1. Standardisasi format versi: Ganti titik terakhir dengan tanda hubung jika diikuti angka (misal: 1.0.4.0 -> 1.0.4-0)
+          STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
+          # 2. Bersihkan versi yang sudah distandardisasi
+          CLEAN_VERSION=$(echo "$STANDARDIZED_VERSION" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
+          
+          # 3. Konstruksi nama file dengan struktur folder yang diminta (plugins/generic/namaPlugin-vVERSION.json)
+          JSON_FILENAME="plugins/generic/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
+          
           DOWNLOADED_FILE="${TEMP_DIR}/package.tar.gz"
           EXTRACT_DIR="${TEMP_DIR}/extracted_content"
 
@@ -121,6 +127,9 @@ jobs:
             # 2. Awk memformat output sebagai objek JSON tunggal {path: hash} per baris.
             awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}'
           )
+
+          # Pastikan direktori tujuan ada (ojs-plugin-hashes/plugins/generic/)
+          mkdir -p "ojs-plugin-hashes/plugins/generic/"
 
           # 5. Buat JSON hanya jika ada data hash yang ditemukan
           if [ -z "$HASH_DATA" ]; then
