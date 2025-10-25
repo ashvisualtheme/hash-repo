@@ -1,17 +1,17 @@
-name: Generate OJS Plugin Hashes (Optimized)
+name: Generate OJS Plugin Hashes (Sharded & Optimized)
 
 on:
-  workflow_dispatch: # Pemicu manual dengan satu klik
+  workflow_dispatch:
 
 jobs:
   # ------------------------------------------------------------------------------------
-  # JOB 1: Temukan semua plugin yang valid dan buat daftar kerja (matrix) untuk job berikutnya
+  # JOB 1: Temukan SEMUA plugin dan bagi menjadi beberapa kelompok (shard)
   # ------------------------------------------------------------------------------------
-  discover-plugins:
+  discover-and-shard-plugins:
     runs-on: ubuntu-latest
     outputs:
-      matrix: ${{ steps.set_matrix.outputs.matrix }} # Output dari job ini akan menjadi input matrix untuk job berikutnya
-    
+      shards: ${{ steps.create_shards.outputs.shards }} # Output: Daftar shard, misal: '["0", "1"]'
+
     steps:
     - name: 🛒 Setup Tools
       run: |
@@ -22,10 +22,9 @@ jobs:
       run: |
         curl -L -o plugins.xml https://raw.githubusercontent.com/pkp/plugin-gallery/main/plugins.xml
 
-    - name: 🔍 Generate Plugin Matrix
-      id: set_matrix
+    - name: 🔍 Discover Plugins and Create Shards
+      id: create_shards
       run: |
-        # Filter XPath untuk rilis yang kompatibel dengan OJS 3.3.x, 3.4.x, atau 3.5.x
         XPATH_QUERY="//*[local-name()='plugin']/*[local-name()='release'][
             *[local-name()='compatibility'][@application='ojs2'][
                 *[local-name()='version'][
@@ -34,8 +33,8 @@ jobs:
             ]
         ]"
         
-        # Ekstrak data yang dibutuhkan dan format menjadi JSON array untuk matrix
-        JSON_MATRIX=$(xmlstarlet sel -t -m "${XPATH_QUERY}" \
+        # Hasilkan daftar lengkap semua plugin sebagai JSON array
+        FULL_PLUGIN_LIST=$(xmlstarlet sel -t -m "${XPATH_QUERY}" \
           -v 'ancestor::*[local-name()="plugin"]/@product' -o '|' \
           -v 'ancestor::*[local-name()="plugin"]/@category' -o '|' \
           -v '@version' -o '|' \
@@ -44,109 +43,133 @@ jobs:
           jq -R 'split("|") | {product: .[0], category: .[1], version: .[2], url: .[3]}' | \
           jq -s '.')
 
-        # Gunakan heredoc untuk menangani output multi-baris dengan aman
-        {
-          echo "matrix<<EOF"
-          echo "$JSON_MATRIX"
-          echo "EOF"
-        } >> "$GITHUB_OUTPUT"
+        # Simpan daftar lengkap ke file untuk digunakan oleh job berikutnya
+        echo "$FULL_PLUGIN_LIST" > full-plugin-list.json
+        
+        # Tentukan ukuran setiap shard (kelompok)
+        SHARD_SIZE=200
+        
+        # Hitung jumlah total plugin dan jumlah shard yang dibutuhkan
+        TOTAL_PLUGINS=$(echo "$FULL_PLUGIN_LIST" | jq 'length')
+        NUM_SHARDS=$(( (TOTAL_PLUGINS + SHARD_SIZE - 1) / SHARD_SIZE ))
+        
+        echo "Total plugin ditemukan: $TOTAL_PLUGINS"
+        echo "Ukuran shard: $SHARD_SIZE"
+        echo "Jumlah shard yang dibutuhkan: $NUM_SHARDS"
+        
+        # Buat output berupa JSON array dari nomor shard (misal: ["0", "1", "2"])
+        SHARD_INDICES=$(jq -n --argjson count "$NUM_SHARDS" 'range($count) | map(tostring)')
+        echo "shards=${SHARD_INDICES}" >> $GITHUB_OUTPUT
 
-  # ------------------------------------------------------------------------------------
-  # JOB 2: Hasilkan hash untuk setiap plugin secara PARALEL
-  # ------------------------------------------------------------------------------------
-  generate-hashes:
-    runs-on: ubuntu-latest
-    needs: discover-plugins # Job ini bergantung pada Job 1
-    strategy:
-      fail-fast: false # Jika satu plugin gagal, yang lain tetap berjalan
-      matrix:
-        # Matrix ini diisi secara dinamis dari output Job 1
-        plugin: ${{ fromJson(needs.discover-plugins.outputs.matrix) }}
-        
-    steps:
-    - name: 🛒 Setup Tools
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y jq wget
-
-    - name: ⚙️ Process ${{ matrix.plugin.product }} v${{ matrix.plugin.version }}
-      run: |
-        # Ambil data dari matrix untuk keterbacaan
-        PRODUCT="${{ matrix.plugin.product }}"
-        CATEGORY="${{ matrix.plugin.category }}"
-        VERSION="${{ matrix.plugin.version }}"
-        URL="${{ matrix.plugin.url }}"
-        
-        # Bersihkan nama untuk path file yang aman
-        SAFE_PRODUCT=$(echo "$PRODUCT" | tr -cd '[:alnum:]-._')
-        SAFE_CATEGORY=$(echo "$CATEGORY" | tr -cd '[:alnum:]-._')
-        STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
-        CLEAN_VERSION=$(echo "$STANDARDIZED_VERSION" | tr -cd '[:alnum:]-._')
-        
-        # Buat struktur direktori dan nama file JSON tujuan
-        JSON_DIR="output/plugins/${SAFE_CATEGORY}"
-        JSON_PATH="${JSON_DIR}/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
-        mkdir -p "$JSON_DIR"
-
-        echo "--- Memproses: $PRODUCT (Kategori: $CATEGORY) v$VERSION ---"
-        echo "URL Unduhan: $URL"
-        echo "Path Tujuan: $JSON_PATH"
-        
-        DOWNLOADED_FILE="package.tar.gz"
-        EXTRACT_DIR="extracted_content"
-        mkdir -p "$EXTRACT_DIR"
-
-        # Download
-        if ! wget -q --tries=3 --timeout=30 "$URL" -O "$DOWNLOADED_FILE"; then
-          echo "::error::Gagal mengunduh $URL setelah 3 percobaan."
-          exit 1
-        fi
-        
-        # Ekstrak
-        if ! tar xzf "$DOWNLOADED_FILE" -C "$EXTRACT_DIR" --warning=none; then
-          echo "::warning::Gagal mengekstrak $DOWNLOADED_FILE. Mungkin file korup atau bukan tar.gz."
-          echo "{}" > "$JSON_PATH" # Buat file JSON kosong sebagai penanda
-          exit 0 # Keluar dengan sukses agar tidak menghentikan job lain
-        fi
-        
-        # Tentukan direktori akar setelah ekstraksi
-        ROOT_DIR=$(find "$EXTRACT_DIR" -maxdepth 1 -mindepth 1 -type d | head -n 1)
-        if [ -z "$ROOT_DIR" ]; then
-           ROOT_DIR="$EXTRACT_DIR"
-        fi
-        
-        # Hitung hash
-        cd "$ROOT_DIR"
-        HASH_DATA=$(find . -type f -not -path './.git/*' ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}')
-        
-        # Buat file JSON
-        if [ -z "$HASH_DATA" ]; then
-          echo "{}" > "../../${JSON_PATH}"
-        else
-          echo "$HASH_DATA" | jq -s 'add' > "../../${JSON_PATH}"
-        fi
-
-    - name: ⬆️ Upload individual hash artifact
+    - name: ⬆️ Upload Full Plugin List
       uses: actions/upload-artifact@v4
       with:
-        name: hash-${{ matrix.plugin.product }}-${{ matrix.plugin.version }}
+        name: plugin-list-artifact
+        path: full-plugin-list.json
+        retention-days: 1
+
+  # ------------------------------------------------------------------------------------
+  # JOB 2: Jalankan satu job untuk setiap shard secara PARALEL
+  # ------------------------------------------------------------------------------------
+  generate-hashes-in-shards:
+    runs-on: ubuntu-latest
+    needs: discover-and-shard-plugins
+    strategy:
+      fail-fast: false
+      matrix:
+        # Matrix ini diisi secara dinamis dengan nomor shard dari job sebelumnya
+        shard_index: ${{ fromJson(needs.discover-and-shard-plugins.outputs.shards) }}
+
+    steps:
+    - name: 🛒 Setup Tools
+      run: sudo apt-get update && sudo apt-get install -y jq wget
+
+    - name: ⬇️ Download Full Plugin List
+      uses: actions/download-artifact@v4
+      with:
+        name: plugin-list-artifact
+        path: .
+    
+    - name: ⚙️ Process Shard ${{ matrix.shard_index }}
+      run: |
+        SHARD_INDEX=${{ matrix.shard_index }}
+        SHARD_SIZE=200
+        START_INDEX=$((SHARD_INDEX * SHARD_SIZE))
+        
+        echo "Memproses shard #${SHARD_INDEX}, dimulai dari plugin ke-${START_INDEX}..."
+        
+        # Ambil daftar plugin untuk shard ini menggunakan jq
+        # Loop melalui setiap plugin dalam shard ini secara SEKUENSIAL
+        jq -c ". | .[$START_INDEX:$START_INDEX+$SHARD_SIZE] | .[]" full-plugin-list.json | while read -r PLUGIN_JSON; do
+          PRODUCT=$(echo "$PLUGIN_JSON" | jq -r '.product')
+          CATEGORY=$(echo "$PLUGIN_JSON" | jq -r '.category')
+          VERSION=$(echo "$PLUGIN_JSON" | jq -r '.version')
+          URL=$(echo "$PLUGIN_JSON" | jq -r '.url')
+          
+          # (Logika download, ekstrak, dan hash yang sama seperti sebelumnya ada di sini)
+          SAFE_PRODUCT=$(echo "$PRODUCT" | tr -cd '[:alnum:]-._')
+          SAFE_CATEGORY=$(echo "$CATEGORY" | tr -cd '[:alnum:]-._')
+          STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
+          CLEAN_VERSION=$(echo "$STANDARDIZED_VERSION" | tr -cd '[:alnum:]-._')
+          
+          JSON_DIR="output/plugins/${SAFE_CATEGORY}"
+          JSON_PATH="${JSON_DIR}/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
+          mkdir -p "$JSON_DIR"
+
+          echo "--- Memproses: $PRODUCT v$VERSION ---"
+          
+          DOWNLOADED_FILE="package.tar.gz"
+          EXTRACT_DIR="extracted_content"
+          mkdir -p "$EXTRACT_DIR"
+
+          if ! wget -q --tries=3 --timeout=30 "$URL" -O "$DOWNLOADED_FILE"; then
+            echo "::warning::Gagal mengunduh $URL."
+            continue
+          fi
+          
+          if ! tar xzf "$DOWNLOADED_FILE" -C "$EXTRACT_DIR" --warning=none; then
+            echo "::warning::Gagal mengekstrak $DOWNLOADED_FILE."
+            echo "{}" > "$JSON_PATH"
+            rm -f "$DOWNLOADED_FILE"
+            continue
+          fi
+          
+          ROOT_DIR=$(find "$EXTRACT_DIR" -maxdepth 1 -mindepth 1 -type d | head -n 1)
+          if [ -z "$ROOT_DIR" ]; then ROOT_DIR="$EXTRACT_DIR"; fi
+          
+          cd "$ROOT_DIR"
+          HASH_DATA=$(find . -type f -not -path './.git/*' ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}')
+          
+          if [ -z "$HASH_DATA" ]; then
+            echo "{}" > "../../${JSON_PATH}"
+          else
+            echo "$HASH_DATA" | jq -s 'add' > "../../${JSON_PATH}"
+          fi
+          cd ../..
+          rm -rf "$EXTRACT_DIR" "$DOWNLOADED_FILE"
+        done
+
+    - name: ⬆️ Upload Hashes for Shard ${{ matrix.shard_index }}
+      uses: actions/upload-artifact@v4
+      with:
+        name: hashes-shard-${{ matrix.shard_index }}
         path: output/
         retention-days: 1
 
   # ------------------------------------------------------------------------------------
-  # JOB 3: Kumpulkan semua hasil dan kemas menjadi satu artefak final
+  # JOB 3: Kumpulkan semua hasil dari setiap shard dan kemas menjadi satu artefak final
   # ------------------------------------------------------------------------------------
   package-artifact:
     runs-on: ubuntu-latest
-    needs: generate-hashes # Job ini bergantung pada Job 2
+    needs: generate-hashes-in-shards
 
     steps:
-    - name: ⬇️ Download all generated hash files
+    - name: ⬇️ Download all shard artifacts
       uses: actions/download-artifact@v4
       with:
         path: ojs-plugin-hashes/
-        pattern: hash-* # Unduh semua artefak sementara
-        merge-multiple: true # Gabungkan semua artefak ke satu direktori
+        pattern: hashes-shard-*
+        merge-multiple: true
 
     - name: 📄 List final directory structure
       run: ls -lhR ojs-plugin-hashes/
