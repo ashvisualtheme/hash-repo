@@ -1,4 +1,4 @@
-name: Generate OJS Plugin Hashes (Sharded & Optimized)
+name: Generate OJS Plugin Hashes (Sharded & Optimized - All Plugins)
 
 on:
   workflow_dispatch:
@@ -25,13 +25,8 @@ jobs:
     - name: 🔍 Discover Plugins and Create Shards
       id: create_shards
       run: |
-        XPATH_QUERY="//*[local-name()='plugin']/*[local-name()='release'][
-            *[local-name()='compatibility'][@application='ojs2'][
-                *[local-name()='version'][
-                    starts-with(text(), '3.3') or starts-with(text(), '3.4') or starts-with(text(), '~3.3') or starts-with(text(), '~3.4') or starts-with(text(), '~3.5')
-                ]
-            ]
-        ]"
+        # Menyederhanakan query untuk mengambil SEMUA rilis plugin tanpa filter
+        XPATH_QUERY="//*[local-name()='plugin']/*[local-name()='release']"
         
         FULL_PLUGIN_LIST=$(xmlstarlet sel -t -m "${XPATH_QUERY}" \
           -v 'ancestor::*[local-name()="plugin"]/@product' -o '|' \
@@ -52,10 +47,8 @@ jobs:
         echo "Ukuran shard: $SHARD_SIZE"
         echo "Jumlah shard yang dibutuhkan: $NUM_SHARDS"
         
-        # PERBAIKAN: Tambahkan flag '-c' untuk membuat output JSON menjadi satu baris (compact)
         SHARD_INDICES=$(jq -cn --argjson count "$NUM_SHARDS" '[range($count)] | map(tostring)')
         
-        # Echo sederhana sekarang aman digunakan karena outputnya satu baris
         echo "shards=${SHARD_INDICES}" >> $GITHUB_OUTPUT
 
     - name: ⬆️ Upload Full Plugin List
@@ -102,11 +95,10 @@ jobs:
           
           SAFE_PRODUCT=$(echo "$PRODUCT" | tr -cd '[:alnum:]-._')
           SAFE_CATEGORY=$(echo "$CATEGORY" | tr -cd '[:alnum:]-._')
-          STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
-          CLEAN_VERSION=$(echo "$STANDARDIZED_VERSION" | tr -cd '[:alnum:]-._')
+          FILENAME_VERSION=$(echo "$VERSION" | tr -cd '[:alnum:]._-')
           
           JSON_DIR="output/plugins/${SAFE_CATEGORY}"
-          JSON_PATH="${JSON_DIR}/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
+          JSON_PATH="${JSON_DIR}/${SAFE_PRODUCT}-${FILENAME_VERSION}.json"
           mkdir -p "$JSON_DIR"
 
           echo "--- Memproses: $PRODUCT v$VERSION ---"
@@ -131,7 +123,7 @@ jobs:
           if [ -z "$ROOT_DIR" ]; then ROOT_DIR="$EXTRACT_DIR"; fi
           
           cd "$ROOT_DIR"
-          HASH_DATA=$(find . -type f -not -path './.git/*' ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}')
+          HASH_DATA=$(find . -type f -print0 | xargs -0 sha256sum | awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}')
           
           if [ -z "$HASH_DATA" ]; then
             echo "{}" > "../../${JSON_PATH}"
