@@ -1,46 +1,78 @@
-name: Generate OJS Hashes
+name: Generate and Package OJS Hashes
 
 on:
-  workflow_dispatch:
-    inputs:
-      ojs_version:
-        description: 'OJS Version (e.g., 3.4.0-5)'
-        required: true
+  workflow_dispatch: # Pemicu manual dengan satu klik
 
 jobs:
-  build:
+  # ✨ JOB 1: Menghasilkan file hash untuk setiap versi secara paralel
+  generate-hashes:
     runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false # Biarkan job lain tetap berjalan meskipun satu versi gagal
+      matrix:
+        # <-- Tambahkan atau ubah versi OJS yang Anda inginkan di sini
+        ojs_version: ['3.3.0-3', '3.3.0-4', '3.3.0-5', '3.3.0-6', '3.3.0-7', '3.3.0-8', '3.3.0-9', '3.3.0-10', '3.3.0-11', '3.3.0-12', '3.3.0-13', '3.3.0-14', '3.3.0-15', '3.3.0-16', '3.3.0-17', '3.3.0-18', '3.3.0-19', '3.3.0-20', '3.3.0-21',
+'3.4.0-0', '3.4.0-1', '3.4.0-2', '3.4.0-3', '3.4.0-4', '3.4.0-5', '3.4.0-6', '3.4.0-7', '3.4.0-8', '3.4.0-9',
+'3.5.0-0', '3.5.0-1'] 
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v4
 
-    - name: Set OJS Version
-      id: get_version
-      run: echo "VERSION=${{ github.event.inputs.ojs_version }}" >> $GITHUB_ENV
-
     - name: Install jq
       run: sudo apt-get update && sudo apt-get install -y jq
 
-    - name: Download and Extract OJS
+    - name: Download and Extract OJS for ${{ matrix.ojs_version }}
       run: |
-        wget "https://pkp.sfu.ca/ojs/download/ojs-${{ env.VERSION }}.tar.gz"
-        tar -xzf "ojs-${{ env.VERSION }}.tar.gz"
+        wget "https://pkp.sfu.ca/ojs/download/ojs-${{ matrix.ojs_version }}.tar.gz"
+        tar -xzf "ojs-${{ matrix.ojs_version }}.tar.gz"
 
-    - name: Generate Hashes JSON
+    - name: Generate Hashes JSON for ${{ matrix.ojs_version }}
       run: |
-        cd "ojs-${{ env.VERSION }}"
-        find . -type f ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
+        cd "ojs-${{ matrix.ojs_version }}"
+        find . -type f -print0 | xargs -0 sha256sum | \
         awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}' | \
-        jq -s 'add' > "../ojs-${{ env.VERSION }}.json"  # <-- PERBAIKAN DI SINI
+        jq -s 'add' > "../ojs-${{ matrix.ojs_version }}.json"
         cd ..
 
-    # Langkah debugging ini akan menunjukkan nama file yang sebenarnya dibuat
-    - name: List files in workspace
-      run: ls -R
-
-    - name: Upload hashes as artifact
+    - name: Upload individual hash as artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ojs-hashes
-        path: ojs-${{ env.VERSION }}.json
+        # Setiap file JSON diunggah sebagai artefak sementara dengan namanya sendiri
+        name: ojs-hash-${{ matrix.ojs_version }}
+        path: ojs-${{ matrix.ojs_version }}.json
+        retention-days: 1 # Simpan artefak sementara hanya 1 hari
+
+  # ✨ JOB 2: Mengemas semua file hash menjadi satu artefak dengan struktur direktori
+  package-artifact:
+    runs-on: ubuntu-latest
+    # Baris ini memastikan job 'package-artifact' hanya berjalan setelah SEMUA job 'generate-hashes' selesai
+    needs: generate-hashes 
+
+    steps:
+      - name: Create target directory structure
+        run: mkdir -p ojs/core
+
+      - name: Download all generated hash files
+        uses: actions/download-artifact@v4
+        with:
+          # Mengunduh SEMUA artefak yang diawali dengan "ojs-hash-"
+          pattern: ojs-hash-*
+          path: temp-hashes # Unduh ke direktori sementara
+          merge-multiple: true # Gabungkan semua artefak ke satu direktori
+
+      - name: Organize files into final structure
+        run: |
+          # Pindahkan semua file .json dari direktori unduhan ke ojs/core/
+          mv temp-hashes/*.json ojs/core/
+      
+      - name: List final directory structure (for debugging)
+        run: ls -R
+
+      - name: Upload final packaged artifact
+        uses: actions/upload-artifact@v4
+        with:
+          # Nama artefak final yang akan Anda unduh
+          name: ojs-core-hashes
+          # Mengunggah seluruh direktori 'ojs'
+          path: ojs/
