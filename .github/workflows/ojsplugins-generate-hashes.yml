@@ -52,9 +52,10 @@ jobs:
         echo "Ukuran shard: $SHARD_SIZE"
         echo "Jumlah shard yang dibutuhkan: $NUM_SHARDS"
         
-        # PERBAIKAN: Kumpulkan output 'range' ke dalam array [ ] sebelum memetakannya ke string
-        SHARD_INDICES=$(jq -n --argjson count "$NUM_SHARDS" '[range($count)] | map(tostring)')
+        # PERBAIKAN: Tambahkan flag '-c' untuk membuat output JSON menjadi satu baris (compact)
+        SHARD_INDICES=$(jq -cn --argjson count "$NUM_SHARDS" '[range($count)] | map(tostring)')
         
+        # Echo sederhana sekarang aman digunakan karena outputnya satu baris
         echo "shards=${SHARD_INDICES}" >> $GITHUB_OUTPUT
 
     - name: ⬆️ Upload Full Plugin List
