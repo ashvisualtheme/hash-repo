@@ -1,44 +1,31 @@
-name: Generate OJS Plugin Hashes (3.3+)
+name: Generate OJS Plugin Hashes (Optimized)
 
 on:
-  workflow_dispatch:
-    inputs:
-      target_compat_filter:
-        description: 'Filter kompatibilitas (misalnya: 3.3 atau ~3.4). Default: 3.3 ke atas'
-        required: false
-        default: '3.3'
+  workflow_dispatch: # Pemicu manual dengan satu klik
 
 jobs:
-  filter_and_process_plugins:
+  # ------------------------------------------------------------------------------------
+  # JOB 1: Temukan semua plugin yang valid dan buat daftar kerja (matrix) untuk job berikutnya
+  # ------------------------------------------------------------------------------------
+  discover-plugins:
     runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set_matrix.outputs.matrix }} # Output dari job ini akan menjadi input matrix untuk job berikutnya
     
     steps:
-    - name: 🛒 Setup Tools & Create Artifact Directory
+    - name: 🛒 Setup Tools
       run: |
-        # Nonaktifkan man-db trigger untuk mempercepat instalasi paket
-        echo 'DPkg::Post-Invoke {"if [ -d /usr/share/man ]; then /usr/bin/mandb --quiet; fi";};' | sudo tee /etc/apt/apt.conf.d/99man-db
-        echo 'APT::AutoRemove::Suggests "false";' | sudo tee -a /etc/apt/apt.conf.d/99man-db
-        
-        # Instal xmlstarlet (untuk parsing XML) dan jq (untuk memformat JSON)
         sudo apt-get update
-        sudo apt-get install -y xmlstarlet jq wget curl
-        
-        # Buat direktori untuk menampung hasil artefak JSON
-        mkdir -p ojs-plugin-hashes
+        sudo apt-get install -y xmlstarlet jq curl
 
     - name: ⬇️ Download Plugin Gallery XML
       run: |
         curl -L -o plugins.xml https://raw.githubusercontent.com/pkp/plugin-gallery/main/plugins.xml
 
-    - name: 🔍 Filter, Download, Extract, and Hash Packages
-      id: process_releases
+    - name: 🔍 Generate Plugin Matrix
+      id: set_matrix
       run: |
-        # Direktori kerja sementara untuk mengunduh dan mengekstrak
-        TEMP_DIR="temp_download_area"
-        mkdir -p "$TEMP_DIR"
-
-        # Tentukan filter XPath untuk rilis yang kompatibel dengan OJS 3.3.x, ~3.4.x, atau ~3.5.x
-        # Kami menggunakan local-name() untuk mengabaikan namespace PKP yang rumit.
+        # Filter XPath untuk rilis yang kompatibel dengan OJS 3.3.x, 3.4.x, atau 3.5.x
         XPATH_QUERY="//*[local-name()='plugin']/*[local-name()='release'][
             *[local-name()='compatibility'][@application='ojs2'][
                 *[local-name()='version'][
@@ -47,125 +34,121 @@ jobs:
             ]
         ]"
         
-        # 1. Ekstrak data: product, version, package URL, dan CATEGORY BARU.
-        #    Outputnya adalah baris yang dipisahkan pipa (|)
-        echo "Memproses rilis dengan filter kompatibilitas: OJS 3.3+ ..."
-        
-        xmlstarlet sel -t -m "${XPATH_QUERY}" \
+        # Ekstrak data yang dibutuhkan (product, category, version, url) dan format menjadi JSON array
+        # JSON ini akan digunakan untuk membuat job paralel secara dinamis
+        JSON_MATRIX=$(xmlstarlet sel -t -m "${XPATH_QUERY}" \
           -v 'ancestor::*[local-name()="plugin"]/@product' -o '|' \
           -v 'ancestor::*[local-name()="plugin"]/@category' -o '|' \
           -v '@version' -o '|' \
           -v '*[local-name()="package"]' -n \
-          plugins.xml > releases.txt
+          plugins.xml | \
+          jq -R 'split("|") | {product: .[0], category: .[1], version: .[2], url: .[3]}' | \
+          jq -s '.')
 
-        echo "Ditemukan $(wc -l < releases.txt) rilis yang kompatibel."
+        echo "matrix=${JSON_MATRIX}" >> $GITHUB_OUTPUT
 
-        # 2. Iterasi melalui setiap rilis untuk mengunduh, menghitung hash, dan membuat JSON
-        while IFS="|" read -r PRODUCT CATEGORY VERSION URL; do
-          if [ -z "$PRODUCT" ] || [ -z "$CATEGORY" ] || [ -z "$VERSION" ] || [ -z "$URL" ]; then
-            echo "Melewati baris data tidak lengkap."
-            continue
-          fi
-          
-          # Bersihkan nama file dari karakter yang tidak aman (PRODUCT)
-          SAFE_PRODUCT=$(echo "$PRODUCT" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
-          
-          # Bersihkan kategori
-          SAFE_CATEGORY=$(echo "$CATEGORY" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
-          
-          # 1. Standardisasi format versi: Ganti titik terakhir dengan tanda hubung jika diikuti angka (misal: 1.0.4.0 -> 1.0.4-0)
-          STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
-          # 2. Bersihkan versi yang sudah distandardisasi
-          CLEAN_VERSION=$(echo "$STANDARDIZED_VERSION" | tr -d '[:space:]' | tr -cd '[:alnum:]-._')
-          
-          # 3. Konstruksi nama file dengan struktur folder yang diminta (plugins/[category]/namaPlugin-vVERSION.json)
-          JSON_FILENAME="plugins/${SAFE_CATEGORY}/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
-          
-          DOWNLOADED_FILE="${TEMP_DIR}/package.tar.gz"
-          EXTRACT_DIR="${TEMP_DIR}/extracted_content"
+  # ------------------------------------------------------------------------------------
+  # JOB 2: Hasilkan hash untuk setiap plugin secara PARALEL
+  # ------------------------------------------------------------------------------------
+  generate-hashes:
+    runs-on: ubuntu-latest
+    needs: discover-plugins # Job ini bergantung pada Job 1
+    strategy:
+      fail-fast: false # Jika satu plugin gagal, yang lain tetap berjalan
+      matrix:
+        # Matrix ini diisi secara dinamis dari output Job 1
+        plugin: ${{ fromJson(needs.discover-plugins.outputs.matrix) }}
+        
+    steps:
+    - name: 🛒 Setup Tools
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y jq wget
 
-          echo "--- Memproses: $PRODUCT (Kategori: $CATEGORY) v$VERSION ($JSON_FILENAME) ---"
-          
-          # 3. Download package ke direktori sementara
-          if ! wget -q "$URL" -O "$DOWNLOADED_FILE"; then
-            echo "Peringatan: Gagal mengunduh $URL. Melewati."
-            continue
-          fi
-          
-          # 4. Ekstrak file dan tentukan nama direktori akar (root) setelah ekstraksi
-          # Bersihkan direktori ekstrak sebelumnya
-          rm -rf "$EXTRACT_DIR"
-          mkdir -p "$EXTRACT_DIR"
-          
-          # Ekstraksi. Tambahkan pengecekan apakah file yang diunduh adalah file tar.gz
-          if [[ "$URL" == *.tar.gz ]]; then
-             TAR_OPTS="xzf"
-          elif [[ "$URL" == *.tgz ]]; then
-             TAR_OPTS="xzf"
-          else
-             echo "Peringatan: URL $URL bukan file .tar.gz atau .tgz yang didukung. Melewati."
-             rm -f "$DOWNLOADED_FILE"
-             continue
-          fi
-          
-          if ! tar -"$TAR_OPTS" "$DOWNLOADED_FILE" -C "$EXTRACT_DIR" --warning=none; then
-            echo "Peringatan: Gagal mengekstrak $DOWNLOADED_FILE. Melewati."
-            rm -f "$DOWNLOADED_FILE"
-            continue
-          fi
-          
-          # Cari direktori akar (biasanya satu-satunya sub-direktori setelah ekstraksi)
-          # Ini mungkin adalah direktori yang bernama 'plugin-name-version'
-          ROOT_DIR=$(find "$EXTRACT_DIR" -maxdepth 1 -mindepth 1 -type d | head -n 1)
-          
-          if [ -z "$ROOT_DIR" ]; then
-             # Jika file diekstrak langsung ke EXTRACT_DIR (tidak ada sub-dir), gunakan EXTRACT_DIR sebagai root
-             ROOT_DIR="$EXTRACT_DIR"
-          fi
+    - name: ⚙️ Process ${{ matrix.plugin.product }} v${{ matrix.plugin.version }}
+      run: |
+        # Ambil data dari matrix untuk keterbacaan
+        PRODUCT="${{ matrix.plugin.product }}"
+        CATEGORY="${{ matrix.plugin.category }}"
+        VERSION="${{ matrix.plugin.version }}"
+        URL="${{ matrix.plugin.url }}"
+        
+        # Bersihkan nama untuk path file yang aman
+        SAFE_PRODUCT=$(echo "$PRODUCT" | tr -cd '[:alnum:]-._')
+        SAFE_CATEGORY=$(echo "$CATEGORY" | tr -cd '[:alnum:]-._')
+        STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
+        CLEAN_VERSION=$(echo "$STANDARDIZED_VERSION" | tr -cd '[:alnum:]-._')
+        
+        # Buat struktur direktori dan nama file JSON tujuan
+        JSON_DIR="output/plugins/${SAFE_CATEGORY}"
+        JSON_PATH="${JSON_DIR}/${SAFE_PRODUCT}-v${CLEAN_VERSION}.json"
+        mkdir -p "$JSON_DIR"
 
-          # Hitung hash SHA256 dan siapkan input untuk jq
-          HASH_DATA=$(
-            cd "$ROOT_DIR"
-            # 1. Temukan semua file biasa, kecualikan file di dalam direktori .git/, dan kecualikan file template. Hitung sha256sum
-            find . -type f -not -path './.git/*' ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | \
-            # 2. Awk memformat output sebagai objek JSON tunggal {path: hash} per baris.
-            awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}'
-          )
+        echo "--- Memproses: $PRODUCT (Kategori: $CATEGORY) v$VERSION ---"
+        echo "URL Unduhan: $URL"
+        echo "Path Tujuan: $JSON_PATH"
+        
+        DOWNLOADED_FILE="package.tar.gz"
+        EXTRACT_DIR="extracted_content"
+        mkdir -p "$EXTRACT_DIR"
 
-          # Pastikan direktori tujuan ada (ojs-plugin-hashes/plugins/[category]/)
-          mkdir -p "ojs-plugin-hashes/plugins/${SAFE_CATEGORY}/"
+        # Download
+        if ! wget -q --tries=3 --timeout=30 "$URL" -O "$DOWNLOADED_FILE"; then
+          echo "::error::Gagal mengunduh $URL setelah 3 percobaan."
+          exit 1
+        fi
+        
+        # Ekstrak
+        if ! tar xzf "$DOWNLOADED_FILE" -C "$EXTRACT_DIR" --warning=none; then
+          echo "::warning::Gagal mengekstrak $DOWNLOADED_FILE. Mungkin file korup atau bukan tar.gz."
+          echo "{}" > "$JSON_PATH" # Buat file JSON kosong sebagai penanda
+          exit 0 # Keluar dengan sukses agar tidak menghentikan job lain
+        fi
+        
+        # Tentukan direktori akar setelah ekstraksi
+        ROOT_DIR=$(find "$EXTRACT_DIR" -maxdepth 1 -mindepth 1 -type d | head -n 1)
+        if [ -z "$ROOT_DIR" ]; then
+           ROOT_DIR="$EXTRACT_DIR"
+        fi
+        
+        # Hitung hash
+        cd "$ROOT_DIR"
+        HASH_DATA=$(find . -type f -not -path './.git/*' ! -name 'config.TEMPLATE.inc.php' -print0 | xargs -0 sha256sum | awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}')
+        
+        # Buat file JSON
+        if [ -z "$HASH_DATA" ]; then
+          echo "{}" > "../../${JSON_PATH}"
+        else
+          echo "$HASH_DATA" | jq -s 'add' > "../../${JSON_PATH}"
+        fi
 
-          # 5. Buat JSON hanya jika ada data hash yang ditemukan
-          if [ -z "$HASH_DATA" ]; then
-            echo "Peringatan: Tidak ada file hash yang ditemukan dalam paket yang diekstrak. Membuat objek JSON kosong."
-            echo "{}" > "ojs-plugin-hashes/$JSON_FILENAME"
-          else
-            # DEBUG: Cetak 5 baris pertama dari HASH_DATA sebelum diproses oleh jq
-            echo "DEBUG: 5 baris pertama HASH_DATA:"
-            echo "$HASH_DATA" | head -n 5
-            
-            # Gunakan HASH_DATA sebagai input ke jq dan gabungkan objek menjadi satu ({path: hash, ...})
-            if ! echo "$HASH_DATA" | jq -s 'add' > "ojs-plugin-hashes/$JSON_FILENAME"; then
-               echo "ERROR: Gagal memproses jq untuk $PRODUCT v$VERSION."
-               echo "Data mentah yang menyebabkan kegagalan jq disimpan ke /tmp/jq_fail_raw.txt"
-               echo "$HASH_DATA" > "/tmp/jq_fail_raw.txt"
-               # Tidak exit dengan error agar workflow dapat mencoba yang lain, tetapi mencetak peringatan.
-            fi
-          fi
-
-          # Bersihkan
-          rm -rf "$EXTRACT_DIR" "$DOWNLOADED_FILE"
-          
-          echo "Berhasil memproses hash untuk $PRODUCT v$VERSION."
-          
-        done < releases.txt
-
-    - name: 📄 List generated files
-      run: ls -lhR ojs-plugin-hashes/
-
-    - name: 📦 Upload Hashes as Artifact
+    - name: ⬆️ Upload individual hash artifact
       uses: actions/upload-artifact@v4
       with:
-        name: ojs-3.3-plus-plugin-hashes
+        name: hash-${{ matrix.plugin.product }}-${{ matrix.plugin.version }}
+        path: output/
+        retention-days: 1
+
+  # ------------------------------------------------------------------------------------
+  # JOB 3: Kumpulkan semua hasil dan kemas menjadi satu artefak final
+  # ------------------------------------------------------------------------------------
+  package-artifact:
+    runs-on: ubuntu-latest
+    needs: generate-hashes # Job ini bergantung pada Job 2
+
+    steps:
+    - name: ⬇️ Download all generated hash files
+      uses: actions/download-artifact@v4
+      with:
         path: ojs-plugin-hashes/
-        if-no-files-found: warn
+        pattern: hash-* # Unduh semua artefak sementara
+        merge-multiple: true # Gabungkan semua artefak ke satu direktori
+
+    - name: 📄 List final directory structure
+      run: ls -lhR ojs-plugin-hashes/
+
+    - name: 📦 Upload Final Packaged Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ojs-plugin-hashes
+        path: ojs-plugin-hashes/
