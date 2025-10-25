@@ -10,7 +10,7 @@ jobs:
   discover-and-shard-plugins:
     runs-on: ubuntu-latest
     outputs:
-      shards: ${{ steps.create_shards.outputs.shards }} # Output: Daftar shard, misal: '["0", "1"]'
+      shards: ${{ steps.create_shards.outputs.shards }}
 
     steps:
     - name: 🛒 Setup Tools
@@ -33,7 +33,6 @@ jobs:
             ]
         ]"
         
-        # Hasilkan daftar lengkap semua plugin sebagai JSON array
         FULL_PLUGIN_LIST=$(xmlstarlet sel -t -m "${XPATH_QUERY}" \
           -v 'ancestor::*[local-name()="plugin"]/@product' -o '|' \
           -v 'ancestor::*[local-name()="plugin"]/@category' -o '|' \
@@ -43,13 +42,9 @@ jobs:
           jq -R 'split("|") | {product: .[0], category: .[1], version: .[2], url: .[3]}' | \
           jq -s '.')
 
-        # Simpan daftar lengkap ke file untuk digunakan oleh job berikutnya
         echo "$FULL_PLUGIN_LIST" > full-plugin-list.json
         
-        # Tentukan ukuran setiap shard (kelompok)
         SHARD_SIZE=200
-        
-        # Hitung jumlah total plugin dan jumlah shard yang dibutuhkan
         TOTAL_PLUGINS=$(echo "$FULL_PLUGIN_LIST" | jq 'length')
         NUM_SHARDS=$(( (TOTAL_PLUGINS + SHARD_SIZE - 1) / SHARD_SIZE ))
         
@@ -57,8 +52,9 @@ jobs:
         echo "Ukuran shard: $SHARD_SIZE"
         echo "Jumlah shard yang dibutuhkan: $NUM_SHARDS"
         
-        # Buat output berupa JSON array dari nomor shard (misal: ["0", "1", "2"])
-        SHARD_INDICES=$(jq -n --argjson count "$NUM_SHARDS" 'range($count) | map(tostring)')
+        # PERBAIKAN: Kumpulkan output 'range' ke dalam array [ ] sebelum memetakannya ke string
+        SHARD_INDICES=$(jq -n --argjson count "$NUM_SHARDS" '[range($count)] | map(tostring)')
+        
         echo "shards=${SHARD_INDICES}" >> $GITHUB_OUTPUT
 
     - name: ⬆️ Upload Full Plugin List
@@ -77,7 +73,6 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        # Matrix ini diisi secara dinamis dengan nomor shard dari job sebelumnya
         shard_index: ${{ fromJson(needs.discover-and-shard-plugins.outputs.shards) }}
 
     steps:
@@ -98,15 +93,12 @@ jobs:
         
         echo "Memproses shard #${SHARD_INDEX}, dimulai dari plugin ke-${START_INDEX}..."
         
-        # Ambil daftar plugin untuk shard ini menggunakan jq
-        # Loop melalui setiap plugin dalam shard ini secara SEKUENSIAL
         jq -c ". | .[$START_INDEX:$START_INDEX+$SHARD_SIZE] | .[]" full-plugin-list.json | while read -r PLUGIN_JSON; do
           PRODUCT=$(echo "$PLUGIN_JSON" | jq -r '.product')
           CATEGORY=$(echo "$PLUGIN_JSON" | jq -r '.category')
           VERSION=$(echo "$PLUGIN_JSON" | jq -r '.version')
           URL=$(echo "$PLUGIN_JSON" | jq -r '.url')
           
-          # (Logika download, ekstrak, dan hash yang sama seperti sebelumnya ada di sini)
           SAFE_PRODUCT=$(echo "$PRODUCT" | tr -cd '[:alnum:]-._')
           SAFE_CATEGORY=$(echo "$CATEGORY" | tr -cd '[:alnum:]-._')
           STANDARDIZED_VERSION=$(echo "$VERSION" | sed 's/\.\([0-9]*\)$/-\1/')
