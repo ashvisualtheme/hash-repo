@@ -1,4 +1,10 @@
-# ------------------------------------------------------------------------------------
+name: Generate OJS Plugin Hashes (Optimized)
+
+on:
+  workflow_dispatch: # Pemicu manual dengan satu klik
+
+jobs:
+  # ------------------------------------------------------------------------------------
   # JOB 1: Temukan semua plugin yang valid dan buat daftar kerja (matrix) untuk job berikutnya
   # ------------------------------------------------------------------------------------
   discover-plugins:
