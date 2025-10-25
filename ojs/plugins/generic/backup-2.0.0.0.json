@@ -1,0 +1,15 @@
+{
+  "locale/de_DE/locale.xml": "4fd38a532ca05b35531878d2730fdda57689a63035303a4bca6938d255ffe876",
+  "locale/ar_IQ/locale.xml": "a9c100e52b0c4629b896ac7590a7320b8414a4d3386f86b04e1b3ce188204255",
+  "locale/pt_PT/locale.xml": "a2ee8c907aa290ad2e2bb58ea8fb02b6d47e6a5fb9b4029eb37db632e698ed2f",
+  "locale/ru_RU/locale.xml": "778c6ac7152afe257f062be69b998017a871459b74b145dea765ba91bf6f8fed",
+  "locale/en_US/locale.xml": "cdcc0480ae46bfb6bbb5c573e2a8b80d4fa12f12489fb1e75bf9a6f9feace11b",
+  "locale/es_ES/locale.xml": "1195bf7feb440ffa1be0b59d653169012471631ae5b66b6d3831e160a004d26a",
+  "locale/sv_SE/locale.xml": "6119d041613dc2219b26d048b06253029481c31f3b363a877d9329c2d802657d",
+  "locale/it_IT/locale.xml": "c1ed0369cc1cc4ade1f90f43a730c711c7081d8dcab02874b2d4eba3fdad256a",
+  "version.xml": "be52c2324ec7d2b828a2ab7a3bbc8c528647c157dccb51a1373a316f419362fc",
+  "README.md": "ea2b51f6343d6f41081c05d27311b8d6b8f2b0f425f07cef5920383ac0e13a6f",
+  "index.php": "8634c5b064997af69dfde107b45bec2afbff3dabf76edc33ced2b8b160afccec",
+  "BackupPlugin.inc.php": "bdb06ed972b00fd6fad7ec061f34727e5ba053aa91ec3b209d92caa259d9dea7",
+  "templates/index.tpl": "16121ed159e0b4ca999745f30993498f9755fc19efc778e0281fb82fb1854715"
+}

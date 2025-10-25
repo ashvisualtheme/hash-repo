@@ -1,0 +1,20 @@
+{
+  "LICENSE": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+  "locale/de_DE/locale.po": "693c8bf68e3acbd62559b84fcde7e345be9b22460a3aadf2ea0352c9445401a4",
+  "locale/id_ID/locale.po": "027c2658c66cf3ebd51be05b7e0c1d6a24306d8019796d9e1ae97f0d5230363a",
+  "locale/ar_IQ/locale.po": "ccd3b976a5577335573b30d47a715346e0c889013ea4141065ed72711eba086c",
+  "locale/pt_PT/locale.po": "5bdb56d3a8e007f3203edeaf1402a0815478e37dc4c13e8b7f73735d4519eba6",
+  "locale/en_US/locale.po": "973f412347372ab22cdd03db29c9b590affebb95b287e015962b5f4141ae3832",
+  "locale/hu_HU/locale.po": "ffe7676d2f63fa9e60d87887bbf52669d8b964033c0cff449061fdb5f9dd1030",
+  "locale/da_DK/locale.po": "f64faa305b8cc87cecd18156d4724946f7b0ffe3dc53a1826611930a0fd3a0b3",
+  "locale/pl_PL/locale.po": "d304e6c527ec8b90d88e6e4331cf89ce7d71c80a9ef2eb48d92c47f855f450c3",
+  "locale/fr_CA/locale.po": "16eae04c3f727924e561f759be4b4fb755c6f6cf6a30fc04cd37305aff2a6361",
+  "CustomHeaderPlugin.inc.php": "84c06acea00120b81252e35cddf77b5b990f348236647605f546e849aa9988c2",
+  "version.xml": "7c180ac19e5b0bc7a2856e0a12e6aadd64024a0a8414883dbcf5c9cd736afc00",
+  "README.md": "0e1d5f4cec22a163c59680ddf5f0f768b264fe263080528f774f97ae25439b04",
+  "CustomHeaderSettingsForm.inc.php": "f7aabd55ba06f1cb69ce9b58d399f3d6b6dd61871996ede9b6a5ed17fd425641",
+  ".travis.yml": "48434363c22ed3fba9b4c017bfcbb639b3f2184cec73da5a1b8e67a382cc0a25",
+  "cypress/tests/functional/CustomHeader.spec.js": "545a1f98604e4d83c4c3e894fcea47a13e47b2503e2e053b8b991931342426dc",
+  "index.php": "549f2ab8d7563acb7e0d9d89e696fe9febb239f6c670969cd9ec6f3a04c4ebf4",
+  "templates/settingsForm.tpl": "0df40eaa895afc1be7d0587fdb39f1c903dc407dd6e7c3d989901d36d8bc54a5"
+}

@@ -1,0 +1,18 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/AuthorsHistoryDAO.inc.php": "271c5acf801387251aad6bcbde68f2930f90b2c21801c8020d4146d6eb069ed1",
+  "locale/ru_RU/locale.po": "ff88fd9101dc87c41dd4856253112687f9b6fd72758817d7ce16205aede0d5c2",
+  "locale/en_US/locale.po": "2ba2798b829eda609bc0a3ea9ad9be00a1ffc7688743991e97759f6f05ad1a78",
+  "locale/es_ES/locale.po": "7329e674245c0b44aeefbb37dfa48a04ba9231e3e22599a95e796bdb6502e305",
+  "locale/pt_BR/locale.po": "8edd16ab2c79821a78550443383cb2c78e28ae0dfa47131679ab9491e435dada",
+  "version.xml": "57fc90668f1a2c78e4250e3752a50bc4c5ef6d62a7a7c337725444611caafbb9",
+  "images/feature_screenshot.png": "1717b6c161204e8492d23fc4678f2448b6560685164db4a7c316a333089f0a75",
+  "README.md": "958e136e77938e38650e81dadf71a64a60a118e7554a05d12401f57063dea185",
+  "AuthorsHistoryPlugin.inc.php": "eceb4dc74a6ee2e4e1a557fef969909b97600e6124e32174b6f5bcbfc051324a",
+  "cypress/tests/Test01_pluginSetup.spec.js": "818c4f8583043ed68b6d55b98847dab7a3ceac4ff9f1ee2bc41add86942d8c8d",
+  "cypress/tests/Test02_authorHistory.spec.js": "a7f5e63e78c6a13dccba1e92e2ac42ae0a1bc8080495378da8e9b2ec0aac2d56",
+  "index.php": "2a5e42fa3f77524b4b79275bda0cc2d4d95fd1c4b1242e34c8ac752fcbc78748",
+  "templates/authorsHistory.tpl": "4dd468e2cc52147c3dc22cf5d0decdb57fcbc652b80e698e2247bdda2c286ffc",
+  "templates/pagination.js": "5bf0936d98cdbbe94c1418b6dd60262ba6db523ee3a29953d86d3a2f9cb50100",
+  "styles/authorsHistory.css": "939a0d799270c834aeae53ae7ae254664aa1ce579258e18daebd6379f6319e53"
+}

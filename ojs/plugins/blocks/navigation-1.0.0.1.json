@@ -1,0 +1,19 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "NavigationBlockPlugin.php": "de14d18ec37e7cd1ca7bfa805832104214b8dad1b7972c54c1f0ab332dbf6643",
+  "locale/fr_FR/locale.po": "7fded912323f4b46e767c04cb1cb50b06b131b6434bb6a8879ad8eddf3282be6",
+  "locale/pt_PT/locale.po": "f471bcba342016962a441a5284963957ccd5f194db137964144454f6389fe98e",
+  "locale/en/locale.po": "3573fbb680c5a371707a7919fe59e01280f5cabff47c310ded071755e81cbe5c",
+  "locale/ro/locale.po": "dc317682df49c119b45acd7f4db47f265ffd638eafc8e7f348c422c436a22f17",
+  "locale/it/locale.po": "1a372deaff8c243d39276ca7d6c63654ec09361728a45c71cafa4d5fd1a3a857",
+  "locale/es/locale.po": "2390a18887397f4fc5e50e9bb3e5f51bb5b00415be63f51a66ec7ee104e6e9da",
+  "locale/de/locale.po": "496e75e7e69c00b44c73f2eb28be8e0cc555c897c3eaf8c96e79bad0a69017b0",
+  "version.xml": "71250dcabd4fa866854de98e38c4b5a805c0175fa0ac894121258ad6c2383bb6",
+  "README.md": "e19cc991e07d095cbad3ded3942d63ba55a1e4124a7cc9acbae11a097411465a",
+  "settings.xml": "b548c44d68dbdac09d0d5af9d26671c7080cf4df00fdbd6594262485f3e15b2b",
+  "styles_examples/navigation.less": "568657af1e38a4b199d3a7aee161a5a6418bff7cd2ba7cfb9c29910342c9ad0a",
+  "index.php": "fbd768815011120a9354e244b4fcfc169ecc2425755053d3b942b87d398a3698",
+  "templates/block_articlenavig.tpl": "6e4acdcbff3f5ee78c37fbf9e5ed81dd0abee34711cb1c34398763f60af3a47c",
+  "templates/block.tpl": "507cd706806cea3ee2aaf1f2e1603a7c0c8dd4adcaeb5c9534cfab99f59b02aa",
+  "templates/block_issuenavig.tpl": "68207e1d3353b4c01ccf4737eac50a463508ac520f72f9806edb53f4a80f540c"
+}

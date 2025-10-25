@@ -1,0 +1,15 @@
+{
+  "DataciteExportPlugin.php": "a25e8640112711d92ae2d1f70c94e87ea51bb30e60b77efbc3b053c8e9c1f67a",
+  "DataciteExportDeployment.php": "fd08d7142e7fe305756312e28b0d36ab97b1b4057927d7eb2a4d63d3e3dcbef6",
+  "classes/PubObjectsExportPlugin.php": "9e59c5c715247403b0983591d8475bad61f08fed24e4b9a0ceae12ddb89a5eb0",
+  "classes/DataciteSettings.php": "9fa629438f3912c17b9152e7046e747607072342783251717d0ebbc488f1805c",
+  "classes/PubObjectCache.php": "a882bfae9736283798f85b6721d22cfa0078ce17ab52af2e81dc44b80b7544ee",
+  "classes/DOIPubIdExportPlugin.php": "74b939a8feb683d7aa1f869f35e0d081be31722a59e26e78b278af436cd506e5",
+  "locale/en/locale.po": "eb305b04de082d4aa0aa45d764e71827d5f1ab3035f2357fcf72b878b07443e6",
+  "version.xml": "f5cc866e2ee5d7b5c28f9e2b5cd3dc3b1edba1e5514263369105a88841d76ff2",
+  "README.md": "67b061c73ac80b2db6f8ef9d7928704180d0d0cad40debc7f6cf8532a5633bfd",
+  "DatacitePlugin.php": "8ad49f8b7d4367254f95f96805c567306c67f4cd30783e9439febc5e69727462",
+  "filter/filterConfig.xml": "f34feae92e2880e08b746f6088b662fd3fd26c53988d5f81b88a892d99513511",
+  "filter/DataciteXmlFilter.php": "72d327f0fa417b4dc030fc35f4f08e9b7bdc1c1e8c4edcdce6eb4011f4808275",
+  "templates/index.tpl": "356050854fcfd37d7ec00402e87b377d9882cb2cce180b1942d5f6e637de6bb5"
+}

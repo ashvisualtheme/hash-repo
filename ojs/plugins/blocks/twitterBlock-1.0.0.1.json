@@ -1,0 +1,13 @@
+{
+  "TwitterBlockPlugin.inc.php": "7b0488f22b07386eeb0f3cfb9bfcd8dbc0b337acae15be1ec4c494d588e23664",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/fr_FR/locale.xml": "cf83329058a28bb5f7bbbe6e09c047f689209c31465b49612605ea0cd6519018",
+  "locale/de_DE/locale.xml": "2cae7e47e0c92b3519078363eeac6cd3783c59f3e3931cca383746567f50844e",
+  "locale/en_US/locale.xml": "61dfd453865089a6ec492a22d0a8673c3b3849ea9937a611d14a4b9168f2dce5",
+  "version.xml": "2de17ac8e55e421ae7caefe2a2336d50b6c1de61b824be295d8c64aed92634a0",
+  "README.md": "56c3086cf14641e87112c4559d37c9a9e069b57bc9325786e0cbb8305d30ec0a",
+  "TwitterBlockPluginSettingsForm.inc.php": "3913b27325987a204b2ac0df341af37be7e07e9d21ea8186db1930b5eeefd354",
+  "index.php": "47e7696b9dfc45b8d2e2164645906d3eb3c5681a82e579ceca910a1cd780fb61",
+  "templates/settings.tpl": "1461b2f0912f51a7695f7ba2d9d8e8ad3934d6b6ce49a50adca0c15c93b6b5c1",
+  "templates/block.tpl": "61235c080bef35886707646be5e9de9e8a8e37581c2e3d6a5e838453c06716ed"
+}

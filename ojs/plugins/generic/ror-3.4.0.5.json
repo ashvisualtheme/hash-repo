@@ -1,0 +1,21 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/SubmissionDisplay.php": "c53baa6e2f239d6b50c5084809bc8665af80d28abbb5f4818ffd63779d90e1d3",
+  "classes/Form.php": "2ab9de6e7d29fb34ef8c5fe68aff714d035f3fb80330cad00ef7e3332cf8b93c",
+  "classes/ArticleView.php": "2d83fa621752661b0b59ef623baf0417825fc59d284239fe36486daf96bf8848",
+  "classes/Schema.php": "102be718e0e647c500da5e3fdd6d3529b055250dce57d77c482e911b9ceff6f9",
+  "classes/FieldTextLookup.php": "13154899043a62c1965add9a8cabe17b4803627a29dc8ffc55b04ba00c18d8b8",
+  "classes/Constants.php": "b92c458e37e4eab9f011a3ce68c83fcfdfa6b72bfd004e6d10b85348d909a4eb",
+  "classes/Workflow.php": "1f47caf866028976aede21cec2e0ad1b36b59b3346425f9332c35b67ca09b905",
+  "locale/en/locale.po": "6a4196d2f51e7bb5d6188d53ccf2bb66ba2397c0926cb937332bffdd5de597b2",
+  "version.xml": "91c428ac5d9f56752a4c9cf6605fe2c846740cfdee7450455e53ab95e34fe27e",
+  "assets/images/ror-org-logo-icon.svg": "475de7d34a0b062ebe381326d9caa4a6d65c18d37050e8b159508dcb8a7abbdc",
+  "assets/css/style.css": "d396e5019b8f31a8ae72f009d5cb41086448ec74b8d7511bbb6ede144cfe8394",
+  "README.md": "74b2007817be3c9b39a09a642e01ef9ccebbcf67a0b2170575fd4dd0199f3213",
+  "docs/ror-org-api-example.json": "a2bb4de71100a3781e40e14699a138e9f55c90ad6f778ac19f7f9d0956fe671e",
+  "docs/ror-lookup-ojs-3-4-0.gif": "4ef370646398453a1cd34c4e138043f74b09bdd1cd039d5abc819e57333956c8",
+  "RorPlugin.php": "002a3c12d4597a63f3a9d1ac454b419143eff56816de8db5a5b800700711afb2",
+  "templates/omp_authors.tpl": "451d12ca3e5788d28a1f9c55c11e56f32efd6de05be24df88aefa8326239e5ce",
+  "templates/contributor.tpl": "af78354f8a6d26e6df8085a616d9dfe1ac843e4cde7e7a5e9a7b1840c9d52702",
+  "templates/ops_authors.tpl": "ac6a8e3942bdf5af53bda8e9e97ddcb0d997a7b4ba883176dd807e6e1be31e01"
+}

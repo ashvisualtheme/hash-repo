@@ -1,0 +1,13 @@
+{
+  "classes/form/PURLSettingsForm.inc.php": "2a89b5a3eae8836a12ed79eb907a73d424856125556d772edc6b5657bd12a6b7",
+  "PURLPubIdPlugin.inc.php": "b4e90384315f4a87f6c454e42a12d424e85a0b92dc2e9b86632413e6e4eed104",
+  "locale/en_US/locale.xml": "821a7b4886c24f4c7e30a93775b8bb7525b8c91cf31a8ae999553c9c7dff60d4",
+  "locale/es_ES/locale.xml": "5aae3ebeca6c9247cb239487869f6f0231f516a9758f889a14771827046bd4f8",
+  "version.xml": "4e1c9e46c0b84aa991a9c094768544a82e968e6282fd2a706fce150ddcd3ce6e",
+  "index.php": "5f161fc929c25ea27096f7a65f8a6d43c18a5d9b86b88d49bd92ef6a565a85c1",
+  "templates/purlSuffixEdit.tpl": "507aca9a5acf85c72a45f25ea3ca7e8bc35d36107aeb94adf631d49727202baf",
+  "templates/purlAssignCheckBox.tpl": "087d02db9225726dc708f1f1b81822b4ee1797b52fdf0ace0f85b428e42c17fc",
+  "templates/settingsForm.tpl": "d7f3fab9e75da0b71908507ee19d527894c2e3ca95805b30f29d5fc2da044dcc",
+  "templates/purlAssign.tpl": "42bc8b359639b621ca8dd92ac4a3c4f3210f3231c4ebc22c526cc222b967dbfa",
+  "js/PURLSettingsFormHandler.js": "681bdc98ca81930ab71fc1b024d1b8eb976bbb0e76e715266d19e2ee2ce9b8d0"
+}

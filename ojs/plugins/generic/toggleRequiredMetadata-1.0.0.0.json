@@ -1,0 +1,11 @@
+{
+  "ToggleRequiredMetadataPlugin.inc.php": "744710c7b17da90194c4ae1eb73249ca735b86f9ebce49fcc706812d52690d14",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en_US/locale.po": "801b78c2345719a90fc65b09303b8c820d4c2036db936effd9e96c35fe53dc5d",
+  "locale/es_ES/locale.po": "f2bf412478abad88f28fe4abe01fd806f5fd0134aa1c2c526cdff754708e632e",
+  "locale/pt_BR/locale.po": "87e8596b92f5bcd27db934957b5e2716475af0d34ae20a0327db218e665b9e48",
+  "version.xml": "1ad2c8b3c2320e15f98585738c6b700bd36912a5e17f62b97c2f4220d55f2181",
+  "README.md": "7fabf62b8a7e2e252dde71d64aecce421ccb30769a412f71c37048b74aa9b3d3",
+  "cypress/tests/Test1_requiredAffiliation.spec.js": "6310bd980bd6a5f9df6395e263eb1e4bc6f201b5c64c641e5429ed3f24b329ba",
+  "index.php": "33028a48cb86c44f6183dcc7ce4bfe6a36922ea85fd55117b56f4a32492ce19a"
+}

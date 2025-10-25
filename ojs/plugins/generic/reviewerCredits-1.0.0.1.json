@@ -1,0 +1,12 @@
+{
+  "locale/en_US/locale.xml": "c06afb88be7c0a278c9895c4557a19c774ce97b30e891ec27eb51fb2e892e3c2",
+  "locale/it_IT/locale.xml": "a036bc80d2627ec24fe0ec94ceb289e73cc2f720bc210554428bf42f2f9536ba",
+  "version.xml": "bcd6e6848133ef99c14036c2c38a28048bb8eb14930163c5f076164c9515d5eb",
+  "README.md": "aa6a68727ffc7f65409a1860da0004a9146963f90ca0f2a5cdbf83ceca94b5ce",
+  "LICENSE.txt": "640d90f6ee401241ff62834d0d1b33f83049e99b8bfdfa04ed1b0a1635dde3e7",
+  "ReviewerCredits.inc.php": "1ca94fc544c505d865583c54138eb4b2c2a39bb35367bc71e23130fe540f45f9",
+  "index.php": "3e9adb2c066f465b2a50a04d6be8a44d2889080a247d8474d9cb0da35da0ad56",
+  "templates/confirmRCEdit.tpl": "0dd8db0a4573af31aeafe60a60592fc413edb62741b2cd5126d35b47579e19e7",
+  "templates/settingsForm.tpl": "fc4d53fb45f5a54ad8ccaf405a8d833e6f8956bf307ddf091aedec15a7509de5",
+  "ReviewerCreditsSettingsForm.inc.php": "b786866cbee610935fbdd304b547cb15fcbad7257c4e3c7d419ad29a78a16a56"
+}

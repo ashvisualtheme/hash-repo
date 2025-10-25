@@ -1,0 +1,14 @@
+{
+  "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+  "locale/en_US/locale.xml": "d37fe1b907fe83b9368eddd2861fa7fd967f436f650330b9e1bbb14dac8714e2",
+  "locale/en_US/emailTemplates.xml": "adb1fc50cfe430075eba77c435d206304606f4aeb6f4f385a0838defc2ebdd59",
+  "version.xml": "0a66d89970da800f4e7ab11ad89dcd8fdf98224eef360567897221312f85bd5c",
+  "RegistrationNotificationPlugin.inc.php": "26fd2ca73e8ee363ff4fcae95d2859bd4c8fc2bada04165f89ec2380482bd9f9",
+  "README.md": "875f636215ede886c9ff65d1249179bff7944ceddd8f2f696235f44323322eb4",
+  "settings.xml": "7a686f5799ba5130adec5e3b1513d34c3f9d70cd11f0a95c24d7248f8412498e",
+  "RegistrationNotificationSettingsForm.inc.php": "4454d4ad2becbd550f58b5021461089efcec8a9fc97f450db3176060e5cdacc8",
+  "emailTemplates.xml": "392696159a8c52087a449274b18b69653e11925fccafb3b74bef43b892a5bbc9",
+  "index.php": "edeb98d8f6c292db2418932c86364e64ed447c2b5e14831a4f2eb84a17f68b41",
+  "templates/settingsForm.tpl": "5ef38500f2ae6da2331474ccb00726d13cab7e67df77ee9102eb7d1e92a4d227",
+  "js/RegistrationNotificationFormHandler.js": "46632059df72a3856dce258b61167a9c2186979800667507dca980061ba53944"
+}

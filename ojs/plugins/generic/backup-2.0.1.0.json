@@ -1,0 +1,18 @@
+{
+  "locale/de_DE/locale.xml": "97aa2f7f0803fcda3b7496c2b285eb2a36da405008d3694e7326843cbaf85b94",
+  "locale/uk_UA/locale.xml": "5534d47e8ff7fa52f19a7999b63746e69cb9bba4d4046d25a5cf29578b2c8cd9",
+  "locale/ar_IQ/locale.xml": "36a77a2f0aa74790dd37345514cd0e8467e4e0795dc8525d1fb86987328aefc0",
+  "locale/pt_PT/locale.xml": "e92d473e058a74a1f091739f33753d3db4c939927481c5ca384395a9c31daf86",
+  "locale/ru_RU/locale.xml": "5bfaaf2f9438ea4b49810add3a72f2ee0ae79e221a105a43e51c71730a4ad2a7",
+  "locale/en_US/locale.xml": "1078fe2ed25475a4f65567d4f318ec4dfad97e49e9299586b6ddb9fb7e29c617",
+  "locale/cs_CZ/locale.xml": "baafdfcda4f68ca1bb58ec6573ff3a91c7ba2e671f213ca4fa80dbc582e3c0c0",
+  "locale/es_ES/locale.xml": "ee7ab318581394501dcf81ae19d0c78d0e4cbe987ceb936db21621db49e255d0",
+  "locale/sv_SE/locale.xml": "50ebad16202ab76791d8de90c9201d29fdc391353aaa32fd69b9463e58303d17",
+  "locale/it_IT/locale.xml": "5cf33c3bf6080498dd96b766706a9e14c6f1d347a04653dec242e4266c42da3e",
+  "locale/nl_NL/locale.xml": "f0694efef05039993c9a6a2a70224656d74cb8959bd124192ae82530a727371d",
+  "version.xml": "f66c4f6e0d51bf2c6ebea5b4cdb3bff0ad9eec4b0bf913ef84a30e74ffa0c15c",
+  "README.md": "ea2b51f6343d6f41081c05d27311b8d6b8f2b0f425f07cef5920383ac0e13a6f",
+  "index.php": "086bcd29aa2da69f63e5944a8c1cc17c5a3dc549f65927a3dc416c3caa800b29",
+  "BackupPlugin.inc.php": "de710bfadff755a54b78922a7bce7ff57fac703bb92fad02f12921b56fab80d4",
+  "templates/index.tpl": "847bb0b1eb6df60b486ab25ed6112eb87d7ce75d019857c125b9afa26e9e4b03"
+}

@@ -1,0 +1,18 @@
+{
+  "DeleteIncompleteSubmissionsPlugin.php": "62f5e3929ff947655421e3a75f0252319b90909cd5aa940eef2c0ca059fffbf6",
+  "LICENSE": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+  "screenshots/plugin-options.png": "0dc3e2a3a50e23185c0e577552d3a9b96a821844e33b05772f7d21bc0380b55a",
+  "screenshots/delete-submissions-modal.png": "2c48202637d756a31655ee155d61332b6ec7e4b03f2176df1e43f91e2008af71",
+  "locale/fr_FR/locale.po": "30a7683359c3f790d8c25d69d6cd16bc4d44e2e0f913d4146af1b2c8435746a9",
+  "locale/pt_PT/locale.po": "cf393ce6e159e88826f833a8171d07d0e2dae2a0543a0dda75f59a37998660a9",
+  "locale/en/locale.po": "8006ddd116e5c90ef6a9535c437191cede2e72b6a0886117e21fc0de8bec8124",
+  "locale/ro/locale.po": "75dd7524564d4783158b46f09c662a39699c4cdad0989fa13974b2fc4fdc3cf7",
+  "locale/it/locale.po": "1439d07bc549cdc0e6589a046e607507d0db101dc22d06a7f469212a496c5520",
+  "locale/es/locale.po": "0d09c7e8bd84a763e4e98df5d910419cff1e97f785e1914bed469f1df96e426d",
+  "locale/de/locale.po": "4cb471a1753ef287a38d12bfb4d103658d0de3c86f8b179cdc9a3d3b6b214ab0",
+  "locale/pt_BR/locale.po": "42a3835f8e7d0741d4434c802edd6218dd581b93b1296e40e4a9d0f7a1323b8f",
+  "version.xml": "36bcef60c01df739464026d98cde5b57ddf12a0204ca752739b322d5dfc6b264",
+  "README.md": "5a83f9dfa075f8dedddb986b7eeeff3675d05421f671191b3490ec146e5253dd",
+  "settings/DeleteIncompleteSubmissionsSettingsForm.php": "034f350fba351a5ba0f22d33cc4685db1123a4cb723e6195f30322dbf0e85845",
+  "templates/settingsForm.tpl": "e117b4b8d01ef330edd869e2f9473ef6554c48e4d62067465f867f7767f83d89"
+}

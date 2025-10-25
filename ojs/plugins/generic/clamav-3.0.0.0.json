@@ -1,0 +1,14 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "locale/en_US/locale.xml": "5345557b12c22c81ba47f7f2cdc5880fe5d0263b9f72adc5734ac300f12616ef",
+  "version.xml": "58ac54ef159344d8d0750778d7e092ee76039331d26cd16bbc50c3cea3e645a6",
+  "images/spinner.gif": "816bf6e0784089c60488dc838abbf0c1338e926c9adebf02fb234c9c21a3d020",
+  "README.md": "acb42c56cbf6f1a9ad747c5ba6ff45f8147ac900cf32e14f1e743f2d1150daff",
+  "css/clamav.css": "6b00ae562565a87640e5fb4048ce3b6f40d9315ab4cd85ec886a689f84027b65",
+  "ClamavPlugin.inc.php": "ac5cbcdeec2ab8b1343be3df233110131ced6a1fd13fbb5d70a9f0e2f6916279",
+  "ClamavVersionHandler.inc.php": "550c89b0030122686e5003507d430e5027fd6163ce34aa87714f9164bda49d99",
+  "ClamavSettingsForm.inc.php": "a787d2b4944264e2e84829d47442eaadf23500e57c39714eb76ba84e02f095f0",
+  "index.php": "a2dc3fe8395e400d04baa187dfe48a89cff1fc33e1ba6fccb4bc69b3603b6945",
+  "templates/settingsForm.tpl": "9e89bdd1f8e2305fdea98e6cb582b3d07478a8d506f9888094084d1325de341f",
+  "js/clamavVersion.js": "88b276e156d80b6a35e6c02adc40a7936d46c2c004d765112bc85613a225625e"
+}

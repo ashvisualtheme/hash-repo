@@ -1,0 +1,18 @@
+{
+  "LICENSE": "c03cea027b4b40e4402fabd08557736727ec3d5bc54ad64ab6472de432198cad",
+  "ShariffSettingsForm.inc.php": "98867726f1c2d358d54ffb3cc3e079a4d7e5f20588c605868f9d526c377538bf",
+  "locale/de_DE/locale.xml": "4e57fae774b8c7287d9f7cb3fc5c0f61f7c6bdd28921ee7b54737a494bc419e8",
+  "locale/en_US/locale.xml": "7482b68b484ff0e285927a3603c50342adeaa84e4cda747e468433a0dbde65a4",
+  "shariff.complete.js": "30b5bf37e98fbea447b031d34bcb43e2ac5151a937a3b2386b53a4d3dfd117c6",
+  "ShariffBlockPlugin.inc.php": "c6043c41e99ce4cfcb30fcecf9d3599d7e6c8408c104a15849eb693d846a4200",
+  "ShariffPlugin.inc.php": "0148a22e7855c0699b6ebe23631a6e8752f4ac84f7d950cfcaf6633111e59e47",
+  "version.xml": "954ddc9ba76880b2ef8fb7014c04b692a871e02b834ed64884f4b6caf2a930fb",
+  "shariff.min.js": "d777ac2f76cb0f7e7cb5e1132852fd9484562c1cf4df5838a29d0747904a1b5c",
+  "settings.xml": "ecc31a1141c20cdaa3a981a0251e63261a19cf6b5e540e04cb7ca3f7c2b431ea",
+  "shariff.min.css": "d0e059f86a86c230f335a7cf7a2ec2e18865a380a75bba3e7a5840f0c89b602e",
+  "index.php": "8860d46c6c5a6af302c956b278f2c6e241ab8ba8408e33bd6c307a197ff1aa62",
+  "templates/shariffBlock.tpl": "8c995f98fb91066bd4f94bc5ab92b9e271e7f1ea1ab8e16a0f52dc4f5f7c06cc",
+  "templates/settingsForm.tpl": "5d249f92207bbe6492615d07dbcfd997933c61748fd34b7ab84ff72138116958",
+  "README": "97634d95892794f95f8b74cb94e04dccb7b4a9654f21818d6336550d2119834c",
+  "shariff.complete.css": "8c7606c7f91ff9b74adbc12dd15f847fe485b09daf0024fa0f19c1a9b14a6160"
+}

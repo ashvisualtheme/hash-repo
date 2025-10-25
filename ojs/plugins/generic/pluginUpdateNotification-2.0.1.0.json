@@ -1,0 +1,17 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "PluginUpdateNotificationPlugin.php": "40f0904f20d07b62cba7f4d61a4b0445e12720fa3f4d2146ed399ded3e18e518",
+  "locale/id/locale.po": "ffcc863f374561826f17ff0e09081d2d24287e1748c0e681c5bfb15152110d32",
+  "locale/en/locale.po": "3e9b7be15568f474b81d104102aa768f534f1f40b6d643fdcd230760120efe74",
+  "locale/es/locale.po": "3eb5ed14140a70aac65e0f856914b306cb7cab0a0d0ae8e4828cf3dd07096831",
+  "locale/pt_BR/locale.po": "0238f807e3331a2763c818755aad3da80b56f0de25f5ec2f78834ea6f343ac87",
+  "locale/fr_CA/locale.po": "efc4fa3232a9140dded1e4b083420fc85ec0649769f4a74e833e0ab9887648ba",
+  "version.xml": "a6eb919edd00e1fced9fc9c5b71f30687052ba0b2b51bbb15486294c1f92bf84",
+  "README.md": "f1d3b72be5b38193a6ba54e1622c24c01d861cc36f5fbba8943382f9bc4cd25d",
+  "cypress/testData/doiInSummary.tar.gz": "b5130174be46b3fb435d27c272966e1622b85757c0b6f9e952fa8ca24731503a",
+  "cypress/support/commands.js": "98f8e2fb95a26210083daf628db9cb456840bb683540eb428abc04218b139ad2",
+  "cypress/tests/Test1_setupScenario.cy.js": "643edd1fe8825758f51ddb6c1aed355e7e173983378bf312b559b91bc1d09b2e",
+  "cypress/tests/Test3_tearDownScenario.cy.js": "f99783c8d5a3cc392b7ce27f5e5632632d162eb8d4b909a76e18113189b4bfce",
+  "cypress/tests/Test2_validateNotification.cy.js": "f048f6ff28c117f45ee5ddc3730d761174860ef1a899e23d73276527b57ebb06",
+  "templates/updateNotificationPlugins.tpl": "9b971d70ae71acd53834735165b0eed421268aa64eda8dca331d0fdfa222a755"
+}

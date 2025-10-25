@@ -1,0 +1,14 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en_US/locale.xml": "de5bf87b6352c105cdb4bc13c798efbad15e1892068d94788655c44ebef2236a",
+  "locale/es_ES/locale.xml": "e12496cc2eb07660ffecc495d5c6f5f7d9a59ea2eede70ba41c1e2dc35757d3d",
+  "locale/pt_BR/locale.xml": "47db88a9f99d941100c20bf3eb9b3b31df4e8b76bdc7e725e93b890cbd32ab03",
+  "version.xml": "6f9a281789a34a45ad3a6ef822903bb6aefde26568564b0bd26f6fbaf8cc9adc",
+  "ScieloSubmissionsReportPlugin.inc.php": "373f72edb1a8e69fec974191b14d7410b569c4a1b9444aaac3486ea33047bcfc",
+  "README.md": "9326e1aea3b3fa9e96343cd9812a09edd153db21a88e6aa08455e5cee6125271",
+  "ScieloSubmissionsReportForm.inc.php": "862e78d9f06cfd5aedf0569f79bbf3d8edc11c0e1aca373a0c5c5a00ac99f29f",
+  "ScieloSubmissionsReportDAO.inc.php": "63b5b13ca38adc6e4cd1e42a3288f81302594821752f9c6096a9ef82ed7cf63b",
+  "index.php": "27935739661834e301fcceff19680b394d26eeee41ee553b7f506b079f5381cb",
+  "templates/scieloSubmissionsReportPlugin.tpl": "b53b2ab50fe5938f6f4d91fc516a03bb84ca49d25146690b26bb2e6a7bfd3c47",
+  "templates/scieloSubmissionsStyleSheet.css": "bec333af370a78aa87ea3aed1a887b5a51b39b20c06437dd8b381000b2bd53f2"
+}

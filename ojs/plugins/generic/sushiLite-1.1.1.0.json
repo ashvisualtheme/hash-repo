@@ -1,0 +1,20 @@
+{
+  "LICENSE": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+  "classes/SushiLite.inc.php": "9edff85860d62b9c9b68307aff1fa26e7dc3edd7708b1ffe1ccca0183140904c",
+  "classes/SushiItemIdentifier.inc.php": "fd5b3541c0b47301d89e8af34e896252850e183ddf3301ed5afc77e2920568a5",
+  "classes/SushiOrderBy.inc.php": "8a711229a0e60fb33588fa899195d5aeedb06ba503c1f4961517afa419108de8",
+  "classes/validation/ValidatorItemContributor.inc.php": "98b68111e94bb171c22e348430f26e14c6da93ca900bad5a4767719d5976748a",
+  "classes/validation/ValidatorMultiItemContributor.inc.php": "b7e909e15b93668bfc9e6c5d5cdb4a6d01c9fdad9b2fccb90c672a47515b7fc4",
+  "classes/validation/ValidatorMultiItemIdentifier.inc.php": "2672fb0c5b80af9cb2f5827004c579a5371015c0ef65c307633f69bb4f2b5b7d",
+  "classes/validation/ValidatorItemIdentifier.inc.php": "bf8ef2f157ba76420811514f75d1c06456e9416e179a9ec510ec7ee1f621e7c8",
+  "classes/SushiLite_v1_7.inc.php": "2528590d40181d239506272e4faec7e7bb2004e6c41ad4ddd48728bdababd3e8",
+  "classes/SushiItemContributor.inc.php": "14cab7e21e395200150e7bf3ee0752e8b9c705bb12b6e0db992e438867623283",
+  "locale/en_US/locale.xml": "8e7dd99b2e9ca9f80ec65303fdcfca03b762f16950a5be76f4a9b582f28df0d4",
+  "locale/en_US/sushiLite.xml": "a4f324c3b502183cda878e8812096c422150ea078e561ceeba83d6b5757dfaac",
+  "pages/SushiLiteHandler.inc.php": "c8facd633cd700108b415289726f3966dcb3b119e5c3a744f086b3b6bc0e189a",
+  "SushiLiteGenericPlugin.inc.php": "7f808b1e8317b548ff46d0489203f3e55feb8b30e72041a1a1e7e0503b1b9aa0",
+  "version.xml": "8689f82082ce16edc422d270eca387867af947dcfa7a15be39de299d7ad80232",
+  "README.md": "4be5d2c719c4d451e6f4899ab03546b84b45a0ca40ee88eb9dda35052353daf5",
+  "xml2json.xslt": "e30693b683573c6be97261992a6953ac5bc52c0a3f0082fa850764f6c7157971",
+  "templates/describeService.tpl": "a3d13757f78e84012deb7fd9e8e6f735bb4e3acd9dad37648c0f7ff4c3247ced"
+}

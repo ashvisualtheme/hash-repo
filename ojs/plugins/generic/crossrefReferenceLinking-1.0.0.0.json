@@ -1,0 +1,14 @@
+{
+  "LICENSE": "a45d0bb572ed792ed34627a72621834b3ba92aab6e2cc4e04301dee7a728d753",
+  "locale/en_US/locale.xml": "6aeadd085d8327f45be5f1cd6983a95b33b6f98fc196b46a0fd21c5621c94373",
+  "version.xml": "5ae0bc5b8ea094ef9a2f1707fdf6cdb46f32f177c7a429981e7abcb9947006f1",
+  "CrossrefReferenceLinkingSettingsForm.inc.php": "db769d269c193c029bd6604e56691266150f43a16a808d0cafd587184a33f3a3",
+  "tools/checkCrossrefReferencesDOIs.php": "0a49c3a9d0ef649962ada7dba2b6fdf27cddda00bebe3a9fec2ec9fc755acca7",
+  "scheduledTasks.xml": "a97ba9e77dcad80443e972a9da177bf1764f532357b44b8e36dcbd93d22e2954",
+  "CrossrefReferenceLinkingPlugin.inc.php": "81cc4c958d430c6b54d60b8727946d757931e971d825e176d3c0c5198dbfcccc",
+  "index.php": "deb4963af2da35b4c670e0350b9ec46e27b4f4e553ba7cf511f04dca24311e50",
+  "templates/displayDOI.tpl": "4085177de654d0e9c040853ecd73a246c81bf7eda33d68d0315304bb8a5173da",
+  "templates/settingsForm.tpl": "9c4b47091377e5a3c7c7e975bbd5a95c49a1b601bd2c6e4c813ce8406121ef0d",
+  "README": "5780722bb20eca9fd8d10e426d974ad290d89c7d2bc7760cf962de2bedaf5dc9",
+  "CrossrefReferenceLinkingInfoSender.inc.php": "c94a7ed3ba794d3af0e2249f79dd31fea04aa4037a4fe0ef9f951eac410646c5"
+}

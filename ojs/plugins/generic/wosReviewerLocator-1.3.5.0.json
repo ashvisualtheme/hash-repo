@@ -1,0 +1,20 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/wosRLDAO.php": "635a382d36961440d1c645951e2708fe333005215c0856548fd983ed0b58414e",
+  "classes/wosRLForm.php": "66865596078579fad76d444015a79a3998213b40da8a06846d0b6ff6f6ddb49f",
+  "classes/wosRLMigration.php": "8b92c43fc5fdd17bced4be5ec01b73bd241889ad869da31fb2a7d9cf21e177fc",
+  "locale/en/locale.po": "3d7a0117b73c75790b7e28e4eb07bacbf8c1ac059bf95ce62dbae2bf7bde14da",
+  "version.xml": "d2bb0ff6e0ae343081e0d54980faf766a477f0a3da11dd29afc7ee25e2ff90c1",
+  "README.md": "c9902bfd65cc786e7eac3baf012b7f6ed44802b150dc58beb166a473d85f11e3",
+  "wosRLHandler.php": "036c04d93c1f3382090803a23a7e39630592d5b8a7e5868e9e013245dd92ed19",
+  "WosReviewerLocatorPlugin.php": "27128864ee1bdb43fd6e849b5e5ad384c603c9fc3f28055dc61009ce59084bca",
+  "templates/settings.tpl": "892030851a7cc1d35d4b99c4228f292398526a49351e193615a89477331b2b2b",
+  "templates/list.tpl": "0280cf1032b82e35d5489b01ef165cab9cc33947f1cd16e01bb4981376270b73",
+  "templates/image/orcid.svg": "9a44ffafbf6e61dee9d57006d91ba6ba734fbfca77fad72ca81977f0e118830a",
+  "templates/image/clarivate-logo-color-font.ico": "0c09d04e0ab167e27f9dd73f58834ac45a1b072007d3fa89cf5d412e645d3927",
+  "templates/empty.tpl": "38c2c2621d4c66ea40978af3db6f2350d62e1cf752c7694faff386254bae663b",
+  "templates/grid.tpl": "a9a326b8894e7d73470e3d6945dc3a6491b7f55ecfee868b332e222c24656521",
+  "js/jquery.paging.min.js": "67fb74bbdfe2eb22f6b2168595c522500b9c193b927477fbae8befc67f0e4131",
+  "js/wosrl.js": "e5027b69db05099cd70bf6819483cf4ade9d67d2474fb0c3a1340304aefbcd61",
+  "styles/wosrl.css": "c34f15ec2e74b0d74b80d7e0f042dae8c855f0fdb3afbeea03e061c2e43d2f1a"
+}

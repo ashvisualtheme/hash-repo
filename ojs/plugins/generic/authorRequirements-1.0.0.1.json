@@ -1,0 +1,12 @@
+{
+  "LICENSE": "c53a65c2fd561c87eaabf1072ef5dcab8653042bc15308465f52413585eb6271",
+  "locale/en_US/locale.xml": "3de5c727355dfa45ea3412145b105e2f03ebf7c463a9530e33130671d728291d",
+  "version.xml": "17b89366e6bc49a0f98f72fae37f84aa27847422a26423d187f588537dd1e8e2",
+  "AuthorRequirementsSettingsForm.inc.php": "9e00c20cd301562c1e6aa842d12af8c02aa8497623b15bf93729022690409ad2",
+  "README.md": "3255adf6c8f2fa209d328715313dac83c0624696ab82d9d44407bbd56076be29",
+  "AuthorRequirementsPlugin.inc.php": "0fc9935f538e07bd4349a6545e59caf9ab2293c9af6240b36d1e4c14f5fd12dd",
+  "index.php": "80e63ba605d3fbba0983d6c5c9fc8d5979bf411064f85add619b381019ca669b",
+  "templates/controllers/grid/users/author/form/authorForm.tpl": "42a54979e20ad9105714ddc22ab253c94c05a575b249eb6e19b6492894cf08c5",
+  "templates/common/userDetails.tpl": "cf01d99cbe3214fe7b58eb444519ac7f8e9ab31ac2c1ebc793587cb2d3266759",
+  "templates/settingsForm.tpl": "7afe6013e2927d75f8b3c1a4812964d7815fa5f3c7e33bc464b7ad476c2b8399"
+}

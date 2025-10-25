@@ -1,0 +1,20 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/CitationsHandler.inc.php": "cc9d84f803c0773070656a2e858ad12babfdfe7e8746461f9f32bf7148fa128a",
+  "classes/CitationsParser.inc.php": "f0166b8f804bbf83f4b0056fa9e9e4f4d5caef1a3fb864f7ad83d6f4c537580e",
+  "locale/de_DE/locale.xml": "65f83ca0b15ae6e08c5c9ae5d7bd4f3f18adb8b8d477a2f1a365f81c0e298b89",
+  "locale/en_US/locale.xml": "b4ae14b73e0aca3e93a2502bebc86d284389bb2437a3d0f23b3acbad140d03d4",
+  "version.xml": "0123695a4ff5b76ec01f98e4615208b967343688df753f54ae70d1c18dcc4302",
+  "images/crossref.png": "a5de32e5203efa6e743cb6790400b62d50538c7332759eeb4963f45def032825",
+  "images/scholar.png": "6025e2f657b46ff9f44b3843daf7cd844af57aecef58c696ebe334e3660c20c1",
+  "images/pmc.png": "7fa59f9d038fe4461681ca8d637099edde23655be023b8bf5d74f36e78cf4352",
+  "images/scopus.png": "d0beff50fb059c52377dfd98acfe58989450b00588da7c6d09f3046e660b83f4",
+  "README.md": "b78265f3e46561b81a840c8402a39943be8f4c4ef6665152b0dbb313b778874c",
+  "css/citations.css": "9eeca2f658ab7e89ddd82079f96bc2ac86021753faffbca9a6fb09ea2ab9b6e6",
+  "CitationsSettingsForm.inc.php": "5aed9491d665bf2b9eaef799eb5ed1197198ae5c3137eb7ae3cc020c39254c9e",
+  "CitationsPlugin.inc.php": "b13cef3b68117db7ae3bed20ed592ae48e2ba08bef4d6f812aff6040445cecfe",
+  "index.php": "544bc3ce33b733c6e94ad48e7d3824bbf2b93ad957ce448ceb242d414c5bcf18",
+  "templates/settings.tpl": "9d9926b4a84a1a46e5aa83933e595af0d7691908f4139e0809d00e18d7b4984f",
+  "templates/citations.tpl": "8b82137aa4c54f4acdfa436a965e6db446dcb51b4eb61c7635eb12aa85dacf40",
+  "js/citations.js": "ecb403d24c37f0e2b49f420a532a47cb7051d8197eeecef016c5715e150f4d25"
+}

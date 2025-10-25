@@ -1,0 +1,14 @@
+{
+  "ShibbolethSettingsForm.inc.php": "643d522c813f578868785a5e2ee0ab0bebebc9fdda91b3c6b4456cdf48f8cd95",
+  "LICENSE": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73",
+  "locale/uk_UA/locale.xml": "697dc86cb5ed67866928bc86586dd0bb48f6dea40512e00f0659cce50a3ad617",
+  "locale/ar_IQ/locale.xml": "f08a1618b8860c36138a7c909b8b3d150a1a35108e42cfe7114a874718330419",
+  "locale/ru_RU/locale.xml": "ffe9f85b2a6c72cbb825abe1f8eebea6ccaa61c80e434702373bfed5dd3cbd80",
+  "locale/en_US/locale.xml": "4d371937726eba51ce317d4caa929a723bcbae2de82c561dc2d3954f7a430d79",
+  "locale/es_ES/locale.xml": "91072a74eada39fef3392df91a779533500bb2ce748922df922ad6aef523e206",
+  "pages/ShibbolethHandler.inc.php": "fa45103536fcab98b74feeebb24666151ebed87b86f687f40ddd463752218f91",
+  "ShibbolethAuthPlugin.inc.php": "9543eff30a4e49cb8e2e8485281389a0140dcf3961e3730cf7efb7a000f04a39",
+  "version.xml": "06cb26472beea90aa08dae9e2abc13fb7fd5273af0b568b2d2799d28ab37e7ad",
+  "index.php": "70eb26e6034779752e6eccdadc68cb59223a8e64101e18926d55cf543d492ba8",
+  "templates/settingsForm.tpl": "747014550664311eb8b96f4c2ac848b4b3cc64f195a9fb13a9e87d9dd8af6cc0"
+}

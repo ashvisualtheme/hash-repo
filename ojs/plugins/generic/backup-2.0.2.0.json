@@ -1,0 +1,19 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/de_DE/locale.po": "6415e1073fd8481d3e6f5372e99c05cb4db89b93ccf53669badff1e7eecf78ff",
+  "locale/uk_UA/locale.po": "27ffd888517a307468c2cc862eea2013ab3b087fa2bdb8d0f10ed0cf4a78d755",
+  "locale/ar_IQ/locale.po": "c6a7473cdc5bfffcd4c188d7edf9b5bb01a424f713e842fed6d46ce590274de1",
+  "locale/pt_PT/locale.po": "a71d6d30842d102610b44a79e655f5e0095c7b5b3f6f21c4a5b00eee1805ca84",
+  "locale/ru_RU/locale.po": "d730129e707bc2061af6c554e1f7b4b3d8064a1fb19d60996e711cb839749d6b",
+  "locale/en_US/locale.po": "d9c1bd39b2bd92a0672cdbace97eb7612c67166fd01d219b0f8477e37d8a8cae",
+  "locale/cs_CZ/locale.po": "972c5e1c045c85deed9cf776fefa8652d02d07198c4a7bec03f5199728d3b36a",
+  "locale/es_ES/locale.po": "89efe2409d07c8b0643d5c5b5983856c3732c034139074b0b029cbd58fff3038",
+  "locale/sv_SE/locale.po": "8945e07eecaa12ae1fe11c5cf869df66d7c392211e541056d6b9f5d1133f2697",
+  "locale/it_IT/locale.po": "9653398d4474f5a97b317dcc4fcab389d3ba727ab8446a80ba69a628e1372f58",
+  "locale/nl_NL/locale.po": "b24a459f9b8f4dfe7539e99e966087e515211785ef340fd74f93a09cea51a512",
+  "version.xml": "e48ae3f751a1e8f5841296a98b8b5c09ca2fb9e90c4073bb966519da4375b0cf",
+  "README.md": "c2e6f8bda708ebc738357cfb4ac56c9d8b502c013e793b51a7ad8efa67457d32",
+  "index.php": "aecf42810eae9b389f4494a95c46dc4fdfbc83c94882d11663e4f01f7982001a",
+  "BackupPlugin.inc.php": "b41c57763afdd0886f73489f2f54b580f2a50c344fe18e413d4537ce60097c7a",
+  "templates/index.tpl": "66121628628c95b535344a3fae421cf8bc640284ea8c312a79a67cb694125285"
+}

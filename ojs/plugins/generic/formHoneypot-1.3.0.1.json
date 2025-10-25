@@ -1,0 +1,15 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "FormHoneypotSettingsForm.inc.php": "f4a294218de2a5d96d6e1ab4890c1f96fdb7b821f74c50826450d89ba7d0b480",
+  "locale/en_US/locale.xml": "b323ced9496eeea599befb0acaa38137b295a75edf1b50171e45f6a23fcea1b8",
+  "locale/es_ES/locale.xml": "ec8d99c7c0dfe0b22b3cf5c432ab335917e17c303f6976a3e6c8d31773339269",
+  "locale/pt_BR/locale.xml": "3297e6da00236b9604905aa13214db2a39b63ae8177a00332821f8b005fb6d59",
+  "locale/nl_NL/locale.xml": "14fc46eccaa42b2e4d8ca73442f73d64c8e9f5803ec92460c060d33d2bddc685",
+  "version.xml": "83c017364e9f35f4e8263bddab9e09a9ed9fb0289fc8521d6b1107b41c346f7a",
+  "FormHoneypotPlugin.inc.php": "bc6edb05ec72b1e3ef0ce24713271e9740a866839edf3aa4e150555e69552d61",
+  "README.md": "bf0ddb037816b9ced057c64c941138b820a60dc264557b6598559361e284f6b6",
+  "index.php": "52e9087752f74a305a4ca99dca714d2b460027883d883959bd585f8280197262",
+  "templates/pageTagForm.tpl": "8627fb80c76162bef894ddf2962ae097e7a389256d9e10bd660339d1a1669609",
+  "templates/settingsForm.tpl": "9a3385b85ab6b6803db0ea9a2d2ab08a4d5968d5e7d58a6c01009903c970ed14",
+  "templates/pageTagScript.tpl": "db211c64b44e90c9dc1690c4dd64717158963560e6fc5a718ec6a44f929a832e"
+}

@@ -1,0 +1,13 @@
+{
+  "locale/uk_UA/locale.xml": "aba45bf9ab1cff4ffd81f6a795cac0ea60a63f2c72329a5647eac72199dfd3f6",
+  "locale/sl_SI/locale.xml": "0d2dadeb30183f44898d21cddbd734b523c4436ac6bd9b9e1812f766509b18ac",
+  "locale/ru_RU/locale.xml": "4474540da35206b5c9294886cfa7df80650d11729ee07086440f452aab8305a7",
+  "locale/en_US/locale.xml": "cc2d255a54691e9053abc74e7e185a1930538f46890628791ef2dade09b62b16",
+  "CopernicusExportPlugin.inc.php": "53fd8eb1e95f037a26f45c9dc7e5a884ee26df5f83688a0e58a2799d92aaa156",
+  "version.xml": "86d4bb80941a731ad202616deda26f87d3ca5248b5f90e88eeff45a6c41be2ae",
+  "README.md": "c7e218395c85d0ff4104a583857afdabd7cf1167fbffd7399ff6ab2d0062c331",
+  "index.php": "fd2923556ed0911da2a08f0f5ae83f9ac2376336116ef20de1420ea9c74ac149",
+  "ic-import.xsd": "2775bf3e3ec202565c91365c0d63746d21460d22c834f7c05e1bd2fbcf17c0aa",
+  "templates/issues.tpl": "13340b799af103bfefee9b6acbd57fdf80ba2276453a6b35924fd4b31e865b11",
+  "templates/validate.tpl": "4bf5924055b438778848842c6541bade2463a7f67cfa63e30312d301315efb08"
+}

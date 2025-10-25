@@ -1,0 +1,16 @@
+{
+  "LICENSE": "39db8f9acf036595a2566ea3fe560bc7bd65d8749f088e0f4a4ef2f8a6cb4b34",
+  "locale/de_DE/locale.po": "b93c4a6d982bddf1e7b1e279bc5caa183a19f07bbd4f190a5001d9253b74508b",
+  "locale/uk_UA/locale.po": "de9c88cf0df2696a0bfefa1d568537354883af05a1e40789efdd5ed36b5a965e",
+  "locale/ar_IQ/locale.po": "bce77f3bca452e5debd255109f121e500627b9d029af07e8ad37a8be5ada654c",
+  "locale/en_US/locale.po": "6b9eec585de096b2e862709c6961017a1c21c04c1f5ea3bf9c0ee03db846129d",
+  "locale/es_ES/locale.po": "66f6cd33225d63a8d78a8a37a4d441dd2877fb9d283f3063584327ee8d3a7410",
+  "locale/fi_FI/locale.po": "f120ad59da5552a621e37f39b95b427d980e1358d382ad3de63d700707d7dddd",
+  "pages/BrowseBySectionHandler.inc.php": "72bbbf9701da2465f139bdfa5b421789f7a96c06458654e2d7176ab2fb2a2e2b",
+  "version.xml": "b4e48ad4249b5f8b5bc6089555ed87a4bc888c313e0f82a325f8b7ad1d091839",
+  "BrowseBySectionPlugin.inc.php": "ac51eaabbb19fbfb57e14490841395bd495308f7843799aea317abe7c4dfb142",
+  "readme.md": "ae8c3cbea704b35975f86a572c4b2196799be5fcfbe52a9300cc4c0f1a2584cc",
+  "index.php": "ba0f9f808c88821489852ce2ed1b5e6c89923fcd7343cc28a28de31675ff30df",
+  "templates/controllers/grids/settings/section/form/sectionFormAdditionalFields.tpl": "c2975cabb5228c6d46e9050f99b1d2aca12bc609d467b74e8ab7ef36c74ca821",
+  "templates/frontend/pages/section.tpl": "38272eb9647f5d287c4f0bf493bd12256212ac38d6e45db3c9de7d9645701e3c"
+}

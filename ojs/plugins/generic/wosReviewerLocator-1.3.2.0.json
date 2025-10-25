@@ -1,0 +1,21 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/WosRLForm.inc.php": "858bf8edc8e276e5f1bde57b459c459b859932a29f1e529e2312e6e2a3749831",
+  "classes/WosRLDAO.inc.php": "2e81105a9f3fb8b5d8163810cbbe3770430320890fbedce90f7bab7a6da7a832",
+  "locale/en_US/locale.po": "f66fe47ca0a96ff0f48bb62cfeff8fdee041d54ff59737ff1b0a9bb34ddca89e",
+  "WosRLHandler.inc.php": "083d22aa4e75ebcfbc13bcc53c799df681eee83b3f0503bd19584d4f7f20a361",
+  "version.xml": "bf703aaad05a280a1d049b4073f2ec82c2c471f78519096e3926405f45080f73",
+  "README.md": "e6bab4e01e3c84fd497ff9b2d937a8eca1b41094c3ce3f2070a9eac7b03f1ad9",
+  "schema.xml": "99f602363b69d27ab814aac7e0b88c63e15ab49a23c6c51a1579749832366243",
+  "WosReviewerLocatorPlugin.inc.php": "068bd12d2ad06123c3cfbe6ffea1ac2b5498cf7c8887a2f55e27a9f2f9c29050",
+  "index.php": "98cc9081a829aa3cb5b18f3fe9dcbdf49b72120eeed6b20d12bc16d9dbb9e79d",
+  "templates/settings.tpl": "892030851a7cc1d35d4b99c4228f292398526a49351e193615a89477331b2b2b",
+  "templates/list.tpl": "0280cf1032b82e35d5489b01ef165cab9cc33947f1cd16e01bb4981376270b73",
+  "templates/image/orcid.svg": "9a44ffafbf6e61dee9d57006d91ba6ba734fbfca77fad72ca81977f0e118830a",
+  "templates/image/clarivate-logo-color-font.ico": "0c09d04e0ab167e27f9dd73f58834ac45a1b072007d3fa89cf5d412e645d3927",
+  "templates/empty.tpl": "38c2c2621d4c66ea40978af3db6f2350d62e1cf752c7694faff386254bae663b",
+  "templates/grid.tpl": "e5cf5e8cb8fd74cec4f4dc79e480fdc47311118600b92966c95940980e4580fd",
+  "js/jquery.paging.min.js": "67fb74bbdfe2eb22f6b2168595c522500b9c193b927477fbae8befc67f0e4131",
+  "js/wosrl.js": "32709b28e9a7ff0fde6e586f31feb545292a7d19092ccedf896613949b8e31dc",
+  "styles/wosrl.css": "c34f15ec2e74b0d74b80d7e0f042dae8c855f0fdb3afbeea03e061c2e43d2f1a"
+}

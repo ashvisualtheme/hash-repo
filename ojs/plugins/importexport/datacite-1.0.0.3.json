@@ -1,0 +1,17 @@
+{
+  "www/dara.png": "bd1aee19bd3bb88d3ac9fd492314dd1be4d9ef77c9c847cb67a8e218622531e6",
+  "www/usage.gif": "aa5315559cfd1d08c41b1dd8012621d34276be73806264a987d2e4e4ccc4bb03",
+  "www/datacite.png": "f46856a2c7d1d780ac05f29a54678383bd9c57acc5a54dca9b2400e4193982e7",
+  "LICENSE": "e3a994d82e644b03a792a930f574002658412f62407f5fee083f2555c5f23118",
+  "locale/en_US/locale.xml": "9fd0b49bfe44117c612bcca6cc5c2aea4d8b7be6195ef5cb5bfd455197c98106",
+  "locale/it_IT/locale.xml": "b40ea679b9a86d8cd22ba30d1aed213fbfbb51feed4498e9051ffa9d3c919e15",
+  "DataciteExportPlugin.inc.php": "4152dac582bb82ea96e19b04bc26837c0747ab0b7dce6a3a0791030b64fed9c0",
+  "README_DE.md": "cdb204c5133d41dfba5bc6c3bfbd5cffe8e84ce31e95cea3ddc32b8d7fa084aa",
+  "version.xml": "812405089181e531311b7cb9ebd42bd0e5ce4f7e9aa056805bc29945a202ffa3",
+  "README.md": "f8b4730b7c4d241d1727c4ccecd5f1b9c03bf0b9234c74fac76687f0b96d94f7",
+  "css/datacite-content.css": "fb7c47a701e8ad285de886c07706139126f558c073d0c84ac87b93df975d18df",
+  "DataciteExportDeployment.inc.php": "8158b78d417d3f1fc8648904878bd9f8532425c821e56000d0cb9a5a22e86b46",
+  "index.php": "e1c02ce6be2c4c5f79d210c4ab1d0be8813e80f5af1c86bbd266a58c118c63ec",
+  "templates/index.tpl": "545ea6fce045564813799b62e4af27d4cd2a062c8897d9e8669b7ec3a6c2acf9",
+  "js/datacite-script.js": "5f5d1fb49feb1d4e6c8f28af81fdbc354ffbf26ae5fb7ea04b6e27d6615852af"
+}

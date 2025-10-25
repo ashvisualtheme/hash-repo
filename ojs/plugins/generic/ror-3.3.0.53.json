@@ -1,0 +1,15 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en_US/locale.po": "8af47f3d10fafaa9e43561369944a72d523ce6c3743de2ad90a2901be62307dc",
+  "locale/fr_CA/locale.po": "3306ffe9df5d466d41ca3bfaa1c7e3c4782d8968077c0a5426e9cbb51a97b975",
+  "docu/ror.gif": "f283066cd40d07419348272ae10ba0607c4a22445447d98e3bcce67501bf8806",
+  "docu/ror_customization.gif": "ae34d27ada38e3f4c8e33505ea1a69f6c82f140f9d62ee293fa40983ad25f762",
+  "version.xml": "c86a3cf02773947b0bb5a8d36b3ef44e7ecb01699bf3660530a0c6837ce71760",
+  "assets/rorId.svg": "475de7d34a0b062ebe381326d9caa4a6d65c18d37050e8b159508dcb8a7abbdc",
+  "README.md": "70ff840edb75c0872c5c7c8d1e6e8bfe7a83ec7bfcad19027634057f2b814780",
+  "RORPlugin.php": "5722a6031d9ae4fc16e5b5366aaa6770c9669780406606f82f66438985b46f5a",
+  "index.php": "407313974086b1a9e06826d93d89fd09b46da782737a88152acde1b589db84c0",
+  "templates/omp_submission_authors.tpl": "9fd444ddbaed284b55bcab88710a90296628ab709edd1f2260afdc71bc27f6ed",
+  "templates/affiliation.tpl": "0b83e3d62682f5795937774c936df698863fdf1e84e6ce8e756945d2b0802af7",
+  "templates/ops_submission_authors.tpl": "6ea8644b3e8e6f466578306ed703777e65b81e0f00a4f48d762de154c8235cf9"
+}

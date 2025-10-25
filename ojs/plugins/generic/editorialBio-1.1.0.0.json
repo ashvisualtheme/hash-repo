@@ -1,0 +1,12 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "locale/en/locale.po": "965da2fc4f09be25f5d0d642554f1643a49e985f01d766b5a6f06fdf8e492419",
+  "locale/es/locale.po": "b8eb77bfb9044479d435a61f69faeb5eeab72910cc17c6c3644963c9175c53ad",
+  "version.xml": "d5cbd92bdb92e4717cab15d4c37a7011a571086bd9aee1a8850c1ecff1d0cfd0",
+  "README.md": "374f5d7575643128b1555fb1c35793bc4904571a528bfcae6a0029144ec02c73",
+  "EditorialBioHandler.php": "d4f07950531179519f0fae51c0f0ae93cfc246bc34b6cc3497e3508695be511c",
+  "css/editorialBio.css": "29ab252270f3092dd469c6ba04a64dcb6404b7febcf663c80829fee97610476f",
+  "bio-link-example.png": "2262965eb35095ce9919e09c14d08005abffae9e4d36d17f27ce994f19bc26c3",
+  "templates/frontend/pages/aboutEditorialTeamBio.tpl": "a4d245b820a0eb4e11ec7783c53fe8e80c19b2432f51ad8df39481d94f434405",
+  "EditorialBioPlugin.php": "027456b0a4665f928cead14c229bf1eafadd1a8ef34afe3740f82cb18bd1522b"
+}

@@ -1,0 +1,16 @@
+{
+  "ContentAnalysisPlugin.inc.php": "a3cb7fe34a1c3fd6fa7b065fd33eda81cca7aa96604cc35f08752de9ecca3136",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/DocumentChecklist.inc.php": "5f05dbe99098c23bfb21577406f83e3fb7d55de77d152b05f0871b50ad3b6cb1",
+  "classes/DocumentChecker.inc.php": "c89ad7b61f88d92590f4782aeffacbfb2e4b3dfbb5ff8429c25f35d6f0368165",
+  "classes/ContentParser.inc.php": "5256093a926dc2692afec8611b7fa7619d0e2554d9459f3367c2a6955f218247",
+  "locale/en_US/locale.po": "10b7883caa4458618dce92fc2601bedc12a771a792306bbd815b28ec333d73dd",
+  "locale/es_ES/locale.po": "85d2cc2b6016234152354e07026ddc7678725a4335afa599098adbcca8709b24",
+  "locale/pt_BR/locale.po": "b51b26042919986549a22a4cddb9c57878c0e7d6fd5eeaa7c8dc4547b7ca80ca",
+  "version.xml": "b621efcc52531ccde17b1524af3547013a478621bf16d162b0730d1c5f0320b4",
+  "README.md": "fb9a3536f151c0ddc22a7a23d4807e0255021dd48b2ae68aeb2b94e7654494b9",
+  "index.php": "fe6d68eea1593317007a5f82e2ffd8a05f3d1fc465705ebe8693dc5be51342c3",
+  "templates/statusChecklist.tpl": "55d466cee3480dbee6acc2cc44ce74e62ed6c0325f591b106ef6e29714c74c2c",
+  "autoload.inc.php": "72ab87565be4ad0f32bbc1f5c01b1958a9c9deded518c8075f71f5ddf49319ae",
+  "styles/statusChecklist.css": "666e3d241fe5660d20cec2771ccb83ba1b41c17066fb7b38fe418116c01738cb"
+}

@@ -1,0 +1,21 @@
+{
+  "ContentAnalysisPlugin.inc.php": "2abe83aa0f93a8bc0a5a7a611f9bec21a4dd74df320a414128b41e4d4b4787fb",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/DocumentChecklist.inc.php": "68f70853b51a33c514b395fbb60e7601822aad232c81009fc2e607f2aa34478c",
+  "classes/DocumentChecker.inc.php": "48d58bc15baaf05ed2c3ac70c8b3b4184593ad88d71a03ebd553304fa85e14ef",
+  "classes/ContentParser.inc.php": "d17cd69d01f6760bad554491057416c28ea6d08ecf360165e01e83431677c546",
+  "locale/en_US/locale.po": "683a7a5c0a49bc523803005edc7d7a5e2e7c7d9d24acb7218241bd78f7022bb1",
+  "locale/es_ES/locale.po": "c29fd78d75d0bdbfadca871bcdf650d85c8c75a604b0c5e2abd7fc508a96c583",
+  "locale/pt_BR/locale.po": "764606ad8204758288ea2533c48a877748346046a203bd4b753fef74d7b5882d",
+  "version.xml": "105808c80f309e42bbcb0ea863bcfed0799ea7f0b2ab8f87eca17c58c83c7be4",
+  "README.md": "fb9a3536f151c0ddc22a7a23d4807e0255021dd48b2ae68aeb2b94e7654494b9",
+  "cypress/tests/Test3_errorDuringSubmission.spec.js": "4462b21d3c9403f14741746b1d51607961c7d3a45309922355b8603f13aa8123",
+  "cypress/tests/Test4_nonArticleChecks.spec.js": "df5fcd13cd48523aa0741d2489b7f86e40df61a9aba1aa2f3d36fc4bb33ab58e",
+  "cypress/tests/Test2_checkboxResearchHumansOrAnimals.spec.js": "aa0db0e70a432bd49e4bd95b0f2b32278fdf036a158e4f9e86ed9999733f2915",
+  "cypress/tests/Test1_authorsContributionSingleAuthor.spec.js": "b8888e4dd11b30a5874f5e58656d7652ab887d74c048e2f4e6384bb4d009bb58",
+  "index.php": "656475adc68cae46020404173b2d7b2772af01ab71e441f97c46eadbd3986119",
+  "templates/statusChecklist.tpl": "369f6ff55e6e0dbbbf32b1b86b541bc348e90ac06ab8cdb2d5a1a322a0a78221",
+  "templates/checkboxes.tpl": "d7a972bceb5e38df46972b11b929773f494c34bf55ce6bef877b18a45dde8942",
+  "autoload.inc.php": "8436f0602bacd951fa1d22e061d2c9cf7c13a58ed77b03f281a3c972c0056f78",
+  "styles/statusChecklist.css": "955a91575e16d439892c64f0dae1ef306caf6eaed5fc0f630ce8b3bc943f13fd"
+}

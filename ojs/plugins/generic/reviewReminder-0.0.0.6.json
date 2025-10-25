@@ -1,0 +1,13 @@
+{
+  "LICENSE": "8150b9379bf11d5a10defa43e117ab47ef52c1d6f70a1598ea294bc4034d6619",
+  "classes/ReviewReminderService.php": "1d69f2b38e29cfc541a0fbfc3b3d6269f3404d6568efd26fc9b0a21ef6296295",
+  "classes/ReminderFile.php": "d6816a29b0ca9753ab8a6db9ab4a49904da1f29284412b4acf51a43a1d76dce4",
+  "classes/HookCallbacks.php": "505c050dfe6f500e64a8bc8c6a89292c171b1bda9966dfefd594b87fdbc3d1e3",
+  "locale/en/locale.po": "1715c5813e65e7541f6bed45d41177b1fc0c7474da6d048c23bdad79d904bf23",
+  "locale/es/locale.po": "456a1281b1b22a27eeae657de79ed394917f617f57b185c612d64db096f54f5b",
+  "locale/pt_BR/locale.po": "bc7d135c4d4c016367876606209fc0151abc29516b46c9ee5db521e67cabddad",
+  "version.xml": "dcdba8b307dc0ac23a1f5a38d09d44871a8b704c14e599fde7a430cfa06899a0",
+  "lib/ICS.php": "4bdd15f32cfc50501f9b7dd6df2496aa177bfba88113faf88bcdea83afef10bd",
+  "README.md": "285935c4f6e9c503cd9666596f25ec219228faa6274877565210c828664b1946",
+  "ReviewReminderPlugin.php": "40bd4be1c04328661d2bf5d871707b2e5236e70b506c86d6e5c390a23ef8dda7"
+}
