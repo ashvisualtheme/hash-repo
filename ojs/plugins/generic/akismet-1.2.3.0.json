@@ -1,0 +1,13 @@
+{
+  "AkismetSettingsForm.inc.php": "8e4a332bbe5003e0a538884900b7112860d37251a7c6c08c0b254c8f27e40fb9",
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "locale/en_US/locale.xml": "7f88cf37ed786549e9f7b662f78d90114d973c4188d8672d60d9bb8df8d5b5c4",
+  "locale/en_US/locale.po": "8aa4e5c12d19fabcf0d14ac10487eb5ceecaaaef928b28f31bdd8f1d5318d456",
+  "version.xml": "258564fcd0fc596565065b83a2211bf8bf21a95fb36be51aefa81ac4ba2d8f1f",
+  "README.md": "d6002b2b18b5ad8b168786d0238cd84f5c4a0239f7b4556fa0421f2437c7a21c",
+  "AkismetHandler.inc.php": "4936ae26f2b38f657f55f1bfecee26a1a5486321151609683e2cf4dbc87c3ef2",
+  "AkismetPlugin.inc.php": "5329067f070fac32a20bbffe9ed5ec585c36f0b8ad2c6f40db9ee9533e13b0d0",
+  "markSpamUser.php": "78c4206072f20bd36a86f56d64f8dac19a5199bf1b0eb8e96a3de34278f98c1c",
+  "index.php": "28b91d050662aa39987d65e3e16d718e7f5ff9b077ada3d6e1fc01cea77358fd",
+  "templates/settingsForm.tpl": "742ec01e9e1819fa97dc9c7a7863ad6a8d120bb8fd235f94f5fd80800900da03"
+}

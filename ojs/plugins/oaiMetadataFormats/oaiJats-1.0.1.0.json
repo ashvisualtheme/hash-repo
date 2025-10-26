@@ -1,0 +1,13 @@
+{
+  "LICENSE": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+  "locale/de_DE/locale.xml": "dc9f02fa3a7b16e374d5aaaeeebf69a53f628bf9216dd467cc399566c4abd897",
+  "locale/uk_UA/locale.xml": "b71a9cfd42a57aaa8dfd66ae198df5f4af9f3e666f85e6ad34a100cc95e49a03",
+  "locale/ru_RU/locale.xml": "47ee589afa689d8efca96e5ce18cc46dafde3ae62927f2c6d67dbb4bc93a28bb",
+  "locale/en_US/locale.xml": "d5b6a356bb83316bb127141f2ba664295fdbe69d33230dfffe01b02ccb4751b8",
+  "locale/es_ES/locale.xml": "48c4e42a8bd1a74fa9e7728ec6af8873bb10572840a59a71bacee17edebf1713",
+  "version.xml": "e7a694f71365228287f9a1671636df84b18d530589c79f2b0ad09b8dcde24def",
+  "OAIMetadataFormat_JATS.inc.php": "05b776fdb8c143bfaa0169531ad7dcc2f02f13f6f59cf31c99ef49ee4b4a5b21",
+  "OAIMetadataFormatPlugin_JATS.inc.php": "feef8a16fb04061f5bfbd3b37912818e02bea280645d83ada8d1bf7c050c4250",
+  "index.php": "105694e13c2f55e7801648b48baa3b5da89b29d50c48480162a412355cb62144",
+  "README": "c520fae84b154985c417ecd900b26c1b5f4ee66ab877ae9da898f3891161e927"
+}

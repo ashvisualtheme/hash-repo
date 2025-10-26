@@ -1,0 +1,11 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en_US/locale.po": "e427936064bb136d141006b2c718609691a1c2415ad33ffde7137f72305ce4a2",
+  "locale/fi_FI/locale.po": "0d7f28a878936f49d185f29632e0365dd0c029ef2a556dde22d9ae2d1b25b53d",
+  "version.xml": "085d1124e4a88001dcf36b23f0fb65e9bb4bec709d3fe5a163f645d4cdae76f1",
+  ".gitignore": "e2eb93a61ffd7877ea5c751abcb3a618e8e2e9a2073a27f66d4114fe10819f86",
+  "README.md": "593913b7a4fc11e86afd6e7d62f6e77faf2c4b04356113864df4e930aacdfb57",
+  "settings.xml": "ecf20b73b42b0089337535f31a6693f472ffc551ddb27136e081d17170fad7bb",
+  "OpenGraphPlugin.inc.php": "af8abe5bb026e44c9532bce67e8987e8135af13f893f0c71f51210295a78d216",
+  "index.php": "f49317cc5c26f2834f23b95880aa8dc47c39c7315df5e75f61169bade74db05d"
+}

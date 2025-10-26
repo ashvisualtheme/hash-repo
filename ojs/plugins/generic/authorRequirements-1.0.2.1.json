@@ -1,0 +1,16 @@
+{
+  "LICENSE": "c53a65c2fd561c87eaabf1072ef5dcab8653042bc15308465f52413585eb6271",
+  "locale/fr_FR/locale.po": "130d92d53c51ae230ee650cb40ca8cb2d0e969a96f779332ec5574472499c225",
+  "locale/de_DE/locale.po": "b9722c7f90bcf27eff6f52ae162ec8946758752c074111a41cede9cc1ea28a4a",
+  "locale/en_US/locale.po": "b980eeb5eb8071df8fcbc57e14fd5e1241b340ac180c14518c0eef8f148c4f8e",
+  "locale/it_IT/locale.po": "41f81b883bce7da455230df20a3721e1c389e321760234bb2c23dca4df3a4409",
+  ".github/workflows/release.yml": "d4008aeea2b8fd2f2f6aa0bf1af0e3935d618f5734fd10a0ce25cf5be20d916a",
+  "version.xml": "6a6526a2cae7556538a89ef09aff231b34508544b87b1e309d72ae5adbe2ad15",
+  "AuthorRequirementsSettingsForm.inc.php": "17e28bb1eeaa0dfea8555d38afd84cc5acbaf915fd74eda53839f0e1e6aaa1ec",
+  "README.md": "252aed0347ce4879d2804d8df009a34c660c2ec28bcd509c58db0376d3c68120",
+  "AuthorRequirementsPlugin.inc.php": "eb451f1e3bca8027132c886f713b1ca717753931b818853a889f98dc26a3e5a1",
+  "index.php": "b1265fa04bac27b66a2ddb8a1d5a252599dfeee7f78584be838ead5f702c3f94",
+  "templates/controllers/grid/users/author/form/authorForm.tpl": "df5467ade8df740ef153ef5015ede355da890cb66cb3e8fd204b93930bf8c9e0",
+  "templates/common/userDetails.tpl": "8d0bf6a07f12a750775524433b5d02c86a5c608bf8e12cae7f4a43f3e22072c0",
+  "templates/settingsForm.tpl": "f8f231f47b2471b11d35d97ced890a842f45577b7ac6833aa4824916e7fbf084"
+}

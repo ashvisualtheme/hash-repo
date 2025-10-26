@@ -1,0 +1,12 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "locale/en_US/locale.xml": "cf857c4a555e05ba1f7f89b700f4d4fcfcce71c38768bc3a70d1f7ee3ecaed18",
+  "version.xml": "a3e0e0f3d4be31e4fbc9c3c4405eee0178ecfbe8258d85f97383cb4b65fcfc98",
+  "AuthorRequirementsSettingsForm.inc.php": "033b20af6dd8d2ce1dda252355310bab417f8fd54138eeafd474d06196f925ad",
+  "README.md": "d775b21f1a2a3bac5bc95dc6ef70a51513ef7c74349f816b3089a405838d66b8",
+  "AuthorRequirementsPlugin.inc.php": "b52147f8d4c533afd3a36e729218c2eb331347dfd2d620bc5add7d830648ae8e",
+  "index.php": "21921d7ae911a250f33d7425129f7a605c8c1eb70f5528acf0b631d114cc364c",
+  "templates/controllers/grid/users/author/form/authorForm.tpl": "20e238936fc9b3093c8ebf3076bf7d6f4e3d40865a97dcee2c067744e86621fd",
+  "templates/common/userDetails.tpl": "4302e58ec72ba46e479080fe0650e31bb1dd91fab29c4c9374e7f9c543d11b8b",
+  "templates/settingsForm.tpl": "222740a6e139a22462141cb8264eb36b04f20913e18afb8407cd87271fe13b48"
+}

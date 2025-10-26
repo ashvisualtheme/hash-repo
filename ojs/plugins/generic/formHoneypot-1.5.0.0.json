@@ -1,0 +1,18 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "locale/en/locale.po": "761c16efba4029e409deee9d148831b58af6fc9eb75baf91cf47051d4b0d995f",
+  "locale/nl/locale.po": "ecf7a6eb0af54114f40147f6134a718243fb0b3a7943fd627a52c53243f9b3b2",
+  "locale/it/locale.po": "060a528123accc627cf239acb8ecf819c15b83b41b70d6f253a410b0b4eb7f13",
+  "locale/sv/locale.po": "f21dcc54d710a55c4c326b3cc1d88ee5b34fccce363e47caf7e274ccd7aba702",
+  "locale/es/locale.po": "94f18b9696d7074cb6ad0d1f48c277ce06efa2ccb83fe48b359bab46cc75ef09",
+  "locale/de/locale.po": "76af750174193ee91fe66ee370f4856bf29003c1ca6df72b30786f860d3c34e1",
+  "locale/pt_BR/locale.po": "92980eb9e669fe0c6dc813316372cd58c6e1c1b23f3210aa2af9e8e42dc74402",
+  "locale/nb/locale.po": "ed4b42925bfc104a114d1d276ea5f29e357ec475ad76160404fbff80eb4a72c5",
+  "FormHoneypotSettingsForm.php": "a8a5270264ae62d9f3566801fb98273f2ee4e2f825794d100f3e02be882fd31c",
+  "version.xml": "8f1945d62b776a4186203adf52c6e8500d62b4d20d3e593644dfdd3ba20e2a76",
+  "README.md": "74d801cfcd9cf3caa985a61b61afce2a064c44c849f5459d750b536fa2978e9f",
+  "FormHoneypotPlugin.php": "0a890e97cb33145a17ae110d80908ad36c2e0f0940a0ad4040a696b0809ce44b",
+  "templates/pageTagForm.tpl": "8627fb80c76162bef894ddf2962ae097e7a389256d9e10bd660339d1a1669609",
+  "templates/settingsForm.tpl": "9a3385b85ab6b6803db0ea9a2d2ab08a4d5968d5e7d58a6c01009903c970ed14",
+  "templates/pageTagScript.tpl": "db211c64b44e90c9dc1690c4dd64717158963560e6fc5a718ec6a44f929a832e"
+}

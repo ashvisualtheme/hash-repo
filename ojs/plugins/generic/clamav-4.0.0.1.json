@@ -1,0 +1,21 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "locale/fr_FR/locale.po": "3a258abd5e9cd3d30cd981689390c31b91ab6be168c00060f83ec0d4039f2aed",
+  "locale/de_DE/locale.po": "27468c3faddeb82c2b0ed19bb79a65f5b18811b2816f00c704172f6fd4842cc1",
+  "locale/pt_PT/locale.po": "0d2c2654cb0080c41b69dffa1ab290acb1d160c4ea12093d5823172eef42639c",
+  "locale/en_US/locale.xml": "dc7b13992fb5dba85759b08395eef9b316edc4fc0b6799ba7dcd34c86cd45bb9",
+  "locale/en_US/locale.po": "b4a260eccedd612d22a01c8fa0fea8c854114e476094ca64701041a73aae7268",
+  "locale/ro_RO/locale.po": "81f247f328f285ed3735ebcf113b8bb382fb5434746f83479974a77253e68a84",
+  "locale/es_ES/locale.po": "6b01fc494b3758546d186f7fe2ea8f39bd34687dce0d6d563f55654c3eed5f8e",
+  "locale/it_IT/locale.po": "81f6a9213ee6a2a81b7cb6319c854663152dc70645fbf2ffd19e181680ba98b9",
+  "version.xml": "3823c55d7d9b2c0e93745d1e0b0a42fc1a1fba2fa2f663a7e98ae7595f909705",
+  "images/spinner.gif": "816bf6e0784089c60488dc838abbf0c1338e926c9adebf02fb234c9c21a3d020",
+  "README.md": "575e8f047c2f3fb5700e992e891425445c1cfacdb85095ee89b7adc245921b0d",
+  "css/clamav.css": "6b00ae562565a87640e5fb4048ce3b6f40d9315ab4cd85ec886a689f84027b65",
+  "ClamavPlugin.inc.php": "e4ca796516e41b8540e3480357acd4fecf8314f75e777f5c693597ec83259497",
+  "ClamavVersionHandler.inc.php": "550c89b0030122686e5003507d430e5027fd6163ce34aa87714f9164bda49d99",
+  "ClamavSettingsForm.inc.php": "6836f0031b0d71c90978fef01b33f5d7f12743248058a6f7070bbd101120d073",
+  "index.php": "a2dc3fe8395e400d04baa187dfe48a89cff1fc33e1ba6fccb4bc69b3603b6945",
+  "templates/settingsForm.tpl": "9e89bdd1f8e2305fdea98e6cb582b3d07478a8d506f9888094084d1325de341f",
+  "js/clamavVersion.js": "88b276e156d80b6a35e6c02adc40a7936d46c2c004d765112bc85613a225625e"
+}

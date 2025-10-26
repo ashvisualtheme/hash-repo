@@ -1,0 +1,16 @@
+{
+  "ToggleRequiredMetadataPlugin.inc.php": "def32d084d1ae17bffc8ff5dfa78c10ce0a16c61a5aa838f0e87732100576243",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en_US/locale.po": "b9347d6c176e8dbc1c8c14f1dcb1d356f0b5fe6ebd8e0404415e7fa372c4a985",
+  "locale/es_ES/locale.po": "a98849646ac8020d4756b03e99977e870d44362b34713365f103dd216ae2e376",
+  "locale/pt_BR/locale.po": "f0a2b004c25577aa52ce94e10a9689816c80bfb6a1f6ae7765a910ac49aed972",
+  "version.xml": "5b3ed7f41018cdcc8dfee0546ef8b5883b821997a24b1c434d722b1f4f90e50a",
+  "assets/plugin-settings-section.png": "6f6e337bdd804c45169ce08ea4c9ed099b6589d5bc6e71b2c2202caabf9f7486",
+  "assets/application.png": "5910b14d54e058ac4edf44233bddd86372836bb3ce0b81b93bbbf78afc94f7cf",
+  "assets/plugin-settings.png": "7bf89dc53cd728ae53e3f1866573b23d5dc0f04e2579f859230d695b6cf3bc8d",
+  "README.md": "63aa17a7318f7767cd3dc2e40b194442dcb6cd91fc8fd13a7821a2360060d19e",
+  "form/ToggleRequiredMetadataSettingsForm.inc.php": "6e05682b76a79199a458ab522ef3e18ad34ee39cef1d23eee01c01258d6b9741",
+  "cypress/tests/Test1_requiredAffiliation.spec.js": "40b9a51a8eb3bfef41bbc05a88493ea3778cf02be4e5849acb07d8b02ba2b6ce",
+  "index.php": "bc0fcc1797dacfd8174fe99b7d8eb53716cf359a7e64975e46d5f37d6ebd3206",
+  "templates/settingsForm.tpl": "a3dff2ab86dcaddb20554d3924287cbeabf120a5b8e619245ff187779dc8227e"
+}

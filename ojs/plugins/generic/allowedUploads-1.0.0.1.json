@@ -1,0 +1,11 @@
+{
+  "AllowedUploadsPlugin.inc.php": "484c1b2bd27edf39c5ad36f3674639b6cd3f9555431f67d47e0255c24587d4d1",
+  "LICENSE": "db296f2f7f35bca3a174efb0eb392b3b17bd94b341851429a3dff411b1c2fc73",
+  "locale/en_US/locale.xml": "b0a7f0ed3ce72591f8a13bf18aa8332bf10204bd3c3548bf7d8032633bb7bce4",
+  "locale/fi_FI/locale.xml": "abf5c071f110ea5b18121640010697b8c946c3ba508313210ce3f89489d13ab6",
+  "version.xml": "2688c250d4ff12683cfc9a876bb30a6e219ed29e5d37fc5acc2bf9090a2f61ed",
+  "README.md": "d3186167bc557eae7532b938315849bc2afc22d0734626a8a2d5eb5ddd117765",
+  "AllowedUploadsSettingsForm.inc.php": "4049949a0cfacd436e6fd995a9721cda52eacc5c7e4f39138fec712e5d082459",
+  "index.php": "301e7e46e54962f53d695ebc0a061d10beeeb3f5d07df293efbc493554423c47",
+  "templates/settingsForm.tpl": "c601bb356daa45d0d93fbdc72ed2c43d31d8bd20c66f281af4da54efd5c2175c"
+}

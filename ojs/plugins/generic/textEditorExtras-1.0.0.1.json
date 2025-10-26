@@ -1,0 +1,15 @@
+{
+  "LICENSE": "73a0e0026e3a132b4d01731b0f93d9e0c7660df1c4f0886861de821d411173a3",
+  "locale/id_ID/locale.po": "e08ef430e7308444b5de374e5fd0f1a1ea3ca3b0c4c3904a016f96f386ca4b56",
+  "locale/sl_SI/locale.po": "9ae1f0f28ca1f907b97ad6203c6b57b02d89271b864b7dbdfb6a339df2d61ff9",
+  "locale/en_US/locale.po": "0b87151fdc44e7a4ba76bf1a0bcaa2779b9543214c3304e6f403e2000f900f50",
+  "locale/da_DK/locale.po": "d994d488c98d729dd96ccfdf93d26a0cbe7d4a937ed81070d7a5fbe9af43ad86",
+  "locale/fr_CA/locale.po": "9da9907cabde04fb8313eb5af3310f6d3971bc699f0d502933250342c7925224",
+  "version.xml": "7150081b340c33b1ed3e5d153efc166ceec37a6ee13c18d8d874fbc5f924b184",
+  "TextEditorExtrasPlugin.inc.php": "c6c13557294450aa260a230573214f142790d6115047ec603c8734951994c0ea",
+  "readme.md": "0b9de24cd5c44b9997bac6e8a8a3076a0e626773f27159730b465fd627e3a04f",
+  "screenshot.png": "70849765a69320d69c1e78d604b8be076a35f57387dc80a3eb229083a132999c",
+  "index.php": "714e49a7a41dd6d2d3b3e4205042b171999729f112fe7cf9ac737a19420a15a8",
+  "TextEditorExtrasSettingsForm.inc.php": "c67e0a6c3b6abdee0c0c72b7a4059fbfe73e6b9473da5ffc3acedcec04d4a78a",
+  "templates/settings.tpl": "edc18841e5f3cded4d9f7ad925cf147ab2f2044e17057d0a49bb2cd12a2b94ce"
+}

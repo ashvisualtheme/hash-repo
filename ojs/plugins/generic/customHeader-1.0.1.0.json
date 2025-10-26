@@ -1,0 +1,16 @@
+{
+  "LICENSE": "8177f97513213526df2cf6184d8ff986c675afb514d4e68a404010521b880643",
+  "locale/de_DE/locale.xml": "63497cf93018b10d3ca38839933995b3e24459529174bbbf53f8547a1fc7c2c0",
+  "locale/pt_PT/locale.xml": "248fe162d40040cf3787ba46b7a6af8e51e92886e99ae02c613ed748aff3532d",
+  "locale/en_US/locale.xml": "1cf2a9b9a33e48b253b1d49b4ca1636da3e66b4f15a99b267183a201d5784db4",
+  "locale/da_DK/locale.xml": "10b2fe508f25141c4514cf899a62e31937e3bbf8047b5f65274196b7d86515f9",
+  "locale/es_ES/locale.xml": "00110bd982286b744a1ec203813111c43254583e24a7f438193d9427e7752577",
+  "CustomHeaderPlugin.inc.php": "b5f6e38bf9a0c7e74ad90593c550b5c99c8f34848dca487943a7592d3d94cb84",
+  "version.xml": "1a1551f37e1ca0c28e05a2ca193e8e79f98d8aadf882df24712570d107a517a9",
+  "README.md": "0e1d5f4cec22a163c59680ddf5f0f768b264fe263080528f774f97ae25439b04",
+  "CustomHeaderSettingsForm.inc.php": "1a6125148747f186ee5f38aa250ddb128351bd83ebfda080ed2519791c4a19b7",
+  ".travis.yml": "ef785ead4e31423745379a56131316a3777832e60318361a712dc758fda84c01",
+  "tests/functional/CustomHeaderFunctionalTest.php": "318830cb3b67c75587ab50af6431087e7f73b8dd9b6fca38b2b64db4a8090e70",
+  "index.php": "f6bd490f1e4bfbc4e3e2455ef87b3865afc952eb2f97db6d93eeaedf536c6613",
+  "templates/settingsForm.tpl": "b1856b49e6e14bbd1f1addd0c57f244b1dca85847a1b63492823e04aec15516d"
+}

@@ -1,0 +1,16 @@
+{
+  "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+  "locale/ar_IQ/locale.xml": "21ba0e75054580ab6acf2a9aafadfadae1d828ec04ab20eb6eb6e0f704677d41",
+  "locale/ar_IQ/emailTemplates.xml": "9067a6e37909501bdbe7a5c3458a827d5414d6015009b7594310e42913a7aa18",
+  "locale/en_US/locale.xml": "d37fe1b907fe83b9368eddd2861fa7fd967f436f650330b9e1bbb14dac8714e2",
+  "locale/en_US/emailTemplates.xml": "adb1fc50cfe430075eba77c435d206304606f4aeb6f4f385a0838defc2ebdd59",
+  "version.xml": "d2d8a4dd38da343cd4e71c3bcf99f2d9a9ce4985a9e7f714aeca66c1aa46e817",
+  "RegistrationNotificationPlugin.inc.php": "28ed3a293ee7caea77699cff0bef39b0515bb17a39b8d287fafb25d683b3ba82",
+  "README.md": "875f636215ede886c9ff65d1249179bff7944ceddd8f2f696235f44323322eb4",
+  "settings.xml": "7a686f5799ba5130adec5e3b1513d34c3f9d70cd11f0a95c24d7248f8412498e",
+  "RegistrationNotificationSettingsForm.inc.php": "9bdbd88fb9b959b0829e96ec7002d8752c2a9f0b9287d674cc45394c49a86605",
+  "emailTemplates.xml": "392696159a8c52087a449274b18b69653e11925fccafb3b74bef43b892a5bbc9",
+  "index.php": "edeb98d8f6c292db2418932c86364e64ed447c2b5e14831a4f2eb84a17f68b41",
+  "templates/settingsForm.tpl": "c336b670b20e61d2b6ca6af859bc76f70edefa674154720de4545f9e3a4b49e2",
+  "js/RegistrationNotificationFormHandler.js": "a03a416fe082f9cea2d50143e1458b8bbb281281989d488ab5bdac691dfb7b06"
+}

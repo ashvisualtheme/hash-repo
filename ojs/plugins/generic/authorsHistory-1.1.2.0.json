@@ -1,0 +1,19 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/AuthorsHistoryDAO.inc.php": "e3860d4c6f16023eedda22da62b3f7d889ada4e5e820ed87db0734adb9e65d45",
+  "locale/ar_IQ/locale.po": "78ba81bcbd4c3aa76effc16795af02ea5d9be4d6b05b3b1879da24cb67a8e79e",
+  "locale/ru_RU/locale.po": "ff88fd9101dc87c41dd4856253112687f9b6fd72758817d7ce16205aede0d5c2",
+  "locale/en_US/locale.po": "2ba2798b829eda609bc0a3ea9ad9be00a1ffc7688743991e97759f6f05ad1a78",
+  "locale/es_ES/locale.po": "7329e674245c0b44aeefbb37dfa48a04ba9231e3e22599a95e796bdb6502e305",
+  "locale/pt_BR/locale.po": "8edd16ab2c79821a78550443383cb2c78e28ae0dfa47131679ab9491e435dada",
+  "version.xml": "f1f64f7b68799746bf16488cd4bfba86fca318e629bf43444e08ce2fd44fdda1",
+  "images/feature_screenshot.png": "1717b6c161204e8492d23fc4678f2448b6560685164db4a7c316a333089f0a75",
+  "README.md": "f2c4c47ed2f4e45bfa4cfcdc4687b25b7b8747ba350b3db3e3f5edb752bdb5d1",
+  "AuthorsHistoryPlugin.inc.php": "bdba980376bfb8d41b95cf1d6179611c6240ee7d734eca3be2b5b1f6501c2c21",
+  "cypress/tests/Test01_pluginSetup.spec.js": "818c4f8583043ed68b6d55b98847dab7a3ceac4ff9f1ee2bc41add86942d8c8d",
+  "cypress/tests/Test02_authorHistory.spec.js": "a7f5e63e78c6a13dccba1e92e2ac42ae0a1bc8080495378da8e9b2ec0aac2d56",
+  "index.php": "59e19c61b75cc09c2ce003b0c00bee6d11860239d9d8705ec04bb5c734fc148a",
+  "templates/authorsHistory.tpl": "462254de01e6634c98ef11a8164b0f604625a3b1d16bb80dd50bb562ffba10f6",
+  "templates/pagination.js": "5b44b33cb041ec28f7766158ef0031d218a02e66b98ad45107a1feb04135f50c",
+  "styles/authorsHistory.css": "1f330f8d3c886225dc5a4fee2505cceeb0e3904a1195122144027b49a707d5bd"
+}

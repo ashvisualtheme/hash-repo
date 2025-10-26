@@ -1,0 +1,15 @@
+{
+  "LICENSE": "c53a65c2fd561c87eaabf1072ef5dcab8653042bc15308465f52413585eb6271",
+  "locale/fr_FR/locale.po": "130d92d53c51ae230ee650cb40ca8cb2d0e969a96f779332ec5574472499c225",
+  "locale/en/locale.po": "b980eeb5eb8071df8fcbc57e14fd5e1241b340ac180c14518c0eef8f148c4f8e",
+  "locale/it/locale.po": "41f81b883bce7da455230df20a3721e1c389e321760234bb2c23dca4df3a4409",
+  "locale/de/locale.po": "b9722c7f90bcf27eff6f52ae162ec8946758752c074111a41cede9cc1ea28a4a",
+  ".github/workflows/release.yml": "c7f329033908f084609780309aa423f26072444e0c5629979264dca95f9ca8f8",
+  "AuthorRequirementsPlugin.php": "bcd58f48e843f9649e7fa639295777a1d3f0d3b8e48b3b2211c2aab9ca9381a2",
+  "version.xml": "83fd7053dcd711a043255feb33120b131984be3dbc98170c1dc73463a70d01a4",
+  "README.md": "75a8bbc596771e384a5abb19d99a233a76d20c235a7c131eefc493890c99a1db",
+  "templates/controllers/grid/users/author/form/authorForm.tpl": "8084ea979906cb041bf435895075e7434730e5b190cc3b68486c14ae53500ceb",
+  "templates/common/userDetails.tpl": "8d0bf6a07f12a750775524433b5d02c86a5c608bf8e12cae7f4a43f3e22072c0",
+  "templates/settingsForm.tpl": "f8f231f47b2471b11d35d97ced890a842f45577b7ac6833aa4824916e7fbf084",
+  "AuthorRequirementsSettingsForm.php": "b1caa6f1b974e2164eaae7eefe8e70c599bae3f7ab87ed147e044f2fc451375e"
+}

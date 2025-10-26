@@ -1,0 +1,16 @@
+{
+  "LICENSE": "892d0a23e7c96c84fc1445ed792cba6687413861b6d16d6a9a2e0480ebb52092",
+  "PlumAnalyticsSettingsForm.inc.php": "1ddaa8cb901dfafdc6e85930f1a5e778fa74be489cf22656d6b77bebb9de375a",
+  "locale/pt_PT/locale.po": "8b58e4873ed67a9d20fde48658f672cbd9abcc1b5d25676c19414f850c823f3d",
+  "locale/en_US/locale.po": "059b3e69c26ba89da1b4434d9b72c5ec0987dcc66b361e62fe6a9aa0fe1c0ab5",
+  "locale/pt_BR/locale.po": "8b58e4873ed67a9d20fde48658f672cbd9abcc1b5d25676c19414f850c823f3d",
+  "PlumAnalyticsPlugin.inc.php": "12a29d4e65c4daee34220a8b98f0c948d3b32c57e06ae3362b5f294e5f74fb61",
+  "version.xml": "cb8a1c2c6d2dc726ac24c3f63bbf24c78e545a7d4e39fb3629e60ce919f355a1",
+  "README.md": "09415dcb28c70dbce92395f6a0c98eb5faf3cb2ab4dbbf5e6bbfb6ceb5842cc2",
+  "PlumAnalyticsBlockPlugin.inc.php": "4a583dfab698184d76ed61c5dacfd914f2265238d0668615549428f9fe132a90",
+  "index.php": "ee52212e5a06bcace146ef40e5c355cf00a359d506feadc662b58352136ee070",
+  "templates/pageTagPlumWidget.tpl": "486bafd78974d4794a899f860f646343b53cde1a7d702c6dab6cf83371ac0fa5",
+  "templates/blockPlumWidget.tpl": "f9a978b7e43f0f1817798994a859ab93399d14f87bd77361b62ebdb7236dc864",
+  "templates/pageTagPlumScript.tpl": "e177e75a9290ec0712a973a65825b60a81dca65d855c861dc5585b9bb0a2c90f",
+  "templates/settingsForm.tpl": "3ca4e7f189c095b71a1b5c240ee3a4e633ffadba591c38fe7b9ad334ef3801b0"
+}

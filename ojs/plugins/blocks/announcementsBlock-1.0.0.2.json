@@ -1,0 +1,15 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/de_DE/locale.xml": "7d55905796330e8ae4e2851240d0430391f7eb7494baf3b07608f1515c0d083b",
+  "locale/ar_IQ/locale.xml": "2ecca0d691a8945190f7a6ed54ced7ff8081e73e9d05770888e51060c3fbd626",
+  "locale/en_US/locale.xml": "d73a414726b357c922f6468e961fd8602431e0e90d29b1047b5a95771e99b20f",
+  "version.xml": "454178f6f2cb41fc6fae69ed2c419adc144a59cc47bdeb3e70315f6b1e4bd390",
+  "README.md": "70e284074acf15f9f0b218371122789ca62be0c3976f30d6267b344bbddf901e",
+  ".travis.yml": "4f352fe15dd59d7bb28a8ee693e796285e8490684dd770c0989c0ba8a1d711a5",
+  "AnnouncementsBlockPluginSettingsForm.inc.php": "be91cfb0c2b9616fdc5970e25a79dc958c7bbca5f2bff40989bba5881d8cd064",
+  "cypress/tests/functional/Announcementsblock.spec.js": "8e17ad4907e86cd38b6959fe39c093a72c2371b50272beac8e2b3b5707e3dab2",
+  "index.php": "224f946ec5fc53f2df39d14514a12dfb22a5f808fd38a17f2a2fbd292d613aac",
+  "templates/settings.tpl": "d3271a82d81fb5ecc956ede6dc42b4842c2db49871397e492228636a8693578e",
+  "templates/block.tpl": "31099a9acc41954aa133e11df3bef68f1318c691ddf7a595006d4d1fa40eea60",
+  "AnnouncementsBlockPlugin.inc.php": "fd69559236f9749c37dee8de847df69c2f7159febae94b385d8239f8dbf089ee"
+}

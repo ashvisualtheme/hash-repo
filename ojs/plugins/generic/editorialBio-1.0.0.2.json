@@ -1,0 +1,14 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "EditorialBioHandler.inc.php": "b448d8e3f6483f63b7ae206ed20dd9c725e252877eb5c69512db09f9602a3ed3",
+  "locale/en_US/locale.xml": "4bca007f0522e41d0d7aaaae61be9d3f34fa9248793af2ffde870e35bddc9fb0",
+  "locale/en_US/locale.po": "965da2fc4f09be25f5d0d642554f1643a49e985f01d766b5a6f06fdf8e492419",
+  "locale/es_ES/locale.xml": "70dced8b41f33be1efa8eef73f49e37b29275026781cced822e96f8e76ee9526",
+  "locale/es_ES/locale.po": "b8eb77bfb9044479d435a61f69faeb5eeab72910cc17c6c3644963c9175c53ad",
+  "EditorialBioPlugin.inc.php": "64381a2566d829c84020d49def63fd6eee539361649bad13f32c868510d07373",
+  "version.xml": "d1f48aa518e3524a33588942bc8af19d72432f0f38a0c646525d2f775e6bc5c6",
+  "README.md": "49ff1a663cbcb96063cb57a2143b1f2a3d3096171a2d58946c7c884787d22e63",
+  "index.php": "1f8990286eea0580b2ef89a011d8cece884f4301141f710167fafedf2b2fee20",
+  "bio-link-example.png": "2262965eb35095ce9919e09c14d08005abffae9e4d36d17f27ce994f19bc26c3",
+  "templates/frontend/pages/aboutEditorialTeamBio.tpl": "a798abb6f3fd277841db1c65458695950d23c8681381d9ae862bb3bbeb47bd03"
+}

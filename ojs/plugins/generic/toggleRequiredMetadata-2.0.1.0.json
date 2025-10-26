@@ -1,0 +1,18 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en/locale.po": "3c6f505f88fb3bea80ebfa088362b51e855c7b13ae77e92ae5232e4f1ef4b208",
+  "locale/es_ES/locale.po": "6ac3f69c7e1906a866c21d65b62b6dbfce66127c61fd120b35897657782ccd8a",
+  "locale/pt_BR/locale.po": "5e9a657ac06dacf9d9aea4662c9e13747d1c841872e7bdc57cd117628a5cb97b",
+  "version.xml": "106aadbe851a8a041df7776ace75819d5020f2c7b0e01c1af38e0ec4e741eb47",
+  "assets/plugin-settings-section.png": "6f6e337bdd804c45169ce08ea4c9ed099b6589d5bc6e71b2c2202caabf9f7486",
+  "assets/application.png": "efe0415a279b1c172bf4ec95b33c0d277f49097fa744e5aaf689ef9c46f84466",
+  "assets/plugin-settings.png": "c65782d8d968000334c81af38b05b366c28311850e1ab499fdb82fdcef1a40f7",
+  "README.md": "5ca7b6d5a57475f13b23ba99fd5829fd214e383fdb3084f887614cde8e33475c",
+  "form/ToggleRequiredMetadataSettingsForm.php": "256a3b5e99c510b321dabb72f1c6730b1e5c48c031cc93d4d28f7f338ea6c799",
+  "cypress/support/commands.js": "48a2c5fe5a7375c3991c88ae092044e59676f1e2537fe9e6121d4b3607d199af",
+  "cypress/tests/Test1_startsThePlugin.cy.js": "c09777e0fdd5efb8b753cb4c7ace3bee02c58132ec4dc03c8c17f6a04e8e0f0b",
+  "cypress/tests/Test3_requiredBehaviorOfEachField.cy.js": "b583b5bc70a4d12ec85a5fa0dc3d1c4f609d472c087142d431bcc044b5eac53c",
+  "cypress/tests/Test2_createSubmissionTestsRequiredAndNotRequiredFields.cy.js": "979f8d13af82e2811c245ac1278ddb0cc73210a9aca9a6fe4f5944e9f9d5e2c3",
+  "ToggleRequiredMetadataPlugin.php": "36e7397d4fb94291b9db6e54559c4b0224d2a4a3900db160cd0666f1dcde8532",
+  "templates/settingsForm.tpl": "3b3037c7f4928922c5af21a554c03c5dd8ed1a1fc38979acc609601befb8b108"
+}

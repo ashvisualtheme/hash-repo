@@ -1,0 +1,22 @@
+{
+  "api/v1/doiForTranslation/DoiForTranslationHandler.inc.php": "3b2f761f0ee94b038f01ad5a16e6d2e1b32eb33e4d5c83ab5bc49f8895554d11",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/TranslationCreator.inc.php": "5491af339be6b6ddef37cb14c3bbeb67fc0addb877cb131c07e34cb8ef777440",
+  "classes/TranslationsService.inc.php": "4909fe5d1aafd9cc27857c6b3c70e65b8998b2c55bf56146595e43082cb7ad20",
+  "classes/components/forms/CreateTranslationForm.inc.php": "63a24bcc17e209522dcae4fc6709a7bbbe6a64365de8173bc9372110bd6d2db2",
+  "classes/TranslationsDAO.inc.php": "bf01c6e1e50061cbe8825c66011ed0e2e83c16fb47dea89dfb2b0799c62e957b",
+  "locale/en_US/locale.po": "8107f486ee9f9a4e2084e9122062ff15f8d8eb4798c7e223987873e7a66199c4",
+  "locale/es_ES/locale.po": "ab9af8f30f5fe57d53fb19a82dd35e3f76bf5d64224eb4223e8198e2007605a0",
+  "locale/pt_BR/locale.po": "8ca178f100e3a23af7ca69c1013a20869bfafd52c5a269efa9debd344f73abfe",
+  "version.xml": "f4a9b915a600c91a58f0c9cdc6309f18963327331189b583ba465afbf53579a0",
+  "README.md": "70a0e2f318fc7c9719f6c6fa23bb77e9658cafdc9ecb51f7408df48e1b8dcf3a",
+  "DoiForTranslationPlugin.inc.php": "065729792605491c21b9380bdabc0f8583bb291cb8a2dbb7745d2e016c724d58",
+  "index.php": "7c68df06754a3fe183841bb35812483b96b5880b1de94c486ecd77421992086c",
+  "templates/listTranslationsArticlePage.tpl": "c71a328cbe4eeb99d9055c7057aa7303e1c1c8029790f30f3b32cd4f274c64d4",
+  "templates/refTranslatedArticlePage.tpl": "68de06c211c92e51b221be54b0f9b3df1c5d4ac0c9c16c14adce12bc22e00b1c",
+  "templates/listTranslationsSummary.tpl": "85fce1a003020f4e489edc96a6651482a1ed6fdbd045b1deb92c96a543fe0c33",
+  "templates/refTranslatedSummary.tpl": "f6d990ab622faef948ef7bdd54918791faf61b61c1bc0e64633120228278cead",
+  "templates/nonTranslationWorkflow.tpl": "b22a638261372368c30c932b8bf1fa20d935fa28611f79929c415b586fe062e1",
+  "templates/refTranslatedWorkflow.tpl": "75b50421ca39fe0cdd06277490b6cb2261995a8c928bc9d1d9dfe893d8d074e8",
+  "styles/translationsSummary.css": "8032a3c92f77c724d9b95c20cfb72a3de67d0b8d0b1ce5bd3251ab4cbe7de34d"
+}

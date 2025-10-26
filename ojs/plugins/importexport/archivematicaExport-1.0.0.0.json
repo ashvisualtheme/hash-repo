@@ -1,0 +1,20 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/SubmissionGridCellProvider.inc.php": "a0e6b04e0bb8a3514c20cb7ce08f651f4db74ad131acb2c08593c1c13a1f068a",
+  "classes/IssueGridCellProvider.inc.php": "a6c353eb69f13ddee365635ae08ef1249dbe2743129de8301aa3748b5c1d5561",
+  "classes/PackageWrapper.inc.php": "6c244748f257ff44d6093f6ee673bc9fd93e0cc6968182bc1e8c51dd17cb1b50",
+  "classes/ArchivematicaSettingsForm.inc.php": "da27dba2ab30e221e33ebf2099aa3b43662dc9393dd961b0be47e0c518d83f7b",
+  "classes/ListGridHandler.inc.php": "d097f5396906295746ddbdf4a0ddf3d29ed6630520565bee373532d61c5f3606",
+  "classes/DepositWrapper.inc.php": "a56e7caa383b47dcdc9d3a96548f409fcfa44e9742ffb8260bb4f1f877884e0d",
+  "locale/en_US/locale.xml": "17d3a90e5857a81ed08bb6b5969db6f0c6d0de1ecb22a255638642b500b2cb4b",
+  "locale/es_ES/locale.xml": "0ccc95f13b7be2cd027c664503c99fc850d741be7edae77589144fdb4f38a87f",
+  "version.xml": "11e616a3585fab82c82664c18ff0022cfc2cc38179f563e36ab5edf12b60a1fc",
+  "README.md": "8aa7031a4a9685aba1a20a5db043f5353f0f9be326d9eaacd115cde5aa025e33",
+  "index.php": "7d0bb90aff91287e681d96179e9936e1c5d520b2cd33f69445491c6bd08aa539",
+  "templates/settings.tpl": "9a87aa566de5b0bec077531327d074dc0d6c1fbc1b5c2fec7dc36d5195564953",
+  "templates/exportPage.tpl": "2835c15b6bcfe4f85cc89473ee5f4cfcdb463b9e1ffaf8d86328c3a0d42b4d54",
+  "templates/images/fedoraSpaceArchivematica.png": "7beade5d19851a8c988930131b0a25b19f0bb1044156fe780a3df5827d61df5f",
+  "templates/images/PluginExport.png": "4ed81dd6dc230fd0022623e5519f59dd966814a5b07db3477548d11ebedcc608",
+  "templates/images/ArchivematicaPluginSettings.png": "cea7ade4e6c354c63a7dff4ae3c9e84afc755998f8d4b256a3a5f97e60f7728e",
+  "ArchivematicaExportPlugin.inc.php": "ac81e3a3fd58233a2a7808866ef30c20a665a9bd15807b9bbf9081079e628c7e"
+}

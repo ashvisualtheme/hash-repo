@@ -1,0 +1,11 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/FileIntegrityScanScheduledTask.inc.php": "411141a9ff6f6c75807213be449bfc630d5c5d69677d2a091b0acc57dd6fc054",
+  "locale/en_US/locale.po": "8b6f07ea89e16f294f46ae36c079b27bd17aa631f94fb9447cbe890454d69fa9",
+  "version.xml": "447b07519553046eb74f090be864208f72e8c34b2764bd2a43aa9fdfc00b1eec",
+  "README.md": "4aead3b7ee2d9e29ccca5980a7a6673e8cafbe4903c3f1bcdc5f146998aa7952",
+  "scheduledTasks.xml": "57bfb9aee77896b50828f94a9a2cf6676470e98704d38d61421c2ec21825d2e0",
+  "FileIntegrityHandler.inc.php": "f2cb3b7b4f53ff8f5c4e036c2fa8054c8e2b372b65e1e5be53c60641864880d5",
+  "FileIntegrityPlugin.inc.php": "b99d3c793e29e2a6f370d08b9123411295abb8c08ec87752e6c7c09fa46978b0",
+  "index.php": "73b213cf7ed2593810d579aed7972ebb8775003d78368c9035b4b05c6654cd20"
+}

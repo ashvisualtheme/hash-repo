@@ -1,0 +1,12 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/de_DE/locale.xml": "961f69b5aafac193789c727db1e5033ea2a14495e95f46da00e5e38126b9e497",
+  "locale/en_US/locale.xml": "9bcee0fd1ca4fb05c9b7d9b71b001ad2ed8ecd7b0647593f426720152b339eb8",
+  "version.xml": "3b49d21600039d4e125204a5788515fe693bb1fd1455efeeb7acc99d6f8a8ba9",
+  "README.md": "6325dfd9a20cd9ebc3fac8ff98bd8b784c4877f6fc4bbda8f4fbb68359d3475a",
+  "AnnouncementsBlockPluginSettingsForm.inc.php": "ead84c8257d57f48926048bad8211364438f78f79f1f0c163e417757a8b967a0",
+  "index.php": "224f946ec5fc53f2df39d14514a12dfb22a5f808fd38a17f2a2fbd292d613aac",
+  "templates/settings.tpl": "7b191a54d45b905e3d47079a5efbbb91d9518c00b85643a3eb061eabc161059f",
+  "templates/block.tpl": "d40a856ac26d3c7805aba3758605d5dba1edf1da57b1ee2dd5356d4b16a79ab0",
+  "AnnouncementsBlockPlugin.inc.php": "31d4d5e8c4bd7dfb806e89e3727d683fe2ba433650969d1a24ab2176109c157c"
+}

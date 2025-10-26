@@ -1,0 +1,14 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "phpcs.xml": "97e6e7c5bd3e0e68a4d1cd0e3492af0985225c2c6a3378891bfba80345fe9f62",
+  "locale/en/locale.po": "80b9ad4b51738fa030bb13590edae0d6c70feecd4c0ba44446ca69ab100e039e",
+  "version.xml": "eb0ca77d3d95993b34311ee4aefe13caa63f21b010b6f7b2fea3d41c7a8e1712",
+  "README.md": "5c921ac3eb9f6cab41d11f5124891ec497b6dc049ea358e77bbc50fce111a4df",
+  ".php_cs": "a48ec091cccb071f3fa7100229fc66931a4b665d9215ff4832ae91ec1e59aa52",
+  "PorticoSettingsForm.php": "0810d6d3256378f20f5169a06a383ab62c940e32182d2cce3879c090d425bfaa",
+  "PorticoExportPlugin.php": "fb6ff3913f21cd281b54e95bae9ae304193d4e7531827382ca9fd81494684233",
+  "index.php": "fe3944249cc0477b961f8a5bbc9480a987196bd008e0e773c6006aed5d39ca00",
+  "templates/index.tpl": "fec791579623b090f86e935866f46a164bb112f6a8f4477bfdf27beb0a03168b",
+  "templates/settingsForm.tpl": "73db913f06a0f9e2913affb75efe3a6782596bb522e438c48d1eef0ab9a78f9e",
+  "PorticoExportDom.php": "6ca4402453cc6b79971dace5cfe9a3ed693090155d96261c4b461bec02f271bb"
+}

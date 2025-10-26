@@ -1,0 +1,15 @@
+{
+  "classes/form/FieldArk.inc.php": "18587e456b766168c4eb4bef2a9fa5352dd802fedea66cd2f793e4d153e50674",
+  "classes/form/ARKSettingsForm.inc.php": "43b4596c1b308eb04c6ebb506af782bb59626414536f32e3fadb5be6318ef4c0",
+  "locale/en_US/locale.po": "ecc214ab0299cfba681e6ebc589caa00cf2957fa9d9e5954ef56482c079c2332",
+  "locale/es_ES/locale.po": "6e886546dc2aadc1ab4a3d1be4cbb04cd2cfaad871ef5cf83ecc19009de8116e",
+  "version.xml": "625a16d6c080beb05e8487995ca8a8c91df9fc4cce0ffb289fae5b299a7aa623",
+  "ARKPubIdPlugin.inc.php": "677e757d4adcbce64f73558191ca307ccf31a07b9810a7379f5452268400e67c",
+  "index.php": "6868a9e6774da5248d6b578a58508808ac01068f2642b892d50088f5e13cf244",
+  "templates/arkAssign.tpl": "6b7c5a4ec3263edfb5edbb9a7f2e8e0c425367112ab97dccbb03df0995d40587",
+  "templates/arkAssignCheckBox.tpl": "6086cca2c2c8f824750d6a664c5bbcf2c70de7ea30ed01ed4b5c16072617b542",
+  "templates/settingsForm.tpl": "d671efc32de192a9d4959c035357ff487a2fe9c08be3d0700e5466862adf3a1f",
+  "templates/arkSuffixEdit.tpl": "39160f3ced215cf5c00a566dc266ca375551b7f0590687fb95edfd656079e821",
+  "js/FieldArk.js": "0196618d728d041f76b3d3412c45b669f33bed8e53ff64e0b5bd3b736c118bf4",
+  "js/ARKSettingsFormHandler.js": "3db2d80c0a0487aae12cded0918ca75ab342a31bebe47e1f242e95bec7bee40a"
+}

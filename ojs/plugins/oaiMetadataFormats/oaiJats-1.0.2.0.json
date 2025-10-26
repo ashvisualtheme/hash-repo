@@ -1,0 +1,19 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/de_DE/locale.po": "4e1edf70bc5b2bd63d08b3ccb3db336b0a1a0d61d4d7635ca8033d94ac47043a",
+  "locale/id_ID/locale.po": "9c0a0ddbb69ba1f4ba6cfc1255e817092e4ca4960d9505c67cbea0c0233b1c36",
+  "locale/uk_UA/locale.po": "8cf9bb63b2b8e47e0c4fbd75dff6931edf30ecbb49ca146f789476b4c3e27ba3",
+  "locale/ar_IQ/locale.po": "8adc018eb660eb4770db1278c0a1e8b030dbe122b658520e05f43b925aba6175",
+  "locale/sl/locale.po": "7bb3575d5e0611e54c668c1f42ac4810fa7e8119cd026c4313ec60aded70bcc5",
+  "locale/ru_RU/locale.po": "b9f572be52438574e432084e5458e310638c7a1a48ae4cb81eca0605eb0f1b71",
+  "locale/en_US/locale.po": "9f86ab3d0ce678a05a14cdc9d42c12223c87a61634776b190cda0adba30e0fd8",
+  "locale/da_DK/locale.po": "32bc73e9caf4bfcf12fbb71af3196dec2ddf5c9b461a5319385fe11d7e5d7e0a",
+  "locale/es_ES/locale.po": "bfa8b0c32cbb6fff135eeef33174070da0e39b2adf982ec4c00775ae2507d20b",
+  "version.xml": "a2e390a931371874946df08f5c0bb42b3c7ec2e7ea825f32321f565328735e30",
+  "OAIMetadataFormat_JATS.inc.php": "b36aa5c8920bf3f9822ffd973f0d21e11a627b6c06c13fe2cd865cd412005518",
+  "OAIMetadataFormatPlugin_JATS.inc.php": "ff8b265f300be85ea9ef19280b9032a79d5e066a62f66beed935df7848481534",
+  ".travis.yml": "06fc62fcbcb84b01545d1c462b33a38f2d543973603629180bbe32aeee61b9d9",
+  "cypress/tests/functional/OAIJats.spec.js": "34c25c24790107f50cf692e5200f9bf88d2879df7327eac3cf604f9cf6781fba",
+  "index.php": "38f248e39bb5cfcae81452916acc446bc7db2f974fc61ef276c983a0b56240e2",
+  "README": "70c4d6f9aa4bb1823d99db45870537e8feab29882f9b54d992047d260f9dba8b"
+}

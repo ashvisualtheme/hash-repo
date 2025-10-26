@@ -1,0 +1,79 @@
+# Workflow name
+name: Generate Hash for OJS/OMP/OPS Plugins
+
+# Workflow trigger
+on:
+  # Allows manual triggering from the Actions tab
+  workflow_dispatch:
+    # Defines input fields that will appear in the GitHub UI
+    inputs:
+      download_url:
+        description: 'Full URL of the .tar.gz file to process'
+        required: true
+        type: string
+      plugin_category:
+        description: 'Plugin category (e.g., themes, blocks, generic, etc)'
+        required: true
+        type: string
+
+jobs:
+  # Job to generate the hash from the provided inputs
+  build-from-inputs:
+    runs-on: ubuntu-latest
+    steps:
+      # Step 1: Checkout the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # Step 2: Extract data from manual inputs
+      - name: Get Data from Workflow Inputs
+        id: payload
+        run: |
+          # Get inputs directly from the 'github.event.inputs' context
+          DOWNLOAD_URL="${{ github.event.inputs.download_url }}"
+          PLUGIN_CATEGORY="${{ github.event.inputs.plugin_category }}"
+          
+          # Get the filename from the end of the URL
+          FILENAME=$(basename "${DOWNLOAD_URL}")
+          
+          # Remove the .tar.gz extension and "-v" from the version to get the base name
+          BASENAME=$(echo "${FILENAME}" | sed 's/\.tar\.gz$//' | sed 's/-v/-/')
+
+          # Set variables as output for use in subsequent steps
+          echo "download_url=${DOWNLOAD_URL}" >> "$GITHUB_OUTPUT"
+          echo "category=${PLUGIN_CATEGORY}" >> "$GITHUB_OUTPUT"
+          echo "filename=${FILENAME}" >> "$GITHUB_OUTPUT"
+          echo "basename=${BASENAME}" >> "$GITHUB_OUTPUT"
+
+      # Step 3: Download and Extract the archive
+      - name: Download and Extract Archive
+        run: |
+          wget "${{ steps.payload.outputs.download_url }}"
+          mkdir "${{ steps.payload.outputs.basename }}"
+          tar -xzf "${{ steps.payload.outputs.filename }}" -C "${{ steps.payload.outputs.basename }}" --strip-components=1
+
+      # Step 4: Generate a JSON file containing SHA256 hashes
+      - name: Generate Hashes JSON
+        id: generate
+        run: |
+          OUTPUT_JSON="${{ steps.payload.outputs.basename }}.json"
+          cd "${{ steps.payload.outputs.basename }}"
+          
+          find . -type f -print0 | xargs -0 sha256sum | \
+          awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}' | \
+          jq -s 'add' > "../${OUTPUT_JSON}"
+          
+          echo "json_file=${OUTPUT_JSON}" >> "$GITHUB_OUTPUT"
+
+      # Step 5: Prepare the final directory structure
+      - name: Organize file into final structure
+        run: |
+          mkdir -p "plugins/${{ steps.payload.outputs.category }}"
+          mv "${{ steps.generate.outputs.json_file }}" "plugins/${{ steps.payload.outputs.category }}/"
+
+      # Step 6: Upload the artifact with the correct structure
+      - name: Upload Structured Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: hash-for-${{ steps.payload.outputs.basename }}
+          path: plugins/

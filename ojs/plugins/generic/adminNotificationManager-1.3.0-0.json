@@ -1,0 +1,9 @@
+{
+  "pkp-adminNotificationManager-master/LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "pkp-adminNotificationManager-master/locale/en/locale.po": "050ece7635464e56835f6821c803bf846683bf60d881b003eb4d1c2f9e01233a",
+  "pkp-adminNotificationManager-master/version.xml": "8de8f381e65befee4c9f2f16ea5b6b4a907095ddcb5d625ab9585b59ca475afa",
+  "pkp-adminNotificationManager-master/README.md": "fa4c8ae46b07b5bad7d3be4d49619004a7b562e9328d786eba09471a14d65325",
+  "pkp-adminNotificationManager-master/AdminNotificationManagerPlugin.php": "d902e44db372fd3496459b43aab07deb323b32967437c13425cf69e7db649661",
+  "pkp-adminNotificationManager-master/templates/adminNotificationForm.tpl": "b459da00f55b26ff0b632083cd15828691e5fb61a85db07d2e98f6c64f61b8a2",
+  "pkp-adminNotificationManager-master/AdminNotificationManagerForm.php": "446ba9d1da4a5ec6fcc05c9c610e04524e834cb84be524768da24c819b93a7a8"
+}

@@ -1,0 +1,11 @@
+{
+  "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+  "locale/id_ID/locale.po": "5faa656b0a58b74e18be6a8dc0fda97237a2466af7ddc1c8f214bc2b7a560bbe",
+  "locale/en_US/locale.po": "ef1e7d1e20c0fce73e4e11a118229db72addb2e7d1a65f910d6e77ea5738c682",
+  "SecurityHeadersSettingsForm.inc.php": "4649e2b4b2880d5bcc7fe670c8b60b024a08e8f58a2e474d499f44c1b7a124ca",
+  "SecurityHeadersPlugin.inc.php": "52313693b1d6793e77475d43315459ffd94cd238d5d6d17aecb66a9d654ec8e0",
+  "version.xml": "3a8e575f3998841b4bd1b56d7209636392ab8c0ca96410455262ca7d98347be0",
+  "README.md": "cc91763f60193175dcabf6c01566596d2fa9b28e1be28cd7293c0721f03d8e08",
+  "index.php": "6cf99ec5444ea37c9e6851942d0fc3ebaccace0e11d473bbd7522e0b77dee6c8",
+  "templates/settings.tpl": "3c933ebf85af0b7f83d3b334f2d6f678e67959253329bfc7dfb67bd1d2a26fba"
+}

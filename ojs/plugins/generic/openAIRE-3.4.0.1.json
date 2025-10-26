@@ -1,0 +1,18 @@
+{
+  "LICENSE": "8ceb4b9ee5adedde47b31e975c1d90c73ad27b6b165a1dcd80c7c545eb65b903",
+  "locale/fr_FR/locale.po": "a5e02ba5d9878931142ae9f33512ba751060181b26170b82c7e8a4e34e2d9bff",
+  "locale/en/locale.po": "34171fdc0c9c97dc2af1c4569e1a283be1fcdb12f025fefeac34e1a03d67b44c",
+  "locale/it/locale.po": "67792f499b6a750cdcbbaf5e9fd71cc95093aefcedc54e390ace992bb154eb84",
+  "locale/fi/locale.po": "63bb7d5a16e09a3f3458906b70cbe5565e4e200ed4d5f6f05f0491543f2b54c7",
+  "locale/de/locale.po": "226cef336574c20425330cec4a4f60b24de3967dcfed5ff707ea0a1ed51d75a9",
+  "locale/fr_CA/locale.po": "471c22ec30bbb95e447e1dc9134cf9c9862a39278c368d6620109f14095638f9",
+  "version.xml": "f9e4000044149aaff6eb3bc2d8d4c26b626de1873fd837910b5bf81b438e255c",
+  ".gitignore": "c2e6e8eecf1cba131c47addd689da89b8842977311bf454d74825953b0de7f24",
+  "OpenAIREPlugin.php": "48613a4df755b6828adfbc6c870c5bde4e625de15a834090e8572a50e8701c9f",
+  "OAIMetadataFormatPlugin_OpenAIRE.php": "f3e41652fa01c3c9dac948df7acacdc8d055f14d117ad4fb1815b65dc1c6abc5",
+  "OpenAIREGatewayPlugin.php": "b5583eb0517972a68f652b5d5dc3a0969770f3a8e56ba3812092956a975291e1",
+  "readme.md": "3768aa7a04ae22e8fb5156d9257565b3a353fd1a8c44d64356b562a8af030dd9",
+  "index.php": "57475a723906c3241652396e83750c95746952797b8a796dc161084212ad0ade",
+  "OAIMetadataFormat_OpenAIRE.php": "a1e805f508901b5d317ef6106dca6ad2cdcab108b668a6ae35f8b7b24f12d16e",
+  "templates/controllers/grids/settings/section/form/sectionFormAdditionalFields.tpl": "9511070a24da037e5b17d08a7fc428a6e1148fef33cf35c8787d30b2566f66bb"
+}

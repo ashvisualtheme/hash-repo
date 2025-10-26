@@ -1,0 +1,18 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/Form.php": "2ab9de6e7d29fb34ef8c5fe68aff714d035f3fb80330cad00ef7e3332cf8b93c",
+  "classes/ArticleView.php": "2d83fa621752661b0b59ef623baf0417825fc59d284239fe36486daf96bf8848",
+  "classes/Schema.php": "102be718e0e647c500da5e3fdd6d3529b055250dce57d77c482e911b9ceff6f9",
+  "classes/FieldTextLookup.php": "13154899043a62c1965add9a8cabe17b4803627a29dc8ffc55b04ba00c18d8b8",
+  "classes/Constants.php": "b92c458e37e4eab9f011a3ce68c83fcfdfa6b72bfd004e6d10b85348d909a4eb",
+  "classes/Workflow.php": "1f47caf866028976aede21cec2e0ad1b36b59b3346425f9332c35b67ca09b905",
+  "locale/en/locale.po": "6a4196d2f51e7bb5d6188d53ccf2bb66ba2397c0926cb937332bffdd5de597b2",
+  "version.xml": "1a37cc70a5adfc36a0a6db0f4d7df81e61a89941b47b0bf97dc91fcaf2bedc4d",
+  "assets/images/ror-org-logo-icon.svg": "475de7d34a0b062ebe381326d9caa4a6d65c18d37050e8b159508dcb8a7abbdc",
+  "assets/css/style.css": "d396e5019b8f31a8ae72f009d5cb41086448ec74b8d7511bbb6ede144cfe8394",
+  "README.md": "b0937c3a021306ebe0b2e82d08283da2b16b2f385c08501813ca0c3e4db1f85b",
+  "docs/ror-org-api-example.json": "a2bb4de71100a3781e40e14699a138e9f55c90ad6f778ac19f7f9d0956fe671e",
+  "docs/ror-lookup-ojs-3-4-0.gif": "4ef370646398453a1cd34c4e138043f74b09bdd1cd039d5abc819e57333956c8",
+  "RorPlugin.php": "e71e36dd294e693e3b7ec21999cb6b71cfaa11d8d6105b81048e64a02c8d1a65",
+  "templates/contributor.tpl": "7db60b3fddd911cea926d9e3bc6bdcad70322b58f1685ec6ce45a73a8272ba83"
+}

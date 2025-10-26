@@ -1,0 +1,10 @@
+{
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "locale/en_US/locale.po": "050ece7635464e56835f6821c803bf846683bf60d881b003eb4d1c2f9e01233a",
+  "AdminNotificationManagerForm.inc.php": "c92940487ed42e309056616dc760884fb75b25ec4c5d861581a031a0e033e9f2",
+  "version.xml": "7a3e22bc481e961e993e125f3f6470032dbdadc2cb97d10e653968a87c028e87",
+  "README.md": "8ddf737e7bb29b57b17b911616d24804600146b47b3396a3547d94d6b3aaf884",
+  "AdminNotificationManagerPlugin.inc.php": "c583636f6fe08455979cb98e84740113fb94f54df46b02c77e1d3e1c59a540f1",
+  "index.php": "af60a4b5f082643377d2e8afa4af078237ac623e68c87f1e3cde6266fc01ebed",
+  "templates/adminNotificationForm.tpl": "b459da00f55b26ff0b632083cd15828691e5fb61a85db07d2e98f6c64f61b8a2"
+}

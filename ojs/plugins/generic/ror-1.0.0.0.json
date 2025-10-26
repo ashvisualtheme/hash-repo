@@ -1,0 +1,14 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en_US/locale.po": "8af47f3d10fafaa9e43561369944a72d523ce6c3743de2ad90a2901be62307dc",
+  "docu/ror.gif": "f283066cd40d07419348272ae10ba0607c4a22445447d98e3bcce67501bf8806",
+  "docu/ror_customization.gif": "ae34d27ada38e3f4c8e33505ea1a69f6c82f140f9d62ee293fa40983ad25f762",
+  "version.xml": "8a8a04ed1712f3e5a646d9a744ba788c68ec73593ad8b0bfa7f61cbccf4692a1",
+  "assets/rorId.svg": "fab48526198762bf877759b4e5847f930cb8b57ed35cb1678dffd3f4cf3adbc5",
+  "assets/ror-logo-small.png": "de63a1e4d4e0a91a88791caad4aea9cd892d32aae09aef11c59ae85ef7fce702",
+  "assets/ror.png": "efcd5d98aafe19789edc11967933e9c67607ef2c252684e63dcd9c4aa2418123",
+  "README.md": "95e25784cf3b9eaeede232aaf093a386c9f5fb0351b0f3ad8f877b78a7db1f46",
+  "RORPlugin.php": "ccd6c73d1d518cd9f2419c45995aa200c7cbd19af7f89a5b17ab9a82971b623e",
+  "index.php": "407313974086b1a9e06826d93d89fd09b46da782737a88152acde1b589db84c0",
+  "templates/affiliation.tpl": "4bee99c7c19c042dae35dcdc9eb2996279ceb40de554fa1db896ca2163d05aff"
+}

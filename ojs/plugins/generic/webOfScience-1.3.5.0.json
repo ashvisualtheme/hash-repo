@@ -1,0 +1,23 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/WOSReview.php": "fcf6877e8b8e5bd316be95e08caafb4e99b318f23941324068dfc89220ce2db6",
+  "classes/WOSReviewsDAO.php": "224a5bd5c0b215dd5a7a19870ff41e1cfb1c70bf51ae1f0f2433a1c4c0898395",
+  "classes/form/WOSForm.php": "8d9fb45751e8dfc1258e4144b1cffbc50b93ea12a9e38eab5f14592435fea950",
+  "classes/WOSMigration.php": "fc0ae5f90b85c3481615a1a3f8062e03c5c2c3a840a5692c3819ed4ce4c883d7",
+  "locale/en/locale.po": "5a42bdc6a4fe404296544bacf188d2d1da19381ca3bd6f230a0ef6035bc8ad99",
+  "locale/pt_BR/locale.po": "eaac6c90c7754be6df3a455a0e2dc0896efc61c878d0be9fd4d4c36ee96533d7",
+  "locale/ru/locale.po": "27ccf32f108e2922d4989dd0d1af013491c3c520b495d722445c5867e05bc555",
+  "version.xml": "40a9f24510f1cddbe054d313ed7f3a9f83d71eff5a3470c5f2a9f758bfda3b5d",
+  "README.md": "bfaf429f797dc43ca785af1ba29967696dbf6794f869a83a0fb4fab9854db511",
+  "WOSHandler.php": "ab23a0cfbea075ffd989e3193eb5bbaba0cff98e5bdc2d3e83bdfd88f0b81881",
+  "templates/wosNotificationStep.tpl": "d5beeb5e8bff24f2778042142c425e02d888a8d04d792eba8502946476e6b2a1",
+  "templates/wosExportResults.tpl": "5a03140fc197e47bb1006d5f47566e50e6542a6447f1c0ff59ac75cef45fcc75",
+  "templates/wosExportStep.tpl": "9403eb2e04abc6da31e7e6fa615b63a0cf669e410dd6816b57ac82acb78839d1",
+  "templates/image/clarivate_logo_rgb_top_color.png": "1f8cb901ef73666b81429309caa88a9d2ea3fc957f2c017e610ef31983e36bc9",
+  "templates/image/clarivate_logo_rgb_top_black.png": "eb9233e5beb6c60fd6d561c089c6ab74d648753e7cd8cd547f5776cc85974fb9",
+  "templates/image/clarivate_logo_rgb_color.png": "3b73f261bfc42dbe1fbdb3461f2b55b2208c83a08db375ab4cd22295414d985b",
+  "templates/wosSettingsForm.tpl": "350cfc650b35ca08ac4425fae0b8733d3511f6f57d3fa2a50ccec506b1518e1a",
+  "templates/wosExportReviewForm.tpl": "52e6f925695b98afd4816e357452c4e21b5566c19a9ce0d7189c5f0f5ab9955e",
+  "WebOfSciencePlugin.php": "f05a544bb970209747290ca680a6689381c6b10f3e9c7d84688bcc711346e8b7",
+  "styles/wos.css": "e50b309fe40495835df76a97cb45553447a0be855fc147ccde0300f7af719d30"
+}

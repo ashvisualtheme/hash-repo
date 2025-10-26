@@ -1,0 +1,91 @@
+name: Generate Hash for OJS/OMP/OPS Core
+
+on:
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: 'Select the application platform'
+        required: true
+        type: choice
+        options:
+          - ojs
+          - omp
+          - ops
+        default: 'ojs'
+      version:
+        description: 'Enter the version string (e.g., 3.4.0-5)'
+        required: true
+        default: '3.4.0-5'
+
+jobs:
+  generate-and-package-hash:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+
+    # 1. Construct variables from the platform and version inputs
+    - name: Set Variables from Inputs
+      id: vars
+      run: |
+        PLATFORM="${{ github.event.inputs.platform }}"
+        VERSION_HYPHEN="${{ github.event.inputs.version }}"
+        VERSION_DOT=$(echo "$VERSION_HYPHEN" | sed 's/-/\./g')
+        FILENAME="${PLATFORM}-${VERSION_HYPHEN}.tar.gz"
+        DOWNLOAD_URL="https://pkp.sfu.ca/${PLATFORM}/download/${FILENAME}"
+        EXTRACTED_DIR="${PLATFORM}-${VERSION_HYPHEN}"
+        
+        echo "download_url=${DOWNLOAD_URL}" >> $GITHUB_OUTPUT
+        echo "filename=${FILENAME}" >> $GITHUB_OUTPUT
+        echo "platform=${PLATFORM}" >> $GITHUB_OUTPUT
+        echo "version_dot=${VERSION_DOT}" >> $GITHUB_OUTPUT
+        echo "extracted_dir=${EXTRACTED_DIR}" >> $GITHUB_OUTPUT
+        
+        echo "Platform: $PLATFORM"
+        echo "Version: $VERSION_HYPHEN"
+        echo "Constructed URL: $DOWNLOAD_URL"
+
+    - name: Install jq
+      run: sudo apt-get update && sudo apt-get install -y jq
+
+    # 2. Download the application using the constructed URL
+    - name: Download Application Release
+      run: wget "${{ steps.vars.outputs.download_url }}"
+
+    # 3. Extract the downloaded archive
+    - name: Extract Archive
+      run: tar -xzf "${{ steps.vars.outputs.filename }}"
+
+    # 4. Generate the JSON hash file with the correct naming convention
+    - name: Generate Hashes JSON
+      run: |
+        JSON_FILENAME="${{ steps.vars.outputs.platform }}-${{ steps.vars.outputs.version_dot }}.json"
+        
+        cd "${{ steps.vars.outputs.extracted_dir }}"
+        find . -type f -print0 | xargs -0 sha256sum | \
+        awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}' | \
+        jq -s 'add' > "../${JSON_FILENAME}"
+        cd ..
+        
+        echo "Successfully generated ${JSON_FILENAME}"
+
+    # 5. Prepare the final directory structure for the artifact
+    - name: Prepare Final Directory Structure
+      run: |
+        FINAL_PATH="core"
+        JSON_FILENAME="${{ steps.vars.outputs.platform }}-${{ steps.vars.outputs.version_dot }}.json"
+        
+        mkdir -p "$FINAL_PATH"
+        mv "$JSON_FILENAME" "$FINAL_PATH/"
+        
+        echo "Final structure prepared at $FINAL_PATH"
+        ls -R
+
+    # 6. Upload the final directory as a packaged artifact
+    - name: Upload Packaged Artifact
+      uses: actions/upload-artifact@v4
+      with:
+        name: ${{ steps.vars.outputs.platform }}-${{ steps.vars.outputs.version_dot }}-hashes
+        path: core
+        retention-days: 90
