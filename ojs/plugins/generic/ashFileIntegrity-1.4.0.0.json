@@ -1,0 +1,14 @@
+{
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/AshFileIntegritySettingsForm.php": "a0b85e592a520e87a138e2dcc5a77bef2517b827ad31ecf375e96680f1620863",
+  "classes/AshFileIntegrityScanScheduledTask.php": "6b2c667abe9a01bc8dae9b588a4d5a6df6c2740908be232a59fbfc0731028b55",
+  "locale/id/locale.po": "d4e04876b9bd9c29622eee1097f78ec58a2e529327cec0f2a621d41b9df9180e",
+  "locale/en/locale.po": "7c2582c70102e7efd84876db951691d06389ce04e330f7751186ab72001a1022",
+  "version.xml": "5494f1a044202600018e5f8c81eeba8504a1880ceee4544b722855cf82a99e0d",
+  "README.md": "c03cbfbfe6a16370381b19cd876975da8746de27be5ae4d6f3b6754e70d40268",
+  "scheduledTasks.xml": "c017bf8af4f113fd33981e2d1f61d8dbba048ab5c650a258aff4e228ed5f7234",
+  "CHANGELOG.MD": "044f770c0a83814d7d8e4442f8da0eb797c727ce7f8022a92fee0cf2c1af6488",
+  "AshFileIntegrityHandler.php": "5e81ea328665e41d7c073fa6e10f8d214eaa104a1743d4f031697fe39258bb53",
+  "templates/settings.tpl": "281743fdc52df64f9840596eb72a2e91ee97e6ad66c7499b99a3c470920f87be",
+  "AshFileIntegrityPlugin.php": "b7f5379a1055a041323a4b49e8e6e9d57fcf171974ea1ce9d600be132d29ddd2"
+}
