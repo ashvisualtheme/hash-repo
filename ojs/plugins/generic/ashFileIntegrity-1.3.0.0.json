@@ -9,7 +9,7 @@
   "scheduledTasks.xml": "57bfb9aee77896b50828f94a9a2cf6676470e98704d38d61421c2ec21825d2e0",
   "CHANGELOG.MD": "2b5be108773a303c9eaeb42fc658864d7283a855f3a3f8e05a652727ab39a466",
   "FileIntegrityHandler.inc.php": "b094b459688f27d0077de6907d975b7d6c3fc4d5ada84a947856e68aaed63c37",
-  "FileIntegrityPlugin.inc.php": "9be85328e050956d3a1f35b69f858144f94b2477fe715e8edffd0219ace5f610",
+  "FileIntegrityPlugin.inc.php": "032eed79c62926557e2a74c4b2a966244549bf8116edc1733caf38f4d014aeed",
   "index.php": "73b213cf7ed2593810d579aed7972ebb8775003d78368c9035b4b05c6654cd20",
   "templates/settings.tpl": "281743fdc52df64f9840596eb72a2e91ee97e6ad66c7499b99a3c470920f87be"
 }
