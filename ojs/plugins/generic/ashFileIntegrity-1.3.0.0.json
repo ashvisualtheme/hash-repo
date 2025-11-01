@@ -1,15 +1,15 @@
 {
   "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
-  "classes/FileIntegrityScanScheduledTask.inc.php": "ec920d69a33b14bc149f835e4dfac41ed5aba33f299b738892931b4675ea3f81",
-  "classes/FileIntegritySettingsForm.inc.php": "e892f0dbaeb1625d2d1aaad87f60cbf62ad804ccc24235bd619be8a64ce93114",
-  "locale/id_ID/locale.po": "fe1855fc7a6fdbd768efb87e66ad228dd059be5223f79f7e0685ee237c7940d3",
-  "locale/en_US/locale.po": "198c7ab3ccfa65339ac0a33e7288d53997d1e591952e8d05618415f3db80fdc9",
-  "version.xml": "03ff881828f7bd22f8498503181e2a61f062cd2ab2ac14f2d9998a907f170ce7",
-  "README.md": "25b211569722bdb3b62e8b3c3d42bfb88dae72d8b5c7324eb457661df5a7f179",
+  "classes/FileIntegrityScanScheduledTask.inc.php": "1113de1c119d9c8e9aba36e67427bcbc6726f100a306dd53699f1b408505bbcb",
+  "classes/FileIntegritySettingsForm.inc.php": "143a1ca42c63006a3593c9bb5b8536676b7efae49fa9695b22c97d3122f8fd3a",
+  "locale/id_ID/locale.po": "d4e04876b9bd9c29622eee1097f78ec58a2e529327cec0f2a621d41b9df9180e",
+  "locale/en_US/locale.po": "7c2582c70102e7efd84876db951691d06389ce04e330f7751186ab72001a1022",
+  "version.xml": "1350ef7d23233c97448e1e24c1992b8a085cdddcbe557d01f2f8072b69916fa0",
+  "README.md": "a94a76b279c8ac6080f82577a00d2288694f314ded085c9ca055f0ff11f542d0",
   "scheduledTasks.xml": "57bfb9aee77896b50828f94a9a2cf6676470e98704d38d61421c2ec21825d2e0",
   "CHANGELOG.MD": "2b5be108773a303c9eaeb42fc658864d7283a855f3a3f8e05a652727ab39a466",
-  "FileIntegrityHandler.inc.php": "e8cb742813185ed34a69a62a7a7583096be5e6f60e3df61a62b20801fc6362a4",
-  "FileIntegrityPlugin.inc.php": "222baa624065c0c6e919897424c7d2410c34cf5b02524ee065ce08d1500b89ac",
+  "FileIntegrityHandler.inc.php": "b094b459688f27d0077de6907d975b7d6c3fc4d5ada84a947856e68aaed63c37",
+  "FileIntegrityPlugin.inc.php": "9be85328e050956d3a1f35b69f858144f94b2477fe715e8edffd0219ace5f610",
   "index.php": "73b213cf7ed2593810d579aed7972ebb8775003d78368c9035b4b05c6654cd20",
-  "templates/settings.tpl": "aedcd446bdd9fb876154bb1ac416938fc8df4da040e47dd7049ed2f728e215c9"
+  "templates/settings.tpl": "281743fdc52df64f9840596eb72a2e91ee97e6ad66c7499b99a3c470920f87be"
 }
