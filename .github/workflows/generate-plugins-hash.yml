@@ -38,12 +38,14 @@ jobs:
           
           # Remove the .tar.gz extension and "-v" from the version to get the base name
           BASENAME=$(echo "${FILENAME}" | sed 's/\.tar\.gz$//' | sed 's/-v/-/')
+          BASENAME_DOT=$(echo "$BASENAME" | sed -E 's/([a-zA-Z_]+)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)/\1-\2.\3.\4.\5/')
 
           # Set variables as output for use in subsequent steps
           echo "download_url=${DOWNLOAD_URL}" >> "$GITHUB_OUTPUT"
           echo "category=${PLUGIN_CATEGORY}" >> "$GITHUB_OUTPUT"
           echo "filename=${FILENAME}" >> "$GITHUB_OUTPUT"
           echo "basename=${BASENAME}" >> "$GITHUB_OUTPUT"
+          echo "basename_dot=${BASENAME_DOT}" >> "$GITHUB_OUTPUT"
 
       # Step 3: Download and Extract the archive
       - name: Download and Extract Archive
@@ -56,7 +58,7 @@ jobs:
       - name: Generate Hashes JSON
         id: generate
         run: |
-          OUTPUT_JSON="${{ steps.payload.outputs.basename }}.json"
+          OUTPUT_JSON="${{ steps.payload.outputs.basename_dot }}.json"
           cd "${{ steps.payload.outputs.basename }}"
           
           find . -type f -print0 | xargs -0 sha256sum -b | \
