@@ -1,7 +1,5 @@
 {
   "CHANGELOG.md": "26d5a692c7014bc65cfd042a14a6fa0d8997ce9cdef38fa9da507a6a00be9644",
-  ".gitlab/secret-detection-ruleset.toml": "68f7d138694dee03d40e59ffe7b339f36986b087e69a8152f131b1b695e3d603",
-  ".gitlab/sast-ruleset.toml": "6b3de40d0b00c1ba6aec08c833480cb0874d0a806855bb0f92018ae4c2f18a2a",
   "LICENSE.md": "b410d0e1b80039632a6aeb7a3fe8610939dbd0fcc4aacf4b538386f61c0bcf9d",
   ".gitlab-ci.yml": "b12e9c3827019e097a7031f6727fbc790d50b92a7c7df5cefc14064eba0bdd19",
   "AshVisualThemePlugin.inc.php": "d4ba9d20d049e5c77d59a19b073ffe48b2a53023edb45c09a516651c0a5c50d4",
@@ -215,7 +213,7 @@
   "templates/custom/2/plugins/generic/staticPages/templates/content.tpl": "55d92e2041751a244a3875f6c184175d54d2ad590565387d045dac25565edec4",
   "templates/custom/2/frontend/pages/indexJournal.tpl": "a695ba051af9695f72d381a610ab8fef36f41e2305e0cd97e8ff15a3eda23d01",
   "templates/custom/2/frontend/pages/indexSite.tpl": "fd82c456fffcee87c446c84b263b3cb6bdd1215ad5dbfc1bd1eda24cfdc3c244",
-  "templates/custom/2/frontend/pages/issueArchive.tpl": "50250a476487633fdb4f5c3caef38f659745556a004c50a9e070145767237fe0",
+  "templates/custom/2/frontend/pages/issueArchive.tpl": "26e69dcd396191d64335b3bd836c63faacef81bec45b10927a8d649e2704b7f1",
   "templates/custom/2/frontend/pages/contact.tpl": "bd759487fc4b9d55a79ff4e06c149c2b03aa1a4b0c6c2f555dc71d0a5f8e27bd",
   "templates/custom/2/frontend/components/breadcrumbs_issue.tpl": "c859e3e8416d2ef82154a4d7fc2943d8adbeeae84aeffebe21e571efc533a36f",
   "templates/custom/2/frontend/components/registrationForm.tpl": "1d0f2551f8a9eaa01234568d852a5748df8d4287a40dbcb90d64c3abce76348d",
