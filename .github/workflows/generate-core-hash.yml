@@ -63,8 +63,8 @@ jobs:
         JSON_FILENAME="${{ steps.vars.outputs.platform }}-${{ steps.vars.outputs.version_dot }}.json"
         
         cd "${{ steps.vars.outputs.extracted_dir }}"
-        find . -type f -print0 | xargs -0 sha256sum | \
-        awk '{sub(/^\.\//, "", $2); printf "{\"%s\":\"%s\"}\n", $2, $1}' | \
+        find . -type f -print0 | xargs -0 sha256sum -b | \
+        awk '{hash=substr($0, 1, 64); filename=substr($0, 68); sub(/^\.\//, "", filename); printf "{\"%s\":\"%s\"}\n", filename, hash}' | \
         jq -s 'add' > "../${JSON_FILENAME}"
         cd ..
         
