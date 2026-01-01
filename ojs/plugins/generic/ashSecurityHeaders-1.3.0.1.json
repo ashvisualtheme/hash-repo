@@ -1,0 +1,11 @@
+{
+  "LICENSE": "230184f60bae2feaf244f10a8bac053c8ff33a183bcc365b4d8b876d2b7f4809",
+  "locale/id_ID/locale.po": "5faa656b0a58b74e18be6a8dc0fda97237a2466af7ddc1c8f214bc2b7a560bbe",
+  "locale/en_US/locale.po": "ef1e7d1e20c0fce73e4e11a118229db72addb2e7d1a65f910d6e77ea5738c682",
+  "version.xml": "1090d5a06f61784fe24dcf4cd3a585638dc19d90154c602f35861875e809043f",
+  "README.md": "cc91763f60193175dcabf6c01566596d2fa9b28e1be28cd7293c0721f03d8e08",
+  "AshSecurityHeadersPlugin.inc.php": "e3942b8f59f0a46e762633c9c5405e0c361eb787c76042fa7bd19e3885b6acde",
+  "AshSecurityHeadersSettingsForm.inc.php": "9c8a322b4ec1bac58dcbc35a27a9487c160bc18bf73878eaeb680cec7553e20b",
+  "index.php": "16f517488a00f24075d591e265ce13368ad9100c4b61a0ff54ba6a6f3806c170",
+  "templates/settings.tpl": "3c933ebf85af0b7f83d3b334f2d6f678e67959253329bfc7dfb67bd1d2a26fba"
+}
