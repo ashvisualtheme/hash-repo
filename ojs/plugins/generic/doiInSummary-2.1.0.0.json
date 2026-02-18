@@ -1,0 +1,12 @@
+{
+  "DoiInSummaryPlugin.inc.php": "a268a3b7669baac82183e6ef221a4f43c58ff656bd5aeaa48bdd2f533d4007bf",
+  "locale/en/locale.po": "646bb13d2339dc64375da65050723295ab9f79e2ceac15774404f5b1c19b409e",
+  "locale/pt_BR/locale.po": "be7ea5778337f1361f683d92ad829e1b0314bd688fe95cb95961d35485d30810",
+  "templates/doi_summary.tpl": "892cde8bb80a25fa007e37b01d1033078ca336790b51188acd66613e576c8ec6",
+  "README.md": "d7ebecab049b78bfcc34a48a04232085f19e18e5ccff713d59ebc1c7e80778b5",
+  "LICENSE": "9aa8d332c8795a96b35beb8942d217e733cedfab67bf48d86736d552dd06aa32",
+  "version.xml": "5b4ff7a4888d7da6e7badb9a821acb47605b817df28a7af8d01eede97c9e4cc1",
+  "index.php": "f36bcbca3a66f2988d67ee593610400e7a9a457129bb0c8576d41b5444bceb30",
+  "cypress/tests/DoiInSummary.cy.js": "242be5763f357105ad794e67e84ea27cb1d99d4e29ede2920b00685d6aee8854",
+  "styles/doi.css": "cbf5a8087a1fcc537c3c5b804be3a66abda42421032d80fc11c21d14b862a267"
+}

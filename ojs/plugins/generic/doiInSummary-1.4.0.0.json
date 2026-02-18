@@ -1,0 +1,11 @@
+{
+  "DoiInSummaryPlugin.inc.php": "96f06e0082be99dbcf79be7aa9a49685b1d9ee707e0d643e941fc48ca9248058",
+  "locale/en_US/locale.po": "646bb13d2339dc64375da65050723295ab9f79e2ceac15774404f5b1c19b409e",
+  "locale/pt_BR/locale.po": "be7ea5778337f1361f683d92ad829e1b0314bd688fe95cb95961d35485d30810",
+  "templates/doi_summary.tpl": "a87b5d366f4c0a11b6ad4009e937707725a91d449cec83f85dba0f7f9a1e5ee4",
+  "README.md": "e365884ef270e0dd01ee2a3da36f38effc273e310f7c155891c815cdf124f703",
+  "LICENSE": "9aa8d332c8795a96b35beb8942d217e733cedfab67bf48d86736d552dd06aa32",
+  "version.xml": "201ea371785dd1562b6b3aa438c6b46f763c15ac201bca938ff6a68dd132ac59",
+  "index.php": "922786201bee57c29bffc2ac5d3577f9fc088feaa0aa70b5ffeb688c42e49ff9",
+  "styles/doi.css": "e85e40bf06e9880d3d8749e6f0d675508cf1f62da5fa57db00dc74e63a017e55"
+}

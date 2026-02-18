@@ -1,0 +1,13 @@
+{
+  "DoiInSummaryPlugin.inc.php": "9258a9d0750786b22df9a5de12c0c485ec26dd5fe11582c88994e1eedd2f9018",
+  "locale/en_US/locale.po": "ea5466abca88c453490d08e524ce96131b601a63f148a0869dc0149427df35f6",
+  "locale/pt_BR/locale.po": "be7ea5778337f1361f683d92ad829e1b0314bd688fe95cb95961d35485d30810",
+  "templates/doi_summary.tpl": "a87b5d366f4c0a11b6ad4009e937707725a91d449cec83f85dba0f7f9a1e5ee4",
+  "README.md": "e365884ef270e0dd01ee2a3da36f38effc273e310f7c155891c815cdf124f703",
+  "LICENSE": "9aa8d332c8795a96b35beb8942d217e733cedfab67bf48d86736d552dd06aa32",
+  "upgrade.xml": "815d99f75bb02fea5c0b3d615c38cb571fc636a9ab11c004b92c55a9c022b688",
+  "version.xml": "c8e7860138e1e4d6b08bf4fccf5358b6fbae2358cccdeb05b8cf833623aa38bd",
+  "ObsoleteVersionMigration.inc.php": "7f79bbfe80709e77daf5f1e0f807f787820e1bec663afa01130b770599e7959e",
+  "index.php": "922786201bee57c29bffc2ac5d3577f9fc088feaa0aa70b5ffeb688c42e49ff9",
+  "styles/doi.css": "e85e40bf06e9880d3d8749e6f0d675508cf1f62da5fa57db00dc74e63a017e55"
+}
