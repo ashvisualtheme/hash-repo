@@ -68,7 +68,7 @@ jobs:
       - name: Generate Hashes JSON
         id: generate
         run: |
-          OUTPUT_JSON="${{ steps.payload.outputs.basename }}-${{ steps.payload.outputs.version }}.json"
+          OUTPUT_JSON="${{ steps.payload.outputs.plugin_name }}-${{ steps.payload.outputs.version }}.json"
           cd "${{ steps.payload.outputs.basename }}"
 
           find . -type f -print0 | xargs -0 sha256sum -b | \
@@ -80,8 +80,8 @@ jobs:
       # Step 5: Prepare the final directory structure
       - name: Organize file into final structure
         run: |
-          mkdir -p "plugins/${{ steps.payload.outputs.category }}/${{ steps.payload.outputs.plugin_name }}"
-          mv "${{ steps.generate.outputs.json_file }}" "plugins/${{ steps.payload.outputs.category }}/${{ steps.payload.outputs.plugin_name }}/"
+          mkdir -p "plugins/${{ steps.payload.outputs.category }}"
+          mv "${{ steps.generate.outputs.json_file }}" "plugins/${{ steps.payload.outputs.category }}/"
 
       # Step 6: Upload the artifact with the correct structure
       - name: Upload Structured Artifact
