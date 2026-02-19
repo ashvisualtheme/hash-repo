@@ -1,0 +1,14 @@
+{
+  "CHANGELOG.MD": "66cb7df119473e8e56fdce1a740bf39f309cf35376d36ece10f07e03ef442ae3",
+  "locale/id/locale.po": "d4e04876b9bd9c29622eee1097f78ec58a2e529327cec0f2a621d41b9df9180e",
+  "locale/en/locale.po": "7c2582c70102e7efd84876db951691d06389ce04e330f7751186ab72001a1022",
+  "templates/settings.tpl": "281743fdc52df64f9840596eb72a2e91ee97e6ad66c7499b99a3c470920f87be",
+  "README.md": "c03cbfbfe6a16370381b19cd876975da8746de27be5ae4d6f3b6754e70d40268",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "version.xml": "174e0dbc9e3c3d475a493292e0cf2747f5c7884772ebd4e61aac4d78b246b72c",
+  "scheduledTasks.xml": "c017bf8af4f113fd33981e2d1f61d8dbba048ab5c650a258aff4e228ed5f7234",
+  "classes/AshFileIntegritySettingsForm.php": "a0b85e592a520e87a138e2dcc5a77bef2517b827ad31ecf375e96680f1620863",
+  "classes/AshFileIntegrityScanScheduledTask.php": "b296070e631cedfead59c8fa314f69046ac0585d23d01fcfbf1fa3d1ee7449a6",
+  "AshFileIntegrityPlugin.php": "b7f5379a1055a041323a4b49e8e6e9d57fcf171974ea1ce9d600be132d29ddd2",
+  "AshFileIntegrityHandler.php": "5e81ea328665e41d7c073fa6e10f8d214eaa104a1743d4f031697fe39258bb53"
+}

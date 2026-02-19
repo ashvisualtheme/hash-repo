@@ -1,0 +1,15 @@
+{
+  "CHANGELOG.MD": "e724d0af8552bda1b1e76e69c9e63c8798bd53a8caf5435d1ba97d5741098021",
+  "locale/en_US/locale.po": "7c2582c70102e7efd84876db951691d06389ce04e330f7751186ab72001a1022",
+  "locale/id_ID/locale.po": "d4e04876b9bd9c29622eee1097f78ec58a2e529327cec0f2a621d41b9df9180e",
+  "templates/settings.tpl": "281743fdc52df64f9840596eb72a2e91ee97e6ad66c7499b99a3c470920f87be",
+  "README.md": "a94a76b279c8ac6080f82577a00d2288694f314ded085c9ca055f0ff11f542d0",
+  "FileIntegrityPlugin.inc.php": "ca655551b99855c6906f5dfcdc0e093ce5c7355aacefaca13620dc0425e06c79",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "version.xml": "49ef89d850dfabf7b27e6d15e6c515cc41e5eb6ffa140bad820b7b3a8af98572",
+  "index.php": "73b213cf7ed2593810d579aed7972ebb8775003d78368c9035b4b05c6654cd20",
+  "scheduledTasks.xml": "57bfb9aee77896b50828f94a9a2cf6676470e98704d38d61421c2ec21825d2e0",
+  "classes/FileIntegrityScanScheduledTask.inc.php": "012dcba10c468fec8f3e42e78d1ccb6185bdead059c844e66efb76cd25e46f72",
+  "classes/FileIntegritySettingsForm.inc.php": "143a1ca42c63006a3593c9bb5b8536676b7efae49fa9695b22c97d3122f8fd3a",
+  "FileIntegrityHandler.inc.php": "cab5cc2763a9d2b67e8bba0604804c5c117bc6af649d0a0544ef9b56833e1309"
+}
