@@ -8,11 +8,19 @@ on:
     # Defines input fields that will appear in the GitHub UI
     inputs:
       download_url:
-        description: 'Full URL of the .tar.gz file to process'
+        description: "Full URL of the .tar.gz file to process"
         required: true
         type: string
       plugin_category:
-        description: 'Plugin category (e.g., themes, blocks, generic, etc)'
+        description: "Plugin category (e.g., themes, blocks, generic, etc)"
+        required: true
+        type: string
+      plugin_name:
+        description: "Plugin name (e.g., healthCheck)"
+        required: true
+        type: string
+      version:
+        description: "Plugin version (e.g., 3.4.0.5)"
         required: true
         type: string
 
@@ -32,20 +40,22 @@ jobs:
           # Get inputs directly from the 'github.event.inputs' context
           DOWNLOAD_URL="${{ github.event.inputs.download_url }}"
           PLUGIN_CATEGORY="${{ github.event.inputs.plugin_category }}"
-          
+          PLUGIN_NAME="${{ github.event.inputs.plugin_name }}"
+          VERSION="${{ github.event.inputs.version }}"
+
           # Get the filename from the end of the URL
           FILENAME=$(basename "${DOWNLOAD_URL}")
-          
+
           # Remove the .tar.gz extension and "-v" from the version to get the base name
           BASENAME=$(echo "${FILENAME}" | sed 's/\.tar\.gz$//' | sed 's/-v/-/')
-          BASENAME_DOT=$(echo "$BASENAME" | sed -E 's/([a-zA-Z_]+)-([0-9]+)-([0-9]+)-([0-9]+)-([0-9]+)/\1-\2.\3.\4.\5/')
 
           # Set variables as output for use in subsequent steps
           echo "download_url=${DOWNLOAD_URL}" >> "$GITHUB_OUTPUT"
           echo "category=${PLUGIN_CATEGORY}" >> "$GITHUB_OUTPUT"
+          echo "plugin_name=${PLUGIN_NAME}" >> "$GITHUB_OUTPUT"
+          echo "version=${VERSION}" >> "$GITHUB_OUTPUT"
           echo "filename=${FILENAME}" >> "$GITHUB_OUTPUT"
           echo "basename=${BASENAME}" >> "$GITHUB_OUTPUT"
-          echo "basename_dot=${BASENAME_DOT}" >> "$GITHUB_OUTPUT"
 
       # Step 3: Download and Extract the archive
       - name: Download and Extract Archive
@@ -58,20 +68,20 @@ jobs:
       - name: Generate Hashes JSON
         id: generate
         run: |
-          OUTPUT_JSON="${{ steps.payload.outputs.basename_dot }}.json"
+          OUTPUT_JSON="${{ steps.payload.outputs.basename }}-${{ steps.payload.outputs.version }}.json"
           cd "${{ steps.payload.outputs.basename }}"
-          
+
           find . -type f -print0 | xargs -0 sha256sum -b | \
           awk '{hash=substr($0, 1, 64); filename=substr($0, 68); sub(/^\.\//, "", filename); sub(/^\//, "", filename); printf "{\"%s\":\"%s\"}\n", filename, hash}' | \
           jq -s 'add' > "../${OUTPUT_JSON}"
-          
+
           echo "json_file=${OUTPUT_JSON}" >> "$GITHUB_OUTPUT"
 
       # Step 5: Prepare the final directory structure
       - name: Organize file into final structure
         run: |
-          mkdir -p "plugins/${{ steps.payload.outputs.category }}"
-          mv "${{ steps.generate.outputs.json_file }}" "plugins/${{ steps.payload.outputs.category }}/"
+          mkdir -p "plugins/${{ steps.payload.outputs.category }}/${{ steps.payload.outputs.plugin_name }}"
+          mv "${{ steps.generate.outputs.json_file }}" "plugins/${{ steps.payload.outputs.category }}/${{ steps.payload.outputs.plugin_name }}/"
 
       # Step 6: Upload the artifact with the correct structure
       - name: Upload Structured Artifact
