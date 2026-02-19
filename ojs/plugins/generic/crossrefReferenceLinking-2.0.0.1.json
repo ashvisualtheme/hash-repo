@@ -1,0 +1,19 @@
+{
+  "locale/fr_FR/locale.po": "48850bb5850c4f43fe24f4d2dd23df695719c81041b99815d25fbfb92d457675",
+  "locale/de/locale.po": "2994605436e921a615c82763b9042df0ff87b8409346d9650478f59036e67aa8",
+  "locale/ar/locale.po": "adddeae2d0a01d0735bf0abad1fd0b4a0f2ebca957e298622d5c845db5e170d0",
+  "locale/pl/locale.po": "cdc9a501113dd4e1c3a5f6c9689b57fd49ca8c95230c3b82acb36cc64f4ac50c",
+  "locale/en/locale.po": "db5114f40bcea85a2a36c7aad49633fd0bd0e56e6e64c372409da44d174e1aea",
+  "locale/it/locale.po": "36e2894503e5715e55cc1411262bf74d069840f4b2cd7ab4abf642ea8ac684c8",
+  "locale/es/locale.po": "a3cc2b7850e965b74396b6f021d3c450d8adbed19af2e972783ebfd67b70ca61",
+  "templates/displayDOI.tpl": "34b20e27e50848843256f572d34750f85a5bab6dfe7714b7165c01722d3d3193",
+  "templates/settingsForm.tpl": "ca838feb7bd0a5f07e2028d651fedb6585e5d7d21997f81377e0170ffafad438",
+  "README.md": "a13b20016da46af2a4c14860adfea7dfbd2e7007a4f0bcee375c79d29b0dbe2b",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "CrossrefReferenceLinkingSettingsForm.php": "b7c703278d08efaba80aad4fe78e6636e82dc1668aac90c62efe46a5fec22e4a",
+  "version.xml": "9cceeaf93bcb85661052379961bd0445feb5a3a0adeb599d9fd9b885fd809e8b",
+  "CrossrefReferenceLinkingInfoSender.php": "af49c1f59040e425b6f3e2bedf7b90bef5b6023e0aa17f95e6d7f5e193bed360",
+  "scheduledTasks.xml": "3359c312eb4b6a81a6251672a1684dd506d8def6836aceda94b4ed1e2e71b099",
+  "CrossrefReferenceLinkingPlugin.php": "13c414f85a948018c6529c211bb2be1f1d8a23d5d2de15b23df4af15d43b7179",
+  "tools/checkCrossrefReferencesDOIs.php": "95b55e8e62d358743c49b7fcff8ddfe86194efa298583a9645f76945ab9ace53"
+}
