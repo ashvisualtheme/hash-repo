@@ -1,0 +1,21 @@
+{
+  "PlauditPlugin.php": "2aa4f6b4754f63b15c09799ca823d7ddc4200470a1be90838dc3f3aa0676968c",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "classes/migration/EncryptLegacyCredentials.php": "58c7a227c538bf330f4d01d76001ad4e03277e02a5ecab0f5b741b1c4c89dec3",
+  "classes/APIKeyEncryption.php": "9c1c3552a31bf8d590a4a8d98db9da257f047a62277a82a4a8ac20d161c9353d",
+  "locale/en/locale.po": "57d7571b82c613853f987e34346a61df7cd0f23bfdfd19c105b3cbe94edc4f99",
+  "locale/ar/locale.po": "2379ad9816bcfb9b497cf7d36d51bf29cf1281ee7705d2b395784ed9234715a8",
+  "locale/es/locale.po": "c204672ef6f9077e9b48540284ffbf8a3fd2608a955a8ed86b0762dc24399c82",
+  "locale/pt_BR/locale.po": "feb5cbab81ba5a2d13e1ac1bf52faea77fb5c8c4cd98eaa57303a4fb9007332b",
+  "version.xml": "942c767c99e7a47735e579e9f2e2ec43b6c8105b3de7525f690cc793fd4e3194",
+  "assets/plaudit-settings-page.png": "3f4ea590a79c4ef62cd3b998df0f1efadcb270bdf36df0bc837aa45489718330",
+  "assets/plaudit-widget.png": "b4345babbb567212ee87b7cdd5061e462a70a6047d99dc011aa3c9905da3288f",
+  "assets/plaudit-plugin-page.png": "09692249400b37500adcca5b5301d3caf184ddc2e7ce1bf407476cf2773ebf0d",
+  "upgrade.xml": "33f1672bfdb5a7c578b9c1e31a9a96f3b40087a7cfb560ce83bece66c9f8a04b",
+  "README.md": "0ae30cf4693233e2a2644c54d69e771b13157116d0e3cdcdb9447c1ce0de4f35",
+  "form/PlauditSettingsForm.php": "f9e5f99a82d790780af9b4783b9d18097847daa6d13d8d1ced445cace9d34101",
+  "cypress/tests/Test1_widgetShow.cy.js": "eef52cf5b15f65ba8731d0c999dbc46ad172f522a348b9e87fe35b1a20e07499",
+  "cypress/tests/Test0_pluginSetup.cy.js": "1be2a3baf62ba4b9eafabb31a97c825fcba34e116c56514a650c6717e66193aa",
+  "templates/settings.tpl": "90839faea1979d8402714a7b09184918f872e8242c7cbf0cee77216a7f97593e",
+  "templates/plauditWidget.tpl": "d951b708bbf4450217a4f48c8d0e2b10fbb32b2fdab766c782b0e7d104c6cc83"
+}
