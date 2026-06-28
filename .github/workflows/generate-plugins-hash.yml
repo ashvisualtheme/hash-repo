@@ -31,7 +31,7 @@ jobs:
     steps:
       # Step 1: Checkout the repository code
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       # Step 2: Extract data from manual inputs
       - name: Get Data from Workflow Inputs
@@ -85,7 +85,7 @@ jobs:
 
       # Step 6: Upload the artifact with the correct structure
       - name: Upload Structured Artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v7
         with:
           name: hash-for-${{ steps.payload.outputs.basename }}
           path: plugins/

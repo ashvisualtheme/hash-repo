@@ -23,7 +23,7 @@ jobs:
 
     steps:
     - name: Checkout repository
-      uses: actions/checkout@v4
+      uses: actions/checkout@v6
 
     # 1. Construct variables from the platform and version inputs
     - name: Set Variables from Inputs
@@ -84,7 +84,7 @@ jobs:
 
     # 6. Upload the final directory as a packaged artifact
     - name: Upload Packaged Artifact
-      uses: actions/upload-artifact@v4
+      uses: actions/upload-artifact@v7
       with:
         name: ${{ steps.vars.outputs.platform }}-${{ steps.vars.outputs.version_dot }}-hashes
         path: core
