@@ -1,0 +1,14 @@
+{
+  "locale/en/locale.po": "de2fa5eb0374eb3d2d3251600bd46028cad76d242e8a3f142f006100a7d37c62",
+  "locale/id/locale.po": "f67ed7e1a9228913e56e2aa9cb85c1a493122e231259556f0b22b7d881d88c2f",
+  "AshFileIntegrityHandler.php": "2f2a185ef1c581254fcf9d6866ebb23e31f9ea75c464fba34eec8287b580953a",
+  "CHANGELOG.MD": "126469b1d3904373ba86aa12a6e8137f9660deb82e8a46688fe64d881274cf65",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "AshFileIntegrityPlugin.php": "68f6604fae797803db54d258889006210aa1d790c26f6f56d471ee448d138e33",
+  "classes/RunFileIntegrityScanCommand.php": "a6b2f60de96bd89a4364ce5e93403f2c41daa8d46b60284bcb3b773f8c4ffe5d",
+  "classes/AshFileIntegritySettingsForm.php": "c245b15f787c1121cd357db53e40cf1a9ee36faf3153df4dd7c8eb1ae4b510ac",
+  "classes/AshFileIntegrityScanScheduledTask.php": "83ebf41932953c88a26965a3954fdacf8d0b2a32da88cae8aaffe6a478471d22",
+  "templates/settings.tpl": "20336ecc7c7d50e1cea40614f408706f8c4986e4cadf660df919e9fdfd1d3d32",
+  "version.xml": "ee2f05f9c919762d0a33366fb28a4f46147bb583c8e201dc388098210b776750",
+  "README.md": "6b48a446cd8cd1aea10abcb61016585a8287e4af8860690e0c438e027c7b7dc8"
+}
