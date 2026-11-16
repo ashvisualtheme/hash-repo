@@ -1,0 +1,253 @@
+# Batch hash generation for PKP plugin gallery releases
+name: Generate Plugin Gallery Hashes
+
+on:
+  workflow_dispatch:
+    inputs:
+      application:
+        description: 'Application platform to generate baselines for'
+        required: true
+        type: choice
+        options:
+          - ojs2
+          - omp
+          - ops
+        default: 'ojs2'
+      category:
+        description: 'Limit to a single plugin category (leave empty for all)'
+        required: false
+        type: string
+        default: ''
+      product:
+        description: 'Limit to a single plugin product, e.g. gopher (leave empty for all)'
+        required: false
+        type: string
+        default: ''
+      version:
+        description: 'Limit to a single version, e.g. 1.0.0.1 (leave empty for all)'
+        required: false
+        type: string
+        default: ''
+      batch_size:
+        description: 'Releases per batch job'
+        required: false
+        type: string
+        default: '40'
+      overwrite:
+        description: 'Rewrite baselines that already exist in the repository'
+        required: false
+        type: boolean
+        default: false
+      create_pull_request:
+        description: 'Open a pull request with the generated baselines'
+        required: false
+        type: boolean
+        default: true
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  # 1. Resolve the gallery feed into a manifest and split it into batches.
+  build-manifest:
+    name: Build manifest
+    runs-on: ubuntu-latest
+    outputs:
+      batch_count: ${{ steps.count.outputs.batch_count }}
+      release_count: ${{ steps.count.outputs.release_count }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Download the plugin gallery feed
+        run: |
+          curl -sSL --retry 3 --retry-delay 2 \
+            -o plugins.xml \
+            https://raw.githubusercontent.com/pkp/plugin-gallery/main/plugins.xml
+          echo "plugins.xml: $(wc -c < plugins.xml) bytes"
+
+      - name: Resolve releases into a manifest
+        run: |
+          python3 tools/build_manifest.py \
+            --plugins-xml plugins.xml \
+            --output manifest.jsonl \
+            --application "${{ inputs.application }}"
+
+      - name: Filter and split into batches
+        run: |
+          python3 - <<'PY'
+          import json, os
+
+          category = os.environ.get('CATEGORY', '').strip()
+          product = os.environ.get('PRODUCT', '').strip()
+          version = os.environ.get('VERSION', '').strip()
+          batch_size = max(1, int(os.environ.get('BATCH_SIZE', '40')))
+
+          rows = []
+          with open('manifest.jsonl', encoding='utf-8') as handle:
+              for line in handle:
+                  line = line.strip()
+                  if not line:
+                      continue
+                  row = json.loads(line)
+                  if category and category not in row['categories']:
+                      continue
+                  if product and row['product'] != product:
+                      continue
+                  if version and row['gallery_version'] != version:
+                      continue
+                  rows.append(row)
+
+          with open('manifest.filtered.jsonl', 'w', encoding='utf-8') as handle:
+              for row in rows:
+                  handle.write(json.dumps(row, sort_keys=True) + '\n')
+
+          batches = [rows[i:i + batch_size] for i in range(0, len(rows), batch_size)]
+          os.makedirs('batches', exist_ok=True)
+          for index, batch in enumerate(batches):
+              path = 'batches/batch-%03d.jsonl' % index
+              with open(path, 'w', encoding='utf-8') as handle:
+                  for row in batch:
+                      handle.write(json.dumps(row, sort_keys=True) + '\n')
+
+          with open('batches/index.json', 'w', encoding='utf-8') as handle:
+              json.dump({'count': len(batches), 'releases': len(rows)}, handle)
+
+          print('releases: %d, batches: %d' % (len(rows), len(batches)))
+          PY
+        env:
+          CATEGORY: ${{ inputs.category }}
+          PRODUCT: ${{ inputs.product }}
+          VERSION: ${{ inputs.version }}
+          BATCH_SIZE: ${{ inputs.batch_size }}
+
+      - name: Record the plan
+        id: count
+        run: |
+          BATCH_COUNT=$(python3 -c "import json;print(json.load(open('batches/index.json'))['count'])")
+          RELEASE_COUNT=$(python3 -c "import json;print(json.load(open('batches/index.json'))['releases'])")
+          echo "batch_count=${BATCH_COUNT}" >> "$GITHUB_OUTPUT"
+          echo "release_count=${RELEASE_COUNT}" >> "$GITHUB_OUTPUT"
+          echo "batches: ${BATCH_COUNT}, releases: ${RELEASE_COUNT}"
+
+      - name: Upload the manifest and the batches
+        uses: actions/upload-artifact@v7
+        with:
+          name: manifest
+          path: |
+            manifest.filtered.jsonl
+            batches/
+          retention-days: 7
+
+  # 2. Download, hash and package each batch. One job per batch.
+  generate:
+    name: Generate (batch ${{ matrix.batch }})
+    needs: build-manifest
+    if: needs.build-manifest.outputs.batch_count != '0'
+    runs-on: ubuntu-latest
+    strategy:
+      fail-fast: false
+      max-parallel: 8
+      matrix:
+        batch: ${{ fromJSON(needs.build-manifest.outputs.batch_count) }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Download the manifest
+        uses: actions/download-artifact@v8
+        with:
+          name: manifest
+          path: .
+
+      - name: Generate hashes
+        run: |
+          BATCH="batches/batch-$(printf '%03d' ${{ matrix.batch }}).jsonl"
+          echo "Processing $BATCH"
+          python3 tools/generate_hashes.py \
+            --manifest "$BATCH" \
+            --output-dir "generated" \
+            --report "report.json" \
+            --jobs 8 \
+            ${{ inputs.overwrite && '--force' || '' }}
+
+      - name: Summarise the batch
+        run: |
+          echo "### Batch ${{ matrix.batch }}" >> "$GITHUB_STEP_SUMMARY"
+          echo '```json' >> "$GITHUB_STEP_SUMMARY"
+          cat report.json >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload the generated baselines
+        uses: actions/upload-artifact@v7
+        with:
+          name: baselines-batch-${{ matrix.batch }}
+          path: generated/
+          if-no-files-found: ignore
+          retention-days: 7
+
+  # 3. Collect every batch and open a pull request.
+  publish:
+    name: Publish pull request
+    needs: [build-manifest, generate]
+    if: always() && needs.build-manifest.result == 'success' && inputs.create_pull_request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v7
+
+      - name: Download every batch
+        uses: actions/download-artifact@v8
+        with:
+          pattern: baselines-batch-*
+          path: collected
+          merge-multiple: true
+
+      - name: Copy the baselines into the repository
+        run: |
+          if [ ! -d collected ]; then
+            echo "No baselines were produced."
+            exit 0
+          fi
+          find collected -name '*.json' -print0 | while IFS= read -r -d '' file; do
+            relative="${file#collected/}"
+            target="${{ inputs.application == 'ojs2' && 'ojs' || inputs.application }}/plugins/$relative"
+            mkdir -p "$(dirname "$target")"
+            cp "$file" "$target"
+          done
+
+          echo "### Generated baselines" >> "$GITHUB_STEP_SUMMARY"
+          git status --short > changes.txt
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+          cat changes.txt >> "$GITHUB_STEP_SUMMARY"
+          echo '```' >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Open a pull request
+        uses: peter-evans/create-pull-request@v8
+        with:
+          branch: chore/plugin-gallery-hashes-${{ github.run_id }}
+          base: main
+          delete-branch: true
+          commit-message: 'chore: add plugin gallery hash baselines'
+          title: 'chore: add plugin gallery hash baselines'
+          body: |
+            Automated SHA-256 baselines generated from the PKP plugin gallery feed.
+
+            - Source: `pkp/plugin-gallery` `plugins.xml`
+            - Application: `${{ inputs.application }}`
+            - Releases processed: `${{ needs.build-manifest.outputs.release_count }}`
+            - Batches: `${{ needs.build-manifest.outputs.batch_count }}`
+
+            Each release is downloaded, verified against the MD5 published in the
+            gallery feed, extracted and hashed file by file. A release is written
+            under every plausible file name (the gallery version, the raw
+            `version.xml` release, and the normalised four-part version PKP
+            computes at runtime) so the scanner finds the right baseline
+            whichever name it derives from the installed plugin.
+
+            Releases whose tarball is no longer downloadable are skipped and
+            listed in the workflow summary.
+
+            This pull request was created by
+            [Generate Plugin Gallery Hashes](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).

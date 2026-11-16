@@ -15,6 +15,9 @@
     <a href="https://github.com/ashvisualtheme/hash-repo/actions/workflows/generate-plugins-hash.yml">
         <img src="https://github.com/ashvisualtheme/hash-repo/actions/workflows/generate-plugins-hash.yml/badge.svg" alt="Automatic Generate Hash for OJS/OMP/OPS Plugins">
     </a>
+    <a href="https://github.com/ashvisualtheme/hash-repo/actions/workflows/generate-plugin-gallery-hashes.yml">
+        <img src="https://github.com/ashvisualtheme/hash-repo/actions/workflows/generate-plugin-gallery-hashes.yml/badge.svg" alt="Batch Generate Hashes from the PKP Plugin Gallery">
+    </a>
 </p>
 
 This repository contains the official, version-specific **SHA-256 checksums** for PKP Platform (OJS/OMP/OPS) core, plugin, and theme files. It serves as the trusted, centralized baseline that our File Integrity Scanner plugin uses to detect unauthorized modifications and ensure the security of your journal's installation.
@@ -50,6 +53,63 @@ To generate and contribute hashes for a new plugin or theme version, please foll
 5.  Click **Run workflow** to start the process.
 
 Once the workflow is complete, a new JSON hash file will be available as a downloadable artifact. Please create a pull request to add this file to the repository.
+
+### Batch Generation from the Plugin Gallery
+
+The **Generate Plugin Gallery Hashes** workflow builds the same baselines from the
+[PKP Plugin Gallery](https://github.com/pkp/plugin-gallery) feed
+(`plugins.xml`) instead of taking a single URL by hand. It is the faster route
+when you want the whole catalogue, or every release of one plugin.
+
+1.  Navigate to the **Actions** tab and select **Generate Plugin Gallery Hashes**.
+2.  Click **Run workflow**.
+3.  Choose the inputs:
+    * **Application platform**: `ojs2`, `omp`, or `ops`.
+    * **Category**, **Product**, **Version**: optional filters. Leave them empty to process the whole catalogue.
+    * **Batch size**: how many releases each parallel job handles (default 40).
+    * **Overwrite**: rewrite baselines that already exist. Off by default, so existing files are left untouched.
+    * **Create pull request**: open a pull request with the results (on by default).
+4.  Click **Run workflow**.
+
+Each release is downloaded, verified against the MD5 published in the gallery
+feed, extracted, and hashed file by file. Releases are spread over parallel
+batches, so the full OJS catalogue completes in a few minutes rather than the
+hours a single manual run would take.
+
+The workflow reports releases whose tarball is no longer downloadable in the run
+summary. Three `funding` releases are currently affected because the upstream
+release assets have been removed.
+
+#### File naming
+
+The scanner asks for a baseline by file name, and it derives that name from the
+plugin's own `version.xml`. The gallery feed and the plugin's `version.xml` do
+not always agree, so a release is written under every name that could be
+requested:
+
+* the gallery version, for example `gopher-1.0.0.1.json`;
+* the raw `version.xml` release, for example `adminNotificationManager-1.4.0-0.json`;
+* the normalised four-part version PKP computes at runtime, for example `rqc-1.0.0.0.json`.
+
+Where two releases of the same plugin claim the same name, the highest version
+owns the file and the collision is reported in the workflow summary.
+
+#### Running the scripts directly
+
+The two helper scripts under `tools/` can also be run on their own:
+
+```bash
+# Resolve the gallery feed into a manifest of releases
+python3 tools/build_manifest.py --plugins-xml plugins.xml --output manifest.jsonl --application ojs2
+
+# Download and hash the releases listed in the manifest
+python3 tools/generate_hashes.py --manifest manifest.jsonl --output-dir ojs/plugins --jobs 8
+```
+
+`build_manifest.py` needs network access, because it reads each release's
+`version.xml` to work out the runtime file names. `generate_hashes.py` can
+reuse that manifest without touching the network beyond the downloads
+themselves.
 
 ---
 
