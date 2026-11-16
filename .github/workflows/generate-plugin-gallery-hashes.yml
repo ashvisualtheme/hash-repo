@@ -38,15 +38,9 @@ on:
         required: false
         type: boolean
         default: false
-      create_pull_request:
-        description: 'Open a pull request with the generated baselines'
-        required: false
-        type: boolean
-        default: true
 
 permissions:
-  contents: write
-  pull-requests: write
+  contents: read
 
 jobs:
   # 1. Resolve the gallery feed into a manifest and split it into batches.
@@ -55,6 +49,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       batch_count: ${{ steps.count.outputs.batch_count }}
+      batch_indices: ${{ steps.count.outputs.batch_indices }}
       release_count: ${{ steps.count.outputs.release_count }}
     steps:
       - name: Checkout repository
@@ -62,10 +57,12 @@ jobs:
 
       - name: Download the plugin gallery feed
         run: |
-          curl -sSL --retry 3 --retry-delay 2 \
+          set -euo pipefail
+          curl -fsSL --retry 3 --retry-delay 2 \
             -o plugins.xml \
             https://raw.githubusercontent.com/pkp/plugin-gallery/main/plugins.xml
           echo "plugins.xml: $(wc -c < plugins.xml) bytes"
+          grep -q '<plugins' plugins.xml
 
       - name: Resolve releases into a manifest
         run: |
@@ -127,7 +124,10 @@ jobs:
         run: |
           BATCH_COUNT=$(python3 -c "import json;print(json.load(open('batches/index.json'))['count'])")
           RELEASE_COUNT=$(python3 -c "import json;print(json.load(open('batches/index.json'))['releases'])")
+          # The matrix needs a JSON array of batch indices, not a count.
+          BATCH_INDICES=$(python3 -c "import json;print(json.dumps(list(range($BATCH_COUNT))))")
           echo "batch_count=${BATCH_COUNT}" >> "$GITHUB_OUTPUT"
+          echo "batch_indices=${BATCH_INDICES}" >> "$GITHUB_OUTPUT"
           echo "release_count=${RELEASE_COUNT}" >> "$GITHUB_OUTPUT"
           echo "batches: ${BATCH_COUNT}, releases: ${RELEASE_COUNT}"
 
@@ -150,7 +150,7 @@ jobs:
       fail-fast: false
       max-parallel: 8
       matrix:
-        batch: ${{ fromJSON(needs.build-manifest.outputs.batch_count) }}
+        batch: ${{ fromJSON(needs.build-manifest.outputs.batch_indices) }}
     steps:
       - name: Checkout repository
         uses: actions/checkout@v7
@@ -168,6 +168,7 @@ jobs:
           python3 tools/generate_hashes.py \
             --manifest "$BATCH" \
             --output-dir "generated" \
+            --existing-dir "${{ inputs.application == 'ojs2' && 'ojs' || inputs.application }}/plugins" \
             --report "report.json" \
             --jobs 8 \
             ${{ inputs.overwrite && '--force' || '' }}
@@ -187,16 +188,13 @@ jobs:
           if-no-files-found: ignore
           retention-days: 7
 
-  # 3. Collect every batch and open a pull request.
+  # 3. Collect every batch and publish the new baselines as one artifact.
   publish:
-    name: Publish pull request
+    name: Collect baselines
     needs: [build-manifest, generate]
-    if: always() && needs.build-manifest.result == 'success' && inputs.create_pull_request
+    if: always() && needs.build-manifest.result == 'success' && needs.build-manifest.outputs.batch_count != '0'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v7
-
       - name: Download every batch
         uses: actions/download-artifact@v8
         with:
@@ -204,50 +202,39 @@ jobs:
           path: collected
           merge-multiple: true
 
-      - name: Copy the baselines into the repository
+      - name: Package the new baselines
         run: |
           if [ ! -d collected ]; then
             echo "No baselines were produced."
             exit 0
           fi
+
+          # Keep only the files that are not committed yet.
+          APP_ROOT="${{ inputs.application == 'ojs2' && 'ojs' || inputs.application }}"
+          mkdir -p new-files
           find collected -name '*.json' -print0 | while IFS= read -r -d '' file; do
             relative="${file#collected/}"
-            target="${{ inputs.application == 'ojs2' && 'ojs' || inputs.application }}/plugins/$relative"
-            mkdir -p "$(dirname "$target")"
-            cp "$file" "$target"
+            if [ ! -f "$APP_ROOT/plugins/$relative" ]; then
+              mkdir -p "new-files/$(dirname "$relative")"
+              cp "$file" "new-files/$relative"
+            fi
           done
 
-          echo "### Generated baselines" >> "$GITHUB_STEP_SUMMARY"
-          git status --short > changes.txt
+          COUNT=$(find new-files -name '*.json' | wc -l)
+          echo "### New baselines" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "Application: \`${{ inputs.application }}\`" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
+          echo "New baseline files: $COUNT" >> "$GITHUB_STEP_SUMMARY"
+          echo "" >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
-          cat changes.txt >> "$GITHUB_STEP_SUMMARY"
+          find new-files -name '*.json' | sed 's|^new-files/||' | sort >> "$GITHUB_STEP_SUMMARY"
           echo '```' >> "$GITHUB_STEP_SUMMARY"
 
-      - name: Open a pull request
-        uses: peter-evans/create-pull-request@v8
+      - name: Upload the new baselines
+        uses: actions/upload-artifact@v7
         with:
-          branch: chore/plugin-gallery-hashes-${{ github.run_id }}
-          base: main
-          delete-branch: true
-          commit-message: 'chore: add plugin gallery hash baselines'
-          title: 'chore: add plugin gallery hash baselines'
-          body: |
-            Automated SHA-256 baselines generated from the PKP plugin gallery feed.
-
-            - Source: `pkp/plugin-gallery` `plugins.xml`
-            - Application: `${{ inputs.application }}`
-            - Releases processed: `${{ needs.build-manifest.outputs.release_count }}`
-            - Batches: `${{ needs.build-manifest.outputs.batch_count }}`
-
-            Each release is downloaded, verified against the MD5 published in the
-            gallery feed, extracted and hashed file by file. A release is written
-            under every plausible file name (the gallery version, the raw
-            `version.xml` release, and the normalised four-part version PKP
-            computes at runtime) so the scanner finds the right baseline
-            whichever name it derives from the installed plugin.
-
-            Releases whose tarball is no longer downloadable are skipped and
-            listed in the workflow summary.
-
-            This pull request was created by
-            [Generate Plugin Gallery Hashes](${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}).
+          name: plugin-gallery-baselines-${{ inputs.application }}
+          path: new-files/
+          if-no-files-found: ignore
+          retention-days: 30

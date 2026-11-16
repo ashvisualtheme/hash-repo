@@ -68,13 +68,13 @@ when you want the whole catalogue, or every release of one plugin.
     * **Category**, **Product**, **Version**: optional filters. Leave them empty to process the whole catalogue.
     * **Batch size**: how many releases each parallel job handles (default 40).
     * **Overwrite**: rewrite baselines that already exist. Off by default, so existing files are left untouched.
-    * **Create pull request**: open a pull request with the results (on by default).
 4.  Click **Run workflow**.
 
-Each release is downloaded, verified against the MD5 published in the gallery
-feed, extracted, and hashed file by file. Releases are spread over parallel
-batches, so the full OJS catalogue completes in a few minutes rather than the
-hours a single manual run would take.
+The workflow scans the selected catalog, skips files that already exist in the
+repository, and generates only the missing baselines. It publishes them as the
+**`plugin-gallery-baselines-<application>` artifact** for you to download and
+review before committing. It does not open a pull request or commit files
+automatically.
 
 The workflow reports releases whose tarball is no longer downloadable in the run
 summary. Three `funding` releases are currently affected because the upstream

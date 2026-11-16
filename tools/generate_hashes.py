@@ -78,7 +78,7 @@ def write_json(path, hashes):
         handle.write('\n')
 
 
-def process(row, output_dir, force, dry_run):
+def process(row, output_dir, force, dry_run, existing_dir=None):
     """Generate every baseline file for one release.
 
     Only the files this release owns are written. A file name can be claimed by
@@ -92,19 +92,26 @@ def process(row, output_dir, force, dry_run):
 
     owned = row.get('owned_files')
     if owned:
-        targets = [os.path.join(output_dir, path) for path in owned]
+        relative_paths = owned
     else:
-        targets = []
+        relative_paths = []
         for category in row['categories']:
             for name in row['file_names']:
-                targets.append(os.path.join(output_dir, category, '%s-%s.json' % (product, name)))
+                relative_paths.append('%s/%s-%s.json' % (category, product, name))
 
-    if not targets:
+    if not relative_paths:
         return {'label': label, 'result': 'no-files', 'files': 0}
 
+    targets = [os.path.join(output_dir, path) for path in relative_paths]
     if not force:
-        missing = [path for path in targets if not os.path.exists(path)]
-        if not missing:
+        if existing_dir:
+            # Compare against the checked-out repository, not just the fresh
+            # output directory, so the default run only emits genuinely new files.
+            targets = [target for target, rel in zip(targets, relative_paths)
+                       if not os.path.exists(os.path.join(existing_dir, rel))]
+        else:
+            targets = [path for path in targets if not os.path.exists(path)]
+        if not targets:
             return {'label': label, 'result': 'skipped-existing'}
 
     if row.get('status') != 'ok':
@@ -158,6 +165,7 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--manifest', required=True, help='Manifest produced by build_manifest.py')
     parser.add_argument('--output-dir', required=True, help='Directory that receives <category>/<name>.json files')
+    parser.add_argument('--existing-dir', help='Repository plugins directory; only write files that do not exist there')
     parser.add_argument('--only', action='append', default=[],
                         help='Only process these product-version labels (repeatable)')
     parser.add_argument('--force', action='store_true', help='Rewrite files that already exist')
@@ -174,9 +182,9 @@ def main():
     if args.jobs > 1:
         with ThreadPoolExecutor(max_workers=args.jobs) as pool:
             results = list(pool.map(
-                lambda row: process(row, args.output_dir, args.force, args.dry_run), rows))
+                lambda row: process(row, args.output_dir, args.force, args.dry_run, args.existing_dir), rows))
     else:
-        results = [process(row, args.output_dir, args.force, args.dry_run) for row in rows]
+        results = [process(row, args.output_dir, args.force, args.dry_run, args.existing_dir) for row in rows]
 
     counts = {}
     for result in results:
