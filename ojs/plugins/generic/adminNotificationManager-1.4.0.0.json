@@ -1,0 +1,9 @@
+{
+  "AdminNotificationManagerForm.php": "446ba9d1da4a5ec6fcc05c9c610e04524e834cb84be524768da24c819b93a7a8",
+  "LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "README.md": "fa4c8ae46b07b5bad7d3be4d49619004a7b562e9328d786eba09471a14d65325",
+  "locale/en/locale.po": "050ece7635464e56835f6821c803bf846683bf60d881b003eb4d1c2f9e01233a",
+  "templates/adminNotificationForm.tpl": "b459da00f55b26ff0b632083cd15828691e5fb61a85db07d2e98f6c64f61b8a2",
+  "AdminNotificationManagerPlugin.php": "c299ab27fa24e85ddc0ae76d3572cfc3085381b5cdada94a9552346dd6137355",
+  "version.xml": "62d579ce39bc0594d243e7ed5ffce20868110aa17669851f37d81bfab075b1a4"
+}

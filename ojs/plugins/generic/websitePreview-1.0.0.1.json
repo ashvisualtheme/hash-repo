@@ -1,0 +1,14 @@
+{
+  ".gitignore": "24eeb917f80f2ac10467521237a3beb2e91715f974dde07ca2c307e712a588d0",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "README.md": "6c94f46f6dd7177eeaa5f25f855e6acea1296c78ec65349a50063afa41279f3a",
+  "WebsitePreviewPlugin.inc.php": "8f84f07f587694d4e58552ac38545e745885cf1808815a6f0dacfa6d00dc3d0b",
+  "classes/WebsitePreviewArchiveService.inc.php": "98c195ad5b98c7e8294d8dff45554149ddd03b8358b475dd7575d8550e131504",
+  "index.php": "84af65499e04d8297881d2407a1e11ebee42a3f2205594dac265efe8d5e8b31d",
+  "js/websitePreviewWorkflow.js": "2b475a96bc44657cc72fc110983c4ac1a8f0c025d089794034c2cebe25a163e0",
+  "locale/en_US/locale.po": "a8d9a4b59ab44834a0046cb4e9535e1d3da75fd3401eeec22bb0e6492fdbcdda",
+  "pages/websitePreview/WebsitePreviewHandler.inc.php": "73988a9c5ca67d54b557b7f26337a2656df3abbf468c685cd1287f3c611c62a0",
+  "pages/websitePreview/index.php": "b7a8e041dab6e66bddd8fac4a5d814ec150965a9f2be5b955643b4371607f617",
+  "tests/WebsitePreviewArchiveServiceTest.php": "5f357fea8f6cf636ed8b1cc86fbfbc184388f706793a85f27cd05387e7b8d50d",
+  "version.xml": "8e5ab92350c0490450c9c0c546dbaca8d59d0f218940ab7dedcc0663116178ed"
+}

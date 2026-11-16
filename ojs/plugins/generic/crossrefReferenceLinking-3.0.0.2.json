@@ -1,0 +1,18 @@
+{
+  "CrossrefReferenceLinkingInfoSender.php": "bd81eed516c032febb7ae647e2597abdda89add02012d838fdafbb92da0be32b",
+  "templates/displayDOI.tpl": "1dd42c0b9f4e70ea177da8050f18552ea634060a57229446cc702d138a596108",
+  "templates/settingsForm.tpl": "5a33458c5f93f6a5952118bc47b86ff90720f382ff3ce7186a1dcf31bad6c57c",
+  "CrossrefReferenceLinkingSettingsForm.php": "06d76cd2327b924ac7ba6d9a179e0fc9b4ee8899aaefacb10c58288fe791ca40",
+  "tools/checkCrossrefReferencesDOIs.php": "4f22af6f5f35ce105aed0397c716bd6ed90aa2f5573e5fb4deb473ddb8651c66",
+  "locale/de/locale.po": "2994605436e921a615c82763b9042df0ff87b8409346d9650478f59036e67aa8",
+  "locale/en/locale.po": "db5114f40bcea85a2a36c7aad49633fd0bd0e56e6e64c372409da44d174e1aea",
+  "locale/pl/locale.po": "cdc9a501113dd4e1c3a5f6c9689b57fd49ca8c95230c3b82acb36cc64f4ac50c",
+  "locale/it/locale.po": "36e2894503e5715e55cc1411262bf74d069840f4b2cd7ab4abf642ea8ac684c8",
+  "locale/ar/locale.po": "adddeae2d0a01d0735bf0abad1fd0b4a0f2ebca957e298622d5c845db5e170d0",
+  "locale/fr/locale.po": "48850bb5850c4f43fe24f4d2dd23df695719c81041b99815d25fbfb92d457675",
+  "locale/es/locale.po": "a3cc2b7850e965b74396b6f021d3c450d8adbed19af2e972783ebfd67b70ca61",
+  "CrossrefReferenceLinkingPlugin.php": "c014f7b27928be15037e3aea10860c9677269b427afe0a9df620fc1ea0d91791",
+  "README": "9a60e8d7430cb88bd8d93145198d798bfae0d223da0152cb8e219531b0148943",
+  "version.xml": "190e88761bca9be5ec8120e22dd50c3926724b9b0eea0b354fe71823a4b33885",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+}

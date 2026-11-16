@@ -1,0 +1,18 @@
+{
+  "assets/application.png": "efe0415a279b1c172bf4ec95b33c0d277f49097fa744e5aaf689ef9c46f84466",
+  "assets/plugin-settings-section.png": "6f6e337bdd804c45169ce08ea4c9ed099b6589d5bc6e71b2c2202caabf9f7486",
+  "assets/plugin-settings.png": "c65782d8d968000334c81af38b05b366c28311850e1ab499fdb82fdcef1a40f7",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "form/ToggleRequiredMetadataSettingsForm.php": "785edf20c07d256824ac0a015811caa20a207eae62c823131f71b1c6c0dddb5d",
+  "README.es.md": "d9509d89ee134ae93bece291f6efee84409692631cb8fc56baef492df74f3889",
+  "version.xml": "df11cf0dd2e7ea4a3b5eb158762aef66ccab5983328b0218058e2191e479ec65",
+  "locale/pt_BR/locale.po": "3c945af36a867deb3d3cb3dc12370b95819f4fa8f4ff4537c3c07de8c911684e",
+  "locale/es/locale.po": "e472de92ea0fb5d60459e358c410d32e07eb6294d63bb6a2c453c1fe4cebef98",
+  "locale/en/locale.po": "9ec6fc907632d3025c1e2d9884a2fad492e985ab0274ba143511966e9caf8bac",
+  "README.md": "29cee9c46b574f3dede507ec969f874669c499210fa3908830ff72f29f8961ac",
+  "ToggleRequiredMetadataPlugin.php": "9bda0bd8aae9313696e52f6fba3281bad7bef7c0843e849ae9bcb10b1a7c0c9d",
+  "classes/MetadataChecker.php": "fd943616dab17ec7b04f39dcdedb2bfc4e391f23bb4aa3902a420f81c4bd9047",
+  "README.pt_BR.md": "ae8cd1566a302f7dd4c9044a34891ec27b53861fd588bf769ca58094f88d9998",
+  "templates/settingsForm.tpl": "e27922c5ee71cc34565cb562dab73ba93199cc4e8b58ab95d01be4b46d8811b5",
+  "templates/orcidWarning.tpl": "cc43ef07754b44424ebe133bc20bed8017c3a4da9837e3b08bca6c8c6308927b"
+}

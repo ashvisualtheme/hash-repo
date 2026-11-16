@@ -1,0 +1,20 @@
+{
+  "locale/en/locale.po": "c483ed512f46d3c19b0df1581e5b302e69c1c080a025fa4140cc9ef73001d4ea",
+  "locale/pt_BR/locale.po": "1786e94046f47d266ce5295b03894ab08f0355153a1b84b148604b7d16f39235",
+  "locale/es/locale.po": "f1a9e8fe2b8113b2d507a2da2091bdb7c9e9e09c800078e587cfa40988d62f67",
+  "templates/form/interestOptionForm.tpl": "afd521978993bc9ad93f4165f924bd570c17a3ad99112fedad2e5447b6ca8278",
+  "templates/form/interestsInput.tpl": "211fff21f69f92c4ad3c219640c1c279e6c4c5c5a87ab28f1204c6161c4a9746",
+  "templates/settings/form.tpl": "16ee0e73285ffcfb97480ba4426aa963d433ba7dc4277c2aa66d0c4f455fa8c9",
+  "templates/emptyInterestsMessage.tpl": "fc5db816002665d191d154242c29dca9da5113fc728bb25a11dcb3f6e760451d",
+  "README.md": "1029c7750dac66f682465ded3fa943501d92f55abdb1bac5a78899b6e4e4f65d",
+  "SelectionOfReviewingInterestsPlugin.php": "0660410b3f4fe00ede1603285eb02004083faf6e12d1e104224cbb38e7bdc402",
+  "version.xml": "4dd6bf8e1e1c7203aea88b6b60d42401a290d6473ca257157b9e2197a310229d",
+  "controllers/grid/SelectionOfReviewingInterestsGridRow.php": "2960be13272273cf2eacf64541506de834f2166f9c558af62b3dd35784f442dc",
+  "controllers/grid/SelectionOfReviewingInterestsGridHandler.php": "58ab5441760de50109e53ce3df5015deb5c24061ce3c8504c065083eeb18c7ee",
+  "controllers/grid/SelectionOfReviewingInterestsGridCellProvider.php": "1ef3c2413563c6404683d499d261a9d37e9813fb95a5effe77ead55e4c5cf71d",
+  "controllers/grid/form/InterestOptionForm.php": "c145756680356f54996144e61a1d0f5d86e7dc64babe8cc5ceabb631aa7baf43",
+  "classes/hookCallbacks/HookCallbacks.php": "9a613bfa5c3b423fd03fb2dfcfec63637ed4c415652c118739f65516d1f01a12",
+  "classes/settings/SelectionOfReviewingInterestsActions.php": "d4f901495e4bad70c17f800f75f84c06646037d2e1a67b2ad2cd3735d73551bb",
+  "classes/settings/SelectionOptionsForm.php": "28275a7ac90083766ac5f5b28056663bf6dcd3f6f116fe0bd8e43b8afc482851",
+  "classes/settings/SelectionOfReviewingInterestsManage.php": "7575ab522a6d54a6708bde82f22c8d0e7afa32fd7d99bf44f59b8bfe39f22b1c"
+}

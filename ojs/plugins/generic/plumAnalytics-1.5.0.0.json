@@ -1,0 +1,14 @@
+{
+  "ojs-plum-plugin-master/LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "ojs-plum-plugin-master/locale/en/locale.po": "35e0161be770f746c9c26b3341f2f7f076f134348d7eca3518a1ce39f22c0b60",
+  "ojs-plum-plugin-master/locale/pt/locale.po": "ad86ba1f8e76b11ccfe6d4cfd98cd5f91be6165f257a77634f3c344fe4fae7ca",
+  "ojs-plum-plugin-master/PlumAnalyticsBlockPlugin.php": "1c45f520815abce2568a5638485b58366d2b779453b245113ff0c96e8b3ef0e7",
+  "ojs-plum-plugin-master/PlumAnalyticsPlugin.php": "f953aec66b5f8d2b2994e3225efd1c9b6f12b14ba92a6cd44b76bc4bff89adf2",
+  "ojs-plum-plugin-master/PlumAnalyticsSettingsForm.php": "e4f712dd7a13db74b05390bccd414f47e8765aeb86be727ae67a0c92973eb4c2",
+  "ojs-plum-plugin-master/README.md": "5701145c507022c6bd91bcceaabdbfe4baa5642dcce5e26291af04d9386df716",
+  "ojs-plum-plugin-master/templates/blockPlumWidget.tpl": "f9bd177894378660b8b5169dcfd2fa5003630a56c03c488fca1b729677ebef0b",
+  "ojs-plum-plugin-master/templates/pageTagPlumScript.tpl": "af9363e2b4beea8de3d3ca47eafb4aa1ef254eeb33347ac888cae34a608c1b5e",
+  "ojs-plum-plugin-master/templates/pageTagPlumWidget.tpl": "47cf986c60377f077bf957dfcff959177bc09d7983307343d7bf2d8118a474e9",
+  "ojs-plum-plugin-master/templates/settingsForm.tpl": "97fcf04bbf82b7d9b7c063e80149cfa43fbd54f454a22ddd4e724525b5c8d245",
+  "ojs-plum-plugin-master/version.xml": "ef6f2cee60cb5eca891aa4710c41173c1fa60588c98eda94856f1501aaf79f5d"
+}

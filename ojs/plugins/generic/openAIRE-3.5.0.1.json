@@ -1,0 +1,22 @@
+{
+  "index.php": "9a0a529b9749fdd8a9cde9b9933666219f5cefe0b08cb6a136da767b5ea09930",
+  "install.xml": "881979ef4d7b83a571f22e395f974dcf44aa39422e5c4bfe2c91991a499460ae",
+  "LICENSE": "0b383d5a63da644f628d99c33976ea6487ed89aaa59f0b3257992deac1171e6b",
+  "OAIMetadataFormatPlugin_OpenAIRE.php": "9af53eda77a66a74568bc49126793a4c6d07e4515bac316d5f4a98acb162f6bf",
+  "OAIMetadataFormatPlugin_OpenAIREJats.php": "19fccf19cac03b41d08cfb713d5032a987e56fee88da5b94db385d43151e1133",
+  "OAIMetadataFormat_OpenAIRE.php": "690ff50f2c6719235bc1d35fdc5be9659937493a2b218ef80bcb5602ee3e6aa6",
+  "OAIMetadataFormat_OpenAIREJats.php": "142d64c2490af061a1bad00dc6b0968c9d5a74cfeef42021563d19a17acb378c",
+  "OpenAIREGatewayPlugin.php": "fccfe1da12eedc9181c8eed7275b1cbe59cc9416c4dc88dc26c78c33a06248e9",
+  "OpenAIREJatsGatewayPlugin.php": "ee337ac576d52d0e3aec60d023bec6df42497daf3381ce95065fe895225be070",
+  "OpenAIREPlugin.php": "f1787747c2226806cb99023ba0c952a4b83605867587e61dc5c69bfc82eed7bd",
+  "OpenAIREstandardCleanupMigration.php": "26e25f49e4b75441931a03a5394fe384d2a234aef7eb5e1536e153a2ccd24351",
+  "readme.md": "b19bd2908b6d9c37c564921fdae24559205e1c38553fb6b200c98375eb23acb3",
+  "version.xml": "21216d33fa79311c80a4a26f020728884a8282022b05a21b4a98bc0ff2751efb",
+  "templates/controllers/grids/settings/section/form/sectionFormAdditionalFields.tpl": "b25f4afc1dff6ab0045b344575a4ef9186122b29f4b81e59cb3953e1570de950",
+  "locale/it/locale.po": "be9df21e497ad39941b9db83f1320d7acf98bc97c65788b219c601de2c2b8c52",
+  "locale/fr_CA/locale.po": "7536aeca039033b9ac10021add0e8bfff0dcd39432cf01ac113c4e2509ca157d",
+  "locale/fr/locale.po": "1187db995c3769f5c7c5fe8f44f83c06edd39beb4c1409f58a07b6e5b4df55eb",
+  "locale/fi/locale.po": "f67f93871eb8efcbddbe391d30da26a917cf55d0fd30bc47e6976265187df879",
+  "locale/en/locale.po": "87fd2b0163f02d5b1c75d57d9d414f96aa05aec861ecb8e7f137683d8feab38d",
+  "locale/de/locale.po": "79515bee1de5c894a51e7cf9cecae5094b25dc8594007d441386553985cc5062"
+}

@@ -1,0 +1,12 @@
+{
+  "GetftrPlugin.php": "5d234ee54ff847d850c8625e183e8000d1e0cb7446138c24b928123a2a100b81",
+  "locale/en/locale.po": "94872b78d53013c9c5a4f748a348be4080cefc5ac1eec4eb4b2360a0eb1bf581",
+  "README.md": "eabe0f0ac2147e306ce963386eb5719c48cf6716bccfaa1efbfbad9658b200ea",
+  "settings.xml": "13cd9d4c8ef0d59b79943cf9735feec1d4f3e6dea39dc13df192a722fc8e3fff",
+  "SettingsForm.php": "a51e7bda86df702ed4c32e00f34fb80be4fb63710d618541e2c34caa401a23c3",
+  "templates/articleDetails.tpl": "9ed22498441f18f6d3047196b9cd000b836f988f591ee446fed77d5ee169d83b",
+  "templates/articleSummary.tpl": "f21b881be205cc2fdcba5a7c437967051ba30c3a5898bf1283fafa69b89524d7",
+  "templates/articleTop.tpl": "d5c5070df7b77b8b0b97be9da8f5907c0d16e6e2c33fadef21cca142864c0afe",
+  "templates/settings.tpl": "b27d1c58a65b3fdb77752040fddaf1127d458dd455ecd08906f3e3545b7d8a45",
+  "version.xml": "ff5a005eb99d8c29125e9478bc6cb9da18d9ccd4a35f74bfbb17fbe520b5fed7"
+}

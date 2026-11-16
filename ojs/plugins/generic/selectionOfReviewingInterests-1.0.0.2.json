@@ -1,0 +1,21 @@
+{
+  "locale/es_ES/locale.po": "f1a9e8fe2b8113b2d507a2da2091bdb7c9e9e09c800078e587cfa40988d62f67",
+  "locale/en_US/locale.po": "c483ed512f46d3c19b0df1581e5b302e69c1c080a025fa4140cc9ef73001d4ea",
+  "locale/pt_BR/locale.po": "1786e94046f47d266ce5295b03894ab08f0355153a1b84b148604b7d16f39235",
+  "templates/form/interestOptionForm.tpl": "afd521978993bc9ad93f4165f924bd570c17a3ad99112fedad2e5447b6ca8278",
+  "templates/form/interestsInput.tpl": "211fff21f69f92c4ad3c219640c1c279e6c4c5c5a87ab28f1204c6161c4a9746",
+  "templates/settings/form.tpl": "16ee0e73285ffcfb97480ba4426aa963d433ba7dc4277c2aa66d0c4f455fa8c9",
+  "templates/emptyInterestsMessage.tpl": "fc5db816002665d191d154242c29dca9da5113fc728bb25a11dcb3f6e760451d",
+  "README.md": "56901148156679623095480ea2453ef651cc7b354c1ccf2274ebb9bbde4541d9",
+  "SelectionOfReviewingInterestsPlugin.inc.php": "f6618134f74ab716880f66972a8c1113fda088d016428b3673d90ea3ea33f1c5",
+  "version.xml": "4dffd9d389032519263fa0f0a24e6f340c56cc51b9916e8b3382897b80d97e75",
+  "index.php": "4a1d9fee880b17fd4c61e48513172dbb4bbd807b7e804ccb44671525297f928e",
+  "controllers/grid/SelectionOfReviewingInterestsGridCellProvider.inc.php": "21bf0a7154a7cb3020f80d3323e430223b7c12038c5f4492afb0dd31c20f1e88",
+  "controllers/grid/SelectionOfReviewingInterestsGridHandler.inc.php": "9cbc2b246f398c5ae5bfd983d5a89a81a413efead59044682cf427af110817be",
+  "controllers/grid/SelectionOfReviewingInterestsGridRow.inc.php": "0bbc96eba26a5b569023ce2c2b730c57a290b82a26793ee3bd4027a8c3588540",
+  "controllers/grid/form/InterestOptionForm.inc.php": "c81cdecdb4baff2f01c398f168492d031ebc107436fb4f8b26aa31d64c43fd36",
+  "classes/hookCallbacks/HookCallbacks.inc.php": "4ee19ab5a05a0f3cb9356e557719f49301accf34372fc3f52e0c5dcbe8d1bdb0",
+  "classes/settings/SelectionOfReviewingInterestsManage.inc.php": "ccecfe018826a55c2e3ff2ef2389ab6148b30452591576720d80ec35120e6100",
+  "classes/settings/SelectionOfReviewingInterestsActions.inc.php": "7a10c3d363366225d29489e8cf3c6b8ad25f52219855775c7c0d329b7dbe417c",
+  "classes/settings/SelectionOptionsForm.inc.php": "ec60bd773ff1ebef1589637255cd9d2604d5961313af6158d34c7eff3c3d6ec5"
+}

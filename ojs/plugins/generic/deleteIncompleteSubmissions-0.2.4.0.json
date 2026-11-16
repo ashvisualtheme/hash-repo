@@ -1,0 +1,20 @@
+{
+  "templates/settingsForm.tpl": "fdcf6fd54282524f5c79a48e6d10a1966d1ab04cf3f35d1bca84fe8bac0a5eb2",
+  "locale/pt_PT/locale.po": "38a3e144f8ce72d9087bcd229c535baa43dfb145015676298c9213b40e3426bd",
+  "locale/en/locale.po": "db3fc369372a23d808d809b18107da6db8fd356e238b4116f6d776ccc9978bbc",
+  "locale/fr_FR/locale.po": "b61a00651c49271a91a96f9c5f6f2a0435b4baf110cf3e25a66844e8ed6599dc",
+  "locale/ro/locale.po": "db8f7b6e3b630fdd816687939306dcfb6cc2cedcb9d1f72af7dfb47b952ff696",
+  "locale/es/locale.po": "af7fae93c2d7f45dd9c0100b8d380d862c51f4cc654bd9a0d793ec17faf0b8a9",
+  "locale/fi/locale.po": "5f3437870214233936c7fa84b6dc8a5015841ce968e153d5e0f7ac59c15329ce",
+  "locale/pt_BR/locale.po": "b41f23259679505c3aa5d1595adec703e17ee90384ff2f55a4634155421402b1",
+  "locale/de/locale.po": "e4392de2beadaf9d0585d506528bfcb5ac7bc6d7aad7713200a8da76ee8ab95e",
+  "locale/it/locale.po": "d896b735d3fe4632d466e31860d2d018002865e07a319576e43d30dc0dac9b3c",
+  "README.md": "bce129087102effe3b59a5e4179a08043f9dddf2d9ac3657ad03fed7cfb0017a",
+  "settings/DeleteIncompleteSubmissionsSettingsForm.php": "1d3dfb29245d8514faa6c536140868fefe956e12fbc407b0ac505fabc4ddba8a",
+  "DeleteIncompleteSubmissionsPlugin.php": "8a282c4166489da8f5d336bcb91e0bf173b3e452868ba14a03de83a6ac24288d",
+  "LICENSE": "8b1ba204bb69a0ade2bfcf65ef294a920f6bb361b317dba43c7ef29d96332b9b",
+  "classes/SubmissionDeletionPolicy.php": "b6cce9a66332e14275a8271cda2458a43c43aedd9bdd5797f08df822582390c1",
+  "screenshots/delete-submissions-modal.png": "2c48202637d756a31655ee155d61332b6ec7e4b03f2176df1e43f91e2008af71",
+  "screenshots/plugin-options.png": "0dc3e2a3a50e23185c0e577552d3a9b96a821844e33b05772f7d21bc0380b55a",
+  "version.xml": "213b1381b3b920b38aa0c06ff9cbeacb9d30c5b2d04ced1c9c411811c6143e75"
+}

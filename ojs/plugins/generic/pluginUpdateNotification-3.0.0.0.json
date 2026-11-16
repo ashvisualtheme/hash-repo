@@ -1,0 +1,12 @@
+{
+  "README.md": "915895494cd1bb984125517a88b6a7cececf3d063360885f8f8295e9b756588b",
+  "version.xml": "f5cd83ca97a349f566e7ec9efc313587c6db25e7753e91a87ef3f34df964f831",
+  "templates/updateNotificationPlugins.tpl": "f4cc445720d1a0c462eff1e972d17f812de33f7210bf35779d1ea4282ded966f",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/en/locale.po": "3e9b7be15568f474b81d104102aa768f534f1f40b6d643fdcd230760120efe74",
+  "locale/id/locale.po": "ffcc863f374561826f17ff0e09081d2d24287e1748c0e681c5bfb15152110d32",
+  "locale/pt_BR/locale.po": "0238f807e3331a2763c818755aad3da80b56f0de25f5ec2f78834ea6f343ac87",
+  "locale/es/locale.po": "3eb5ed14140a70aac65e0f856914b306cb7cab0a0d0ae8e4828cf3dd07096831",
+  "locale/fr_CA/locale.po": "efc4fa3232a9140dded1e4b083420fc85ec0649769f4a74e833e0ab9887648ba",
+  "PluginUpdateNotificationPlugin.php": "334c9dd1196d5320e26524329127949ca0a65d4d649063e86076a15a1a2e469a"
+}

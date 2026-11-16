@@ -1,0 +1,20 @@
+{
+  "pkp-clamav-master/ClamavPlugin.php": "86ad43edcee5a744e3133640d77034e75af0dc680e8a4dbac8d3ddd86a205cd4",
+  "pkp-clamav-master/ClamavSettingsForm.php": "99a2d5b358650239f06192177d13e71e672290035d5189811509c3670c457396",
+  "pkp-clamav-master/ClamavVersionHandler.php": "4e08e185ff43513f8f15c7be6d4b012243e2bc2cce01865989bdb98b92323797",
+  "pkp-clamav-master/css/clamav.css": "af085ca51783a9d4738bac547e56bbacff648fc67717e8a625645f3facbbe8e0",
+  "pkp-clamav-master/images/spinner.gif": "816bf6e0784089c60488dc838abbf0c1338e926c9adebf02fb234c9c21a3d020",
+  "pkp-clamav-master/js/clamavVersion.js": "ce04e511a13e455e3d5508546d04b09c26f9fd5aec55cf0d85fd5564e912e04a",
+  "pkp-clamav-master/LICENSE": "90b664a6fbc82b38595cbb39606268bef0b2eb9b76b0e9e03826befe204190bb",
+  "pkp-clamav-master/locale/de/locale.po": "27468c3faddeb82c2b0ed19bb79a65f5b18811b2816f00c704172f6fd4842cc1",
+  "pkp-clamav-master/locale/en/locale.po": "b4a260eccedd612d22a01c8fa0fea8c854114e476094ca64701041a73aae7268",
+  "pkp-clamav-master/locale/en/locale.xml": "dc7b13992fb5dba85759b08395eef9b316edc4fc0b6799ba7dcd34c86cd45bb9",
+  "pkp-clamav-master/locale/es/locale.po": "6b01fc494b3758546d186f7fe2ea8f39bd34687dce0d6d563f55654c3eed5f8e",
+  "pkp-clamav-master/locale/fr/locale.po": "3a258abd5e9cd3d30cd981689390c31b91ab6be168c00060f83ec0d4039f2aed",
+  "pkp-clamav-master/locale/it/locale.po": "81f6a9213ee6a2a81b7cb6319c854663152dc70645fbf2ffd19e181680ba98b9",
+  "pkp-clamav-master/locale/pt/locale.po": "0d2c2654cb0080c41b69dffa1ab290acb1d160c4ea12093d5823172eef42639c",
+  "pkp-clamav-master/locale/ro/locale.po": "81f247f328f285ed3735ebcf113b8bb382fb5434746f83479974a77253e68a84",
+  "pkp-clamav-master/README.md": "4bc4cbea9719f5161de6dcd9b7c442b8263f1f1e4ec44e4d4f2ea33170a22c73",
+  "pkp-clamav-master/templates/settingsForm.tpl": "9e89bdd1f8e2305fdea98e6cb582b3d07478a8d506f9888094084d1325de341f",
+  "pkp-clamav-master/version.xml": "0211c81b25b94cf6fcae9e6b7f56501f0569cc93197b4e35ebf557b3a855a808"
+}

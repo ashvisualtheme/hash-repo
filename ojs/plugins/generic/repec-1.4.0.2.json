@@ -1,0 +1,18 @@
+{
+  "version.xml": "183bb6bdd09d2b267b5d3e5c509c844ab2435455d6bf631a1077c11822ce6c1e",
+  "README.md": "958af2a6a100ae281b4b3220ee7d53e7d5259809086d82688d444888690263da",
+  "classes/RepecFormatter.inc.php": "ec2c3b5854192792bfa4bec7e309a116b22890339ca524b01c0a60825484d1cb",
+  "classes/RepecLegacyHandleMap.inc.php": "a6e88c6045b33ab806681eb14e8bc36ed152b19da8e26c1e54214de72824ec6e",
+  "classes/RepecSettingsForm.inc.php": "8d98499286888af0d878c13e8a35bca515d188339b845e41249439f3e2ce1a80",
+  "docs/README.es.md": "b9851da40ecdbc76a8b7b0320c9c76680645061fea8ce7f8988f940d30d694c4",
+  "docs/README.pt_BR.md": "3d9bf0b0db40ebbbd90eb6bc5083d18e5f0f266e77b02215bf7bdf14ee8878f1",
+  "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+  "locale/es_ES/locale.po": "20026bb5600782c0300e4ac8fb42a75308bf98e2b95f334f486c64ccb44aed28",
+  "locale/en_US/locale.po": "22f95ba723f27e1436a452d7e2f15fe19f998bae73d2534a22dd85c0f863f455",
+  "locale/pt_BR/locale.po": "5be8fc27906d5033652a407d35649f48adba818a05ea1da39c629d7d9a5a51da",
+  "RepecPlugin.inc.php": "7a347f67df46b1bad66f8e5a03d193112bc5a39f5803f5555e79fd782c881a30",
+  "pages/RepecHandler.inc.php": "b3f696ed711619abe42a51e7a9ff2645137351efcf9c433ccdf76683a1357f69",
+  "templates/settingsForm.tpl": "8b06339d2b0c68611054ffa792130a8e2051ea008b44533f56904bf7afb7f1b5",
+  "index.php": "edd26bb9d8bd494c7880530fc38085fb24a97ff2035a1e73fd82a4e5fd017342",
+  "tools/export-current-repec-candidates.php": "004c838466f280a6f8055d92b01ca56d30ebb6b9eefb6ecb5d842b0b746dd5ba"
+}
